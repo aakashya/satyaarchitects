@@ -14,7 +14,7 @@
       <!-- Service Item 02 -->
       <div class="flex flex-col md:flex-row gap-8 bg-white p-8 shadow-sm border-l-4 border-brand-gold hover:shadow-lg transition">
         <div class="md:w-1/4">
-          <span class="text-6xl font-black text-gray-100 block -mb-4">02</span>
+          <span class="text-6xl font-black text-gray-100 block -mb-4">01</span>
           <h3 class="text-2xl font-serif font-bold text-slate-900 relative z-10">Structural Services</h3>
         </div>
         <div class="md:w-3/4">
@@ -29,7 +29,7 @@
       <!-- Service Item 03 -->
       <div class="flex flex-col md:flex-row gap-8 bg-white p-8 shadow-sm border-l-4 border-brand-gold hover:shadow-lg transition">
         <div class="md:w-1/4">
-          <span class="text-6xl font-black text-gray-100 block -mb-4">03</span>
+          <span class="text-6xl font-black text-gray-100 block -mb-4">02</span>
           <h3 class="text-2xl font-serif font-bold text-slate-900 relative z-10">Plumbing & Fire Fighting</h3>
         </div>
         <div class="md:w-3/4">
@@ -44,7 +44,7 @@
       <!-- Service Item 04 -->
       <div class="flex flex-col md:flex-row gap-8 bg-white p-8 shadow-sm border-l-4 border-brand-gold hover:shadow-lg transition">
         <div class="md:w-1/4">
-          <span class="text-6xl font-black text-gray-100 block -mb-4">04</span>
+          <span class="text-6xl font-black text-gray-100 block -mb-4">03</span>
           <h3 class="text-2xl font-serif font-bold text-slate-900 relative z-10">Electrical Consultants</h3>
         </div>
         <div class="md:w-3/4">
@@ -59,7 +59,7 @@
       <!-- Service Item 05 -->
       <div class="flex flex-col md:flex-row gap-8 bg-white p-8 shadow-sm border-l-4 border-brand-gold hover:shadow-lg transition">
         <div class="md:w-1/4">
-          <span class="text-6xl font-black text-gray-100 block -mb-4">05</span>
+          <span class="text-6xl font-black text-gray-100 block -mb-4">04</span>
           <h3 class="text-2xl font-serif font-bold text-slate-900 relative z-10">HVAC Services</h3>
         </div>
         <div class="md:w-3/4">
@@ -74,7 +74,7 @@
       <!-- Service Item 06 -->
       <div class="flex flex-col md:flex-row gap-8 bg-white p-8 shadow-sm border-l-4 border-brand-gold hover:shadow-lg transition">
         <div class="md:w-1/4">
-          <span class="text-6xl font-black text-gray-100 block -mb-4">06</span>
+          <span class="text-6xl font-black text-gray-100 block -mb-4">05</span>
           <h3 class="text-2xl font-serif font-bold text-slate-900 relative z-10">Landscaping Services</h3>
         </div>
         <div class="md:w-3/4">
@@ -88,7 +88,7 @@
       <!-- Service Item 07 -->
       <div class="flex flex-col md:flex-row gap-8 bg-white p-8 shadow-sm border-l-4 border-brand-gold hover:shadow-lg transition">
         <div class="md:w-1/4">
-          <span class="text-6xl font-black text-gray-100 block -mb-4">07</span>
+          <span class="text-6xl font-black text-gray-100 block -mb-4">06</span>
           <h3 class="text-2xl font-serif font-bold text-slate-900 relative z-10">Green Building</h3>
         </div>
         <div class="md:w-3/4">
