@@ -1,0 +1,33 @@
+<nav id="navbar" class="fixed w-full z-50 transition-all duration-300 text-white py-2 bg-transparent border-b border-white/10">
+  <div class="container mx-auto px-6 flex justify-between items-center">
+    <!-- Logo -->
+    <a href="{{ route('home') }}" class="flex items-center gap-3">
+      <img src="{{ asset('images/logo/satya-architects.png') }}" alt="Satya Architects Logo" class="h-16 w-auto object-contain">
+    </a>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex space-x-8 text-base font-medium tracking-wide uppercase">
+      <a href="{{ route('home') }}" class="hover:text-brand-gold transition">Home</a>
+      <a href="{{ route('about') }}" class="hover:text-brand-gold transition">About Us</a>
+      <a href="{{ route('projects') }}" class="hover:text-brand-gold transition">Projects</a>
+      <a href="{{ route('services') }}" class="hover:text-brand-gold transition">Services</a>
+      <a href="{{ route('clients') }}" class="hover:text-brand-gold transition">Clients</a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-button" class="md:hidden text-2xl focus:outline-none">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-brand-dark text-white p-6 md:hidden shadow-lg">
+    <div class="flex flex-col space-y-4 text-center">
+      <a href="{{ route('home') }}" class="hover:text-brand-gold">Home</a>
+      <a href="{{ route('about') }}" class="hover:text-brand-gold">About Us</a>
+      <a href="{{ route('projects') }}" class="hover:text-brand-gold">Projects</a>
+      <a href="{{ route('services') }}" class="hover:text-brand-gold">Services</a>
+      <a href="{{ route('clients') }}" class="hover:text-brand-gold">Clients</a>
+    </div>
+  </div>
+</nav>
