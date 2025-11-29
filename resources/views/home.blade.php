@@ -7,31 +7,76 @@
 <section id="home">
   <!-- Hero Section with Slideshow -->
   <div id="home-hero" class="relative h-screen w-full overflow-hidden flex items-center justify-center">
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-black/40 z-10"></div>
+    <!-- Overlay dark gradient at bottom for readability -->
+    <div class="absolute inset-0 bg-black/10 z-10"></div>
+    <div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
 
-    <!-- Images -->
-    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" class="hero-slide" alt="Architecture 1">
-    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop" class="hero-slide" alt="Architecture 2">
-    <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?q=80&w=2070&auto=format&fit=crop" class="hero-slide" alt="Architecture 3">
-    <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=1974&auto=format&fit=crop" class="hero-slide" alt="Architecture 4">
-    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" class="hero-slide" alt="Architecture 5">
-    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" class="hero-slide" alt="Architecture 6">
+    <!-- Images from /public/images/hero/01–07 -->
+    <img src="{{ asset('images/hero/01.png') }}" class="hero-slide active" alt="FORTEASIA INDUSTRIAL TOWNSHIP, ROHTAK">
+    <img src="{{ asset('images/hero/02.png') }}" class="hero-slide" alt="SWARN JYOTI , GURGAON">
+    <img src="{{ asset('images/hero/03.png') }}" class="hero-slide" alt="SAGA CASTLE, BHIWADI">
+    <img src="{{ asset('images/hero/04.png') }}" class="hero-slide" alt="EXPERIENTIAL SCHOOL, GURGAON">
+    <img src="{{ asset('images/hero/05.png') }}" class="hero-slide" alt="FOOD PARK, MEGHALAYA">
+    <img src="{{ asset('images/hero/06.jpg') }}" class="hero-slide" alt="SHUBHANGAN, PANIPAT">
+    <img src="{{ asset('images/hero/07.jpg') }}" class="hero-slide" alt="DWARKADISH">
 
-    <!-- Hero Text -->
-    <div class="relative z-20 text-center text-white px-4 max-w-4xl">
-      <h2 class="text-sm md:text-lg uppercase tracking-[0.3em] mb-4 text-brand-gold">Est. Gurgaon</h2>
-      <h1 class="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight">Designing The Future</h1>
-      <p class="text-lg md:text-xl font-light text-gray-200 mb-8 max-w-2xl mx-auto">Creating sustainable and innovative spaces that inspire.</p>
-      <button id="explore-btn"
-        class="border border-white hover:bg-white hover:text-black transition px-8 py-3 uppercase tracking-widest text-sm">Explore</button>
+    <!-- Bottom-left content: tags, heading, sliders -->
+    <div class="absolute bottom-10 left-6 md:bottom-16 md:left-16 z-20 w-[340px] sm:w-[420px] md:w-[720px]">
+      <!-- Key tags (chips) -->
+      <div id="hero-tags" class="flex flex-wrap gap-2 mb-3">
+        <!-- Fallback tags, JS will override -->
+        <span class="px-3 py-1 text-[10px] md:text-xs font-semibold tracking-wide
+                 bg-brand-gold text-black rounded-full shadow-md shadow-brand-gold/40
+                 border border-brand-gold backdrop-blur-sm">
+          Industrial
+        </span>
+        <span class="px-3 py-1 text-[10px] md:text-xs font-semibold tracking-wide
+                 bg-brand-gold text-black rounded-full shadow-md shadow-brand-gold/40
+                 border border-brand-gold backdrop-blur-sm">
+          Residential
+        </span>
+      </div>
+
+      <!-- Project name for current slide (bigger font, single line, wider area) -->
+      <h2 id="hero-heading" class="text-lg sm:text-xl md:text-2xl font-serif font-semibold text-white mb-5 drop-shadow
+               leading-tight whitespace-nowrap overflow-hidden text-ellipsis">
+        FORTEASIA INDUSTRIAL TOWNSHIP, ROHTAK
+      </h2>
+
+      <!-- Sliders / Progress bars: narrower than heading -->
+      <div class="w-[260px] sm:w-[320px] md:w-[360px]">
+        <div class="flex gap-3 w-full">
+          <div class="h-1.5 flex-1 bg-white/20 rounded-full overflow-hidden hero-progress-track">
+            <div class="hero-progress-inner h-full bg-brand-gold" data-index="0" style="width: 0;"></div>
+          </div>
+          <div class="h-1.5 flex-1 bg-white/20 rounded-full overflow-hidden hero-progress-track">
+            <div class="hero-progress-inner h-full bg-brand-gold" data-index="1" style="width: 0;"></div>
+          </div>
+          <div class="h-1.5 flex-1 bg-white/20 rounded-full overflow-hidden hero-progress-track">
+            <div class="hero-progress-inner h-full bg-brand-gold" data-index="2" style="width: 0;"></div>
+          </div>
+          <div class="h-1.5 flex-1 bg-white/20 rounded-full overflow-hidden hero-progress-track">
+            <div class="hero-progress-inner h-full bg-brand-gold" data-index="3" style="width: 0;"></div>
+          </div>
+          <div class="h-1.5 flex-1 bg-white/20 rounded-full overflow-hidden hero-progress-track">
+            <div class="hero-progress-inner h-full bg-brand-gold" data-index="4" style="width: 0;"></div>
+          </div>
+          <div class="h-1.5 flex-1 bg-white/20 rounded-full overflow-hidden hero-progress-track">
+            <div class="hero-progress-inner h-full bg-brand-gold" data-index="5" style="width: 0;"></div>
+          </div>
+          <div class="h-1.5 flex-1 bg-white/20 rounded-full overflow-hidden hero-progress-track">
+            <div class="hero-progress-inner h-full bg-brand-gold" data-index="6" style="width: 0;"></div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Scroll Indicator -->
-    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce text-white">
+    <!-- Scroll Indicator (center bottom) -->
+    <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 animate-bounce text-white">
       <i class="fas fa-chevron-down text-2xl"></i>
     </div>
   </div>
+
 
   <!-- Project Statistics -->
   <div id="stats-section" class="relative py-24 bg-slate-900 text-white overflow-hidden">
