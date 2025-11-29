@@ -5,7 +5,11 @@
 @section('content')
 <section id="about" class="pt-32 pb-20 min-h-screen">
   <div class="container mx-auto px-6">
-    <h1 class="text-4xl font-serif font-bold text-slate-900 mb-12 border-b-2 border-brand-gold inline-block pb-2">About Us</h1>
+    <div class="text-center">
+      <h1 class="text-4xl font-serif font-bold text-slate-900 mb-12 border-b-2 border-brand-gold inline-block pb-2">
+        About Us
+      </h1>
+    </div>
 
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <img src="https://images.unsplash.com/photo-1556955112-28cde3817b0a?q=80&w=2070&auto=format&fit=crop" class="shadow-2xl rounded-sm"

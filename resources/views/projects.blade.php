@@ -5,8 +5,9 @@
 @section('content')
 <section id="projects" class="pt-32 pb-20 min-h-screen">
   <div class="container mx-auto px-6">
-    <h1 class="text-4xl font-serif font-bold text-slate-900 mb-12 border-b-2 border-brand-gold inline-block pb-2">Our Portfolio</h1>
-
+    <div class="text-center">
+      <h1 class="text-4xl font-serif font-bold text-slate-900 mb-12 border-b-2 border-brand-gold inline-block pb-2">Our Portfolio</h1>
+    </div>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       <!-- Mock Project 1 -->
       <div class="group relative overflow-hidden cursor-pointer">
