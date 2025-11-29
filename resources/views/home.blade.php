@@ -34,48 +34,126 @@
   </div>
 
   <!-- Project Statistics -->
-  <div id="stats-section" class="py-20 bg-white">
-    <div class="container mx-auto px-6">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-        <div class="p-6 border border-gray-100 hover:shadow-xl transition duration-300 group">
-          <i class="fas fa-building text-3xl text-brand-gold mb-4 group-hover:scale-110 transition"></i>
-          <h3 class="text-4xl font-bold text-slate-900 mb-2">20</h3>
-          <p class="text-sm uppercase tracking-wider text-gray-500">Group Housing</p>
+  <div id="stats-section" class="relative py-24 bg-slate-900 text-white overflow-hidden">
+    {{-- subtle glow background --}}
+    <div class="pointer-events-none absolute inset-0">
+      <div class="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-brand-gold/10 blur-3xl"></div>
+      <div class="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-cyan-500/10 blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-6 relative">
+      <div class="text-center mb-14">
+        <h2 class="text-sm md:text-base uppercase tracking-[0.35em] text-brand-gold mb-3">
+          Project Snapshot
+        </h2>
+        <p class="text-3xl md:text-4xl font-serif font-bold">
+          Over <span class="text-brand-gold">90+</span> spaces designed with purpose
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {{-- Group Housing --}}
+        <div
+          class="group relative bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur hover:bg-white/10 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-gold/20 transition duration-300">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs uppercase tracking-[0.2em] text-slate-300">Completed</span>
+            <span class="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] text-brand-gold">
+              <i class="fas fa-building text-sm"></i> Group Housing
+            </span>
+          </div>
+          <div class="text-5xl font-bold mb-1">20</div>
+          <p class="text-xs text-slate-300 uppercase tracking-[0.25em]">Projects</p>
         </div>
-        <div class="p-6 border border-gray-100 hover:shadow-xl transition duration-300 group">
-          <i class="fas fa-home text-3xl text-brand-gold mb-4 group-hover:scale-110 transition"></i>
-          <h3 class="text-4xl font-bold text-slate-900 mb-2">12</h3>
-          <p class="text-sm uppercase tracking-wider text-gray-500">Residential</p>
+
+        {{-- Residential --}}
+        <div
+          class="group relative bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur hover:bg-white/10 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-gold/20 transition duration-300">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs uppercase tracking-[0.2em] text-slate-300">Spaces</span>
+            <span class="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] text-brand-gold">
+              <i class="fas fa-home text-sm"></i> Residential
+            </span>
+          </div>
+          <div class="text-5xl font-bold mb-1">12</div>
+          <p class="text-xs text-slate-300 uppercase tracking-[0.25em]">Projects</p>
         </div>
-        <div class="p-6 border border-gray-100 hover:shadow-xl transition duration-300 group">
-          <i class="fas fa-store text-3xl text-brand-gold mb-4 group-hover:scale-110 transition"></i>
-          <h3 class="text-4xl font-bold text-slate-900 mb-2">10</h3>
-          <p class="text-sm uppercase tracking-wider text-gray-500">Commercial</p>
+
+        {{-- Commercial --}}
+        <div
+          class="group relative bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur hover:bg-white/10 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-gold/20 transition duration-300">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs uppercase tracking-[0.2em] text-slate-300">Retail & Offices</span>
+            <span class="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] text-brand-gold">
+              <i class="fas fa-store text-sm"></i> Commercial
+            </span>
+          </div>
+          <div class="text-5xl font-bold mb-1">10</div>
+          <p class="text-xs text-slate-300 uppercase tracking-[0.25em]">Projects</p>
         </div>
-        <div class="p-6 border border-gray-100 hover:shadow-xl transition duration-300 group">
-          <i class="fas fa-university text-3xl text-brand-gold mb-4 group-hover:scale-110 transition"></i>
-          <h3 class="text-4xl font-bold text-slate-900 mb-2">15</h3>
-          <p class="text-sm uppercase tracking-wider text-gray-500">Institutional</p>
+
+        {{-- Institutional --}}
+        <div
+          class="group relative bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur hover:bg-white/10 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-gold/20 transition duration-300">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs uppercase tracking-[0.2em] text-slate-300">Education & Public</span>
+            <span class="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] text-brand-gold">
+              <i class="fas fa-university text-sm"></i> Institutional
+            </span>
+          </div>
+          <div class="text-5xl font-bold mb-1">15</div>
+          <p class="text-xs text-slate-300 uppercase tracking-[0.25em]">Projects</p>
         </div>
-        <div class="p-6 border border-gray-100 hover:shadow-xl transition duration-300 group">
-          <i class="fas fa-hotel text-3xl text-brand-gold mb-4 group-hover:scale-110 transition"></i>
-          <h3 class="text-4xl font-bold text-slate-900 mb-2">7</h3>
-          <p class="text-sm uppercase tracking-wider text-gray-500">Hotel</p>
+
+        {{-- Hotel --}}
+        <div
+          class="group relative bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur hover:bg-white/10 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-gold/20 transition duration-300">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs uppercase tracking-[0.2em] text-slate-300">Hospitality</span>
+            <span class="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] text-brand-gold">
+              <i class="fas fa-hotel text-sm"></i> Hotel
+            </span>
+          </div>
+          <div class="text-5xl font-bold mb-1">7</div>
+          <p class="text-xs text-slate-300 uppercase tracking-[0.25em]">Projects</p>
         </div>
-        <div class="p-6 border border-gray-100 hover:shadow-xl transition duration-300 group">
-          <i class="fas fa-laptop text-3xl text-brand-gold mb-4 group-hover:scale-110 transition"></i>
-          <h3 class="text-4xl font-bold text-slate-900 mb-2">6</h3>
-          <p class="text-sm uppercase tracking-wider text-gray-500">Office</p>
+
+        {{-- Office --}}
+        <div
+          class="group relative bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur hover:bg-white/10 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-gold/20 transition duration-300">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs uppercase tracking-[0.2em] text-slate-300">Workspaces</span>
+            <span class="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] text-brand-gold">
+              <i class="fas fa-laptop text-sm"></i> Office
+            </span>
+          </div>
+          <div class="text-5xl font-bold mb-1">6</div>
+          <p class="text-xs text-slate-300 uppercase tracking-[0.25em]">Projects</p>
         </div>
-        <div class="p-6 border border-gray-100 hover:shadow-xl transition duration-300 group">
-          <i class="fas fa-warehouse text-3xl text-brand-gold mb-4 group-hover:scale-110 transition"></i>
-          <h3 class="text-4xl font-bold text-slate-900 mb-2">9</h3>
-          <p class="text-sm uppercase tracking-wider text-gray-500">Warehouse</p>
+
+        {{-- Warehouse --}}
+        <div
+          class="group relative bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur hover:bg-white/10 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-gold/20 transition duration-300">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs uppercase tracking-[0.2em] text-slate-300">Storage & Logistics</span>
+            <span class="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] text-brand-gold">
+              <i class="fas fa-warehouse text-sm"></i> Warehouse
+            </span>
+          </div>
+          <div class="text-5xl font-bold mb-1">9</div>
+          <p class="text-xs text-slate-300 uppercase tracking-[0.25em]">Projects</p>
         </div>
-        <div class="p-6 border border-gray-100 hover:shadow-xl transition duration-300 group">
-          <i class="fas fa-industry text-3xl text-brand-gold mb-4 group-hover:scale-110 transition"></i>
-          <h3 class="text-4xl font-bold text-slate-900 mb-2">12</h3>
-          <p class="text-sm uppercase tracking-wider text-gray-500">Industries</p>
+
+        {{-- Industries --}}
+        <div
+          class="group relative bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur hover:bg-white/10 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-gold/20 transition duration-300">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs uppercase tracking-[0.2em] text-slate-300">Industrial & Plants</span>
+            <span class="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] text-brand-gold">
+              <i class="fas fa-industry text-sm"></i> Industries
+            </span>
+          </div>
+          <div class="text-5xl font-bold mb-1">12</div>
+          <p class="text-xs text-slate-300 uppercase tracking-[0.25em]">Projects</p>
         </div>
       </div>
     </div>
