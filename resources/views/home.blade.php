@@ -8,7 +8,7 @@
   <!-- Hero Section with Slideshow -->
   <div id="home-hero" class="relative h-screen w-full overflow-hidden flex items-center justify-center">
     <!-- Overlay dark gradient at bottom for readability -->
-    <div class="absolute inset-0 bg-black/10 z-20"></div>
+    {{-- <div class="absolute inset-0 bg-black/10 z-20"></div> --}}
     <div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
 
     <!-- Images from /public/images/hero/01–07 -->
