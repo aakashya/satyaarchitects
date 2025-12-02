@@ -39,7 +39,7 @@
   <style>
     /* Smooth fade for hero images */
     .hero-slide {
-      transition: opacity 1.5s ease-in-out;
+      /* transition: opacity 1.5s ease-in-out; */
       opacity: 0;
       position: absolute;
       top: 0;
