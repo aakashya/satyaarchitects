@@ -12,13 +12,13 @@
     <div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
 
     <!-- Images from /public/images/hero/01–07 -->
-    <img src="{{ asset('images/hero/01.png') }}" class="hero-slide active" alt="FORTEASIA INDUSTRIAL TOWNSHIP, ROHTAK">
-    <img src="{{ asset('images/hero/02.png') }}" class="hero-slide" alt="SWARN JYOTI , GURGAON">
-    <img src="{{ asset('images/hero/03.png') }}" class="hero-slide" alt="SAGA CASTLE, BHIWADI">
-    <img src="{{ asset('images/hero/04.png') }}" class="hero-slide" alt="EXPERIENTIAL SCHOOL, GURGAON">
-    <img src="{{ asset('images/hero/05.png') }}" class="hero-slide" alt="FOOD PARK, MEGHALAYA">
-    <img src="{{ asset('images/hero/06.jpg') }}" class="hero-slide" alt="SHUBHANGAN, PANIPAT">
-    <img src="{{ asset('images/hero/07.jpg') }}" class="hero-slide" alt="DWARKADISH">
+    <img src="{{ asset('images/hero/n/01.jpg') }}" class="hero-slide active" alt="FORTEASIA INDUSTRIAL TOWNSHIP, ROHTAK">
+    <img src="{{ asset('images/hero/n/02.jpg') }}" class="hero-slide" alt="SWARN JYOTI , GURGAON">
+    <img src="{{ asset('images/hero/n/03.jpg') }}" class="hero-slide" alt="SAGA CASTLE, BHIWADI">
+    <img src="{{ asset('images/hero/n/04.jpg') }}" class="hero-slide" alt="EXPERIENTIAL SCHOOL, GURGAON">
+    <img src="{{ asset('images/hero/n/05.jpg') }}" class="hero-slide" alt="FOOD PARK, MEGHALAYA">
+    <img src="{{ asset('images/hero/n/06.jpg') }}" class="hero-slide" alt="SHUBHANGAN, PANIPAT">
+    <img src="{{ asset('images/hero/n/07.jpg') }}" class="hero-slide" alt="DWARKADISH">
 
     <!-- Bottom-left content: tags, heading, sliders -->
     <div class="absolute bottom-10 left-6 md:bottom-16 md:left-16 z-20 w-[340px] sm:w-[420px] md:w-[720px]">
