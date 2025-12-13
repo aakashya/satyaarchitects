@@ -239,8 +239,8 @@
     const homeHero = document.getElementById('home-hero');
 
     function setHomeNavbar() {
-        navbar.classList.add('bg-transparent', 'text-white', 'py-4');
-        navbar.classList.remove('bg-white', 'text-slate-900', 'shadow-md', 'py-2');
+        navbar.classList.add('bg-transparent', 'text-white');
+        navbar.classList.remove('bg-white', 'text-slate-900', 'shadow-md');
     }
 
     function setSolidNavbar() {
