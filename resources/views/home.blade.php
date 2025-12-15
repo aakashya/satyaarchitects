@@ -7,9 +7,14 @@
 <section id="home">
   <!-- Hero Section with Slideshow -->
   <div id="home-hero" class="relative h-screen w-full overflow-hidden flex items-center justify-center">
-    <!-- Overlay dark gradient at bottom for readability -->
     {{-- <div class="absolute inset-0 bg-black/10 z-20"></div> --}}
-    <div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
+    <!-- 🔹 TOP gradient just behind the header -->
+    <div class="absolute inset-x-0 top-0 h-24 md:h-32
+           bg-gradient-to-b from-black/80 via-black/40 to-transparent
+           z-10 pointer-events-none">
+    </div>
+
+
 
     <!-- Images from /public/images/hero/01–07 -->
     <img src="{{ asset('images/hero/n/01.jpg') }}" class="hero-slide active" alt="FORTEASIA INDUSTRIAL TOWNSHIP, ROHTAK">
@@ -24,7 +29,6 @@
     <div class="absolute bottom-10 left-6 md:bottom-16 md:left-16 z-20 w-[340px] sm:w-[420px] md:w-[720px]">
       <!-- Key tags (chips) -->
       <div id="hero-tags" class="flex flex-wrap gap-2 mb-3">
-        <!-- Fallback tags, JS will override -->
         <span class="px-3 py-1 text-[10px] md:text-xs font-semibold tracking-wide
                  bg-brand-gold text-black rounded-full shadow-md shadow-brand-gold/40
                  border border-brand-gold backdrop-blur-sm">
@@ -37,13 +41,13 @@
         </span>
       </div>
 
-      <!-- Project name for current slide (bigger font, single line, wider area) -->
+      <!-- Project name for current slide (single line) -->
       <h2 id="hero-heading" class="text-lg sm:text-xl md:text-2xl font-serif font-semibold text-white mb-5 drop-shadow
-               leading-tight whitespace-nowrap overflow-hidden text-ellipsis">
+                 leading-tight whitespace-nowrap overflow-hidden text-ellipsis">
         FORTEASIA INDUSTRIAL TOWNSHIP, ROHTAK
       </h2>
 
-      <!-- Sliders / Progress bars: narrower than heading -->
+      <!-- Sliders / Progress bars -->
       <div class="w-[260px] sm:w-[320px] md:w-[360px]">
         <div class="flex gap-3 w-full">
           <div class="h-1.5 flex-1 bg-white/20 rounded-full overflow-hidden hero-progress-track">
@@ -77,10 +81,167 @@
     </div>
   </div>
 
+  <!-- Timeline Slider -->
+  <section class="bg-white text-black py-14">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col gap-6">
+        {{-- Heading --}}
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+          <div>
+            <h2 class="text-sm md:text-base uppercase tracking-[0.35em] text-brand-gold mb-2">
+              Selected Work
+            </h2>
+            <p class="text-2xl md:text-3xl font-serif font-semibold">
+              A timeline of key projects
+            </p>
+          </div>
+          <p class="text-xs md:text-sm text-slate-400 max-w-md">
+            Slide to explore a cross-section of industrial, residential and institutional work developed over the years.
+          </p>
+        </div>
+
+        {{-- Timeline Track --}}
+        <div class="relative">
+          <div id="timeline-track" class="flex gap-6 overflow-hidden pb-4">
+            {{-- Card 1 --}}
+            <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[800px]">
+              <div class="group relative overflow-hidden rounded-xl border border-white/10 bg-slate-900/40">
+                <img src="{{ asset('images/slider/dhoot.jpeg') }}" alt="Industrial Campus – Gurgaon"
+                  class="w-full h-72 sm:h-80 lg:h-[420px] object-cover group-hover:scale-[1.03] transition duration-500" />
+
+                {{-- Hover dialog --}}
+                <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
+                            opacity-0 group-hover:opacity-100 group-hover:-translate-y-[115%]
+                            transition duration-300 ease-out z-30">
+                  <div class="bg-white text-slate-900 text-xs sm:text-sm rounded-xl shadow-2xl shadow-black/40
+                              border border-brand-gold/70 px-4 py-3 min-w-[220px]">
+                    <div class="text-[10px] uppercase tracking-[0.22em] text-slate-500 mb-1">
+                      2014 · Gurgaon, Haryana
+                    </div>
+                    <div class="font-semibold whitespace-nowrap overflow-hidden text-ellipsis mb-1">
+                      Industrial Campus – Gurgaon
+                    </div>
+                    <div class="text-[11px] text-slate-600">
+                      Industrial · Masterplanning
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {{-- Card 2 --}}
+            <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[800px]">
+              <div class="group relative overflow-hidden rounded-xl border border-white/10 bg-slate-900/40">
+                <img src="{{ asset('images/slider/forteasia.png') }}" alt="Riverfront Residences – Panipat"
+                  class="w-full h-72 sm:h-80 lg:h-[420px] object-cover group-hover:scale-[1.03] transition duration-500" />
+
+                <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
+                            opacity-0 group-hover:opacity-100 group-hover:-translate-y-[115%]
+                            transition duration-300 ease-out z-30">
+                  <div class="bg-white text-slate-900 text-xs sm:text-sm rounded-xl shadow-2xl shadow-black/40
+                              border border-brand-gold/70 px-4 py-3 min-w-[220px]">
+                    <div class="text-[10px] uppercase tracking-[0.22em] text-slate-500 mb-1">
+                      2016 · Panipat, Haryana
+                    </div>
+                    <div class="font-semibold whitespace-nowrap overflow-hidden text-ellipsis mb-1">
+                      Riverfront Residences – Panipat
+                    </div>
+                    <div class="text-[11px] text-slate-600">
+                      Residential · Group Housing
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {{-- Card 3 --}}
+            <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[800px]">
+              <div class="group relative overflow-hidden rounded-xl border border-white/10 bg-slate-900/40">
+                <img src="{{ asset('images/slider/hub.png') }}" alt="Urban Commercial Plaza – Bhiwadi"
+                  class="w-full h-72 sm:h-80 lg:h-[420px] object-cover group-hover:scale-[1.03] transition duration-500" />
+
+                <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
+                            opacity-0 group-hover:opacity-100 group-hover:-translate-y-[115%]
+                            transition duration-300 ease-out z-30">
+                  <div class="bg-white text-slate-900 text-xs sm:text-sm rounded-xl shadow-2xl shadow-black/40
+                              border border-brand-gold/70 px-4 py-3 min-w-[220px]">
+                    <div class="text-[10px] uppercase tracking-[0.22em] text-slate-500 mb-1">
+                      2018 · Bhiwadi, Rajasthan
+                    </div>
+                    <div class="font-semibold whitespace-nowrap overflow-hidden text-ellipsis mb-1">
+                      Urban Commercial Plaza – Bhiwadi
+                    </div>
+                    <div class="text-[11px] text-slate-600">
+                      Retail · Commercial
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {{-- Card 4 --}}
+            <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[800px]">
+              <div class="group relative overflow-hidden rounded-xl border border-white/10 bg-slate-900/40">
+                <img src="{{ asset('images/slider/sports.png') }}" alt="Experiential Learning Campus – Gurgaon"
+                  class="w-full h-72 sm:h-80 lg:h-[420px] object-cover group-hover:scale-[1.03] transition duration-500" />
+
+                <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
+                            opacity-0 group-hover:opacity-100 group-hover:-translate-y-[115%]
+                            transition duration-300 ease-out z-30">
+                  <div class="bg-white text-slate-900 text-xs sm:text-sm rounded-xl shadow-2xl shadow-black/40
+                              border border-brand-gold/70 px-4 py-3 min-w-[220px]">
+                    <div class="text-[10px] uppercase tracking-[0.22em] text-slate-500 mb-1">
+                      2020 · Gurgaon, Haryana
+                    </div>
+                    <div class="font-semibold whitespace-nowrap overflow-hidden text-ellipsis mb-1">
+                      Experiential Learning Campus – Gurgaon
+                    </div>
+                    <div class="text-[11px] text-slate-600">
+                      Institutional · Education
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {{-- Card 5 --}}
+            <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[800px]">
+              <div class="group relative overflow-hidden rounded-xl border border-white/10 bg-slate-900/40">
+                <img src="{{ asset('images/slider/workkplace.png') }}" alt="Logistics & Warehousing Park – NCR"
+                  class="w-full h-72 sm:h-80 lg:h-[420px] object-cover group-hover:scale-[1.03] transition duration-500" />
+
+                <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
+                            opacity-0 group-hover:opacity-100 group-hover:-translate-y-[115%]
+                            transition duration-300 ease-out z-30">
+                  <div class="bg-white text-slate-900 text-xs sm:text-sm rounded-xl shadow-2xl shadow-black/40
+                              border border-brand-gold/70 px-4 py-3 min-w-[220px]">
+                    <div class="text-[10px] uppercase tracking-[0.22em] text-slate-500 mb-1">
+                      2022 · NCR Region, India
+                    </div>
+                    <div class="font-semibold whitespace-nowrap overflow-hidden text-ellipsis mb-1">
+                      Logistics &amp; Warehousing Park – NCR
+                    </div>
+                    <div class="text-[11px] text-slate-600">
+                      Industrial · Warehousing
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        {{-- Range Slider --}}
+        <div class="mt-2">
+          <input id="timeline-range" type="range" min="0" max="100" value="0" step="1" class="w-full timeline-range">
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Project Statistics -->
   <div id="stats-section" class="relative py-24 bg-slate-900 text-white overflow-hidden">
-    {{-- subtle glow background --}}
     <div class="pointer-events-none absolute inset-0">
       <div class="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-brand-gold/10 blur-3xl"></div>
       <div class="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-cyan-500/10 blur-3xl"></div>
@@ -298,10 +459,59 @@
 
       <div class="text-center mt-12">
         <a href="{{ route('services') }}"
-          class="inline-block border border-brand-gold text-brand-gold px-8 py-3 uppercase tracking-widest text-sm hover:bg-brand-gold hover:text-black transition">View
-          All Services</a>
+          class="inline-block border border-brand-gold text-brand-gold px-8 py-3 uppercase tracking-widest text-sm hover:bg-brand-gold hover:text-black transition">
+          View All Services
+        </a>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  // --- Timeline slider (range <-> horizontal scroll) ---
+  const timelineTrack = document.getElementById('timeline-track');
+const timelineRange = document.getElementById('timeline-range');
+
+if (timelineTrack && timelineRange) {
+    let maxScroll = 0;
+
+    const recalcMaxScroll = () => {
+        maxScroll = timelineTrack.scrollWidth - timelineTrack.clientWidth;
+        if (maxScroll < 0) maxScroll = 0;
+    };
+
+    recalcMaxScroll();
+    window.addEventListener('resize', recalcMaxScroll);
+
+    const syncRangeToScroll = () => {
+        if (maxScroll <= 0) {
+            timelineRange.value = 0;
+            return;
+        }
+        const ratio = timelineTrack.scrollLeft / maxScroll;
+        timelineRange.value = Math.round(ratio * 100);
+    };
+
+    const syncScrollToRange = () => {
+        const ratio = timelineRange.value / 100;
+        timelineTrack.scrollLeft = maxScroll * ratio;
+    };
+
+    timelineRange.addEventListener('input', syncScrollToRange);
+    // Scroll horizontally with mouse wheel when cursor is over the timeline
+timelineTrack.addEventListener(
+    'wheel',
+    (e) => {
+        e.preventDefault(); // stop the page from scrolling vertically
+        const scrollAmount = e.deltaY || e.deltaX;
+        timelineTrack.scrollLeft += scrollAmount;
+        syncRangeToScroll(); // keep the range slider in sync
+    },
+    { passive: false } // needed so preventDefault() works
+);
+
+
+    syncRangeToScroll();
+}
+</script>
 @endsection

@@ -1,4 +1,4 @@
-<nav id="navbar" class="fixed w-full z-50 transition-all duration-300 text-white bg-transparent border-b border-white/10">
+<nav id="navbar" class="fixed w-full z-50 transition-all duration-300 text-white bg-transparent">
   <div class="container mx-auto px-6 flex justify-between items-center">
     <!-- Logo -->
     <a href="{{ route('home') }}" class="flex items-center gap-3">

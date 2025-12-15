@@ -2,22 +2,22 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>@yield('title', 'Satya Architects | Professional Architectural Consultancy')</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@yield('title', 'Satya Architects | Professional Architectural Consultancy')</title>
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <script>
-    tailwind.config = {
+    <script>
+        tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
@@ -34,72 +34,122 @@
                 }
             }
         }
-  </script>
+    </script>
 
-  <style>
-    /* Smooth fade for hero images */
-    .hero-slide {
-      /* transition: opacity 1.5s ease-in-out; */
-      opacity: 0;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
+    <style>
+        /* Timeline range base track */
+        .timeline-range {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 4px;
+            border-radius: 9999px;
+            background: linear-gradient(to right, rgba(148, 163, 184, 0.5), rgba(15, 23, 42, 0.9));
+            outline: none;
+        }
 
-    .hero-slide.active {
-      opacity: 1;
-    }
+        /* WebKit (Chrome, Edge, Safari) thumb */
+        .timeline-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 9999px;
+            background: #d4af37;
+            /* your brand gold hex here if different */
+            border: 2px solid #020617;
+            /* near-slate-950 */
+            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.25);
+            cursor: pointer;
+        }
 
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
+        /* Firefox thumb */
+        .timeline-range::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 9999px;
+            background: #d4af37;
+            border: 2px solid #020617;
+            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.25);
+            cursor: pointer;
+        }
 
-    ::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
+        /* Firefox track */
+        .timeline-range::-moz-range-track {
+            height: 4px;
+            border-radius: 9999px;
+            background: linear-gradient(to right, rgba(148, 163, 184, 0.5), rgba(15, 23, 42, 0.9));
+        }
 
-    ::-webkit-scrollbar-thumb {
-      background: #888;
-    }
+        /* Focus style */
+        .timeline-range:focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.5);
+        }
 
-    ::-webkit-scrollbar-thumb:hover {
-      background: #555;
-    }
+        /* Smooth fade for hero images */
+        .hero-slide {
+            /* transition: opacity 1.5s ease-in-out; */
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
 
-    .fade-in-up {
-      animation: fadeInUp 0.8s ease-out forwards;
-    }
+        .hero-slide.active {
+            opacity: 1;
+        }
 
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
 
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 
 <body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden">
 
-  @include('partials.header')
+    @include('partials.header')
 
-  @yield('content')
+    @yield('content')
 
-  @include('partials.footer')
+    @include('partials.footer')
 
-  <!-- JavaScript -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
     // --- Hero Image Slideshow Logic with heading + sliders ---
     const slides = document.querySelectorAll('.hero-slide');
     const heroHeading = document.getElementById('hero-heading');
@@ -279,7 +329,7 @@
         });
     }
 });
-  </script>
+    </script>
 
 </body>
 
