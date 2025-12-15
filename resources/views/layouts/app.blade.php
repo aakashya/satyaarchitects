@@ -112,7 +112,7 @@
         /* Keyframes for zoom-out effect */
         @keyframes heroZoomOut {
             from {
-                transform: scale(1.08);
+                transform: scale(1.2);
             }
 
             to {
