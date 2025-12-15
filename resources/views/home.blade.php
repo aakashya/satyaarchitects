@@ -104,10 +104,10 @@
         <div class="relative">
           <div id="timeline-track" class="flex gap-6 overflow-hidden pb-4">
             {{-- Card 1 --}}
-            <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[800px]">
+            <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[400px]">
               <div class="group relative overflow-hidden rounded-xl border border-white/10 bg-slate-900/40">
                 <img src="{{ asset('images/slider/dhoot.jpeg') }}" alt="Industrial Campus – Gurgaon"
-                  class="w-full h-72 sm:h-80 lg:h-[420px] object-cover group-hover:scale-[1.03] transition duration-500" />
+                  class="w-full h-72 sm:h-80 lg:h-[220px] object-cover group-hover:scale-[1.03] transition duration-500" />
 
                 {{-- Hover dialog --}}
                 <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
@@ -130,10 +130,10 @@
             </div>
 
             {{-- Card 2 --}}
-            <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[800px]">
+            <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[400px]">
               <div class="group relative overflow-hidden rounded-xl border border-white/10 bg-slate-900/40">
                 <img src="{{ asset('images/slider/forteasia.png') }}" alt="Riverfront Residences – Panipat"
-                  class="w-full h-72 sm:h-80 lg:h-[420px] object-cover group-hover:scale-[1.03] transition duration-500" />
+                  class="w-full h-72 sm:h-80 lg:h-[220px] object-cover group-hover:scale-[1.03] transition duration-500" />
 
                 <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
                             opacity-0 group-hover:opacity-100 group-hover:-translate-y-[115%]
@@ -155,10 +155,10 @@
             </div>
 
             {{-- Card 3 --}}
-            <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[800px]">
+            <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[400px]">
               <div class="group relative overflow-hidden rounded-xl border border-white/10 bg-slate-900/40">
                 <img src="{{ asset('images/slider/hub.png') }}" alt="Urban Commercial Plaza – Bhiwadi"
-                  class="w-full h-72 sm:h-80 lg:h-[420px] object-cover group-hover:scale-[1.03] transition duration-500" />
+                  class="w-full h-72 sm:h-80 lg:h-[220px] object-cover group-hover:scale-[1.03] transition duration-500" />
 
                 <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
                             opacity-0 group-hover:opacity-100 group-hover:-translate-y-[115%]
@@ -180,10 +180,10 @@
             </div>
 
             {{-- Card 4 --}}
-            <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[800px]">
+            <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[400px]">
               <div class="group relative overflow-hidden rounded-xl border border-white/10 bg-slate-900/40">
                 <img src="{{ asset('images/slider/sports.png') }}" alt="Experiential Learning Campus – Gurgaon"
-                  class="w-full h-72 sm:h-80 lg:h-[420px] object-cover group-hover:scale-[1.03] transition duration-500" />
+                  class="w-full h-72 sm:h-80 lg:h-[220px] object-cover group-hover:scale-[1.03] transition duration-500" />
 
                 <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
                             opacity-0 group-hover:opacity-100 group-hover:-translate-y-[115%]
@@ -205,10 +205,10 @@
             </div>
 
             {{-- Card 5 --}}
-            <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[800px]">
+            <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[400px]">
               <div class="group relative overflow-hidden rounded-xl border border-white/10 bg-slate-900/40">
                 <img src="{{ asset('images/slider/workkplace.png') }}" alt="Logistics & Warehousing Park – NCR"
-                  class="w-full h-72 sm:h-80 lg:h-[420px] object-cover group-hover:scale-[1.03] transition duration-500" />
+                  class="w-full h-72 sm:h-80 lg:h-[220px] object-cover group-hover:scale-[1.03] transition duration-500" />
 
                 <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
                             opacity-0 group-hover:opacity-100 group-hover:-translate-y-[115%]
