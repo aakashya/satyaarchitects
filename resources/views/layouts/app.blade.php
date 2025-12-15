@@ -88,52 +88,35 @@
         }
 
         /* Smooth fade for hero images */
+        /* Base hero slide (you may already have something similar) */
         .hero-slide {
-            /* transition: opacity 1.5s ease-in-out; */
-            opacity: 0;
             position: absolute;
-            top: 0;
-            left: 0;
+            inset: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: -1;
+
+            opacity: 0;
+            transition: opacity 700ms ease-out;
+
+            /* Start slightly zoomed in */
+            transform: scale(1.08);
         }
 
+        /* Active slide: fade in + zoom out */
         .hero-slide.active {
             opacity: 1;
+            animation: heroZoomOut 8s ease-out forwards;
         }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #888;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        @keyframes fadeInUp {
+        /* Keyframes for zoom-out effect */
+        @keyframes heroZoomOut {
             from {
-                opacity: 0;
-                transform: translateY(20px);
+                transform: scale(1.08);
             }
 
             to {
-                opacity: 1;
-                transform: translateY(0);
+                transform: scale(1);
             }
         }
     </style>
