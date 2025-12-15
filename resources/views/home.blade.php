@@ -105,7 +105,7 @@
           <div id="timeline-track" class="flex gap-6 overflow-hidden pb-4">
             {{-- Card 1 --}}
             <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[400px]">
-              <div class="group relative overflow-hidden rounded-xl border border-white/10 bg-slate-900/40">
+              <div class="group relative overflow-hidden rounded-xl">
                 <img src="{{ asset('images/slider/dhoot.jpeg') }}" alt="Industrial Campus – Gurgaon"
                   class="w-full h-72 sm:h-80 lg:h-[220px] object-cover group-hover:scale-[1.03] transition duration-500" />
 
@@ -131,7 +131,7 @@
 
             {{-- Card 2 --}}
             <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[400px]">
-              <div class="group relative overflow-hidden rounded-xl border border-white/10 bg-slate-900/40">
+              <div class="group relative overflow-hidden rounded-xl">
                 <img src="{{ asset('images/slider/forteasia.png') }}" alt="Riverfront Residences – Panipat"
                   class="w-full h-72 sm:h-80 lg:h-[220px] object-cover group-hover:scale-[1.03] transition duration-500" />
 
@@ -156,7 +156,7 @@
 
             {{-- Card 3 --}}
             <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[400px]">
-              <div class="group relative overflow-hidden rounded-xl border border-white/10 bg-slate-900/40">
+              <div class="group relative overflow-hidden rounded-xl ">
                 <img src="{{ asset('images/slider/hub.png') }}" alt="Urban Commercial Plaza – Bhiwadi"
                   class="w-full h-72 sm:h-80 lg:h-[220px] object-cover group-hover:scale-[1.03] transition duration-500" />
 
@@ -181,7 +181,7 @@
 
             {{-- Card 4 --}}
             <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[400px]">
-              <div class="group relative overflow-hidden rounded-xl border border-white/10 bg-slate-900/40">
+              <div class="group relative overflow-hidden rounded-xl ">
                 <img src="{{ asset('images/slider/sports.png') }}" alt="Experiential Learning Campus – Gurgaon"
                   class="w-full h-72 sm:h-80 lg:h-[220px] object-cover group-hover:scale-[1.03] transition duration-500" />
 
@@ -206,7 +206,7 @@
 
             {{-- Card 5 --}}
             <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[400px]">
-              <div class="group relative overflow-hidden rounded-xl border border-white/10 bg-slate-900/40">
+              <div class="group relative overflow-hidden rounded-xl ">
                 <img src="{{ asset('images/slider/workkplace.png') }}" alt="Logistics & Warehousing Park – NCR"
                   class="w-full h-72 sm:h-80 lg:h-[220px] object-cover group-hover:scale-[1.03] transition duration-500" />
 
