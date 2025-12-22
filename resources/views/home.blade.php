@@ -22,7 +22,7 @@
 <section id="home">
   <!-- Hero Section with Slideshow -->
   <div id="home-hero" class="relative h-screen w-full overflow-hidden flex items-center justify-center">
-    <div class="absolute inset-0 bg-black/10 z-20"></div>
+    <div class="absolute inset-0 bg-black/10 z-10"></div>
     <!-- 🔹 TOP gradient just behind the header -->
     <div class="absolute inset-x-0 top-0 h-24 md:h-32
      bg-gradient-to-b from-black/60 via-black/20 to-transparent
