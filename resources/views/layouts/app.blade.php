@@ -224,7 +224,7 @@
     ];
 
     let currentSlide = 0;
-    const slideInterval = 6000; // ms per slide
+    const slideInterval = 8000; // ms per slide
     let slideTimer = null;
 
     function updateHeroMeta(index) {
