@@ -234,7 +234,7 @@
             meta.tags.forEach(tag => {
                 const span = document.createElement('span');
                 span.className =
-    'px-3 font-railway py-1 text-[10px] md:text-xs font-semibold tracking-wide ' +
+    'px-3 font-century py-1 text-[10px] md:text-xs font-semibold tracking-wide ' +
     'bg-black/50 text-white rounded-full';
 
                 span.textContent = tag;
