@@ -2,11 +2,11 @@
   <div class="container mx-auto px-6 flex justify-between items-center">
     <!-- Logo -->
     <a href="{{ route('home') }}" class="flex items-center gap-3">
-      <img src="{{ asset('images/logo/satya-new-logoo.png') }}" alt="Satya Architects Logo" class="h-20 w-auto object-contain">
+      <img src="{{ asset('images/logo/satya-new-logoo.png') }}" alt="Satya Architects Logo" class="h-20 w-auto object-contain drop-shadow-[0_0_18px_rgba(255,255,255,1)]">
     </a>
 
     <!-- Desktop Menu -->
-    <div class="hidden md:flex space-x-8 text-base font-medium tracking-wide uppercase">
+    <div class="hidden md:flex space-x-8 text-base font-marcellus font-medium tracking-wide uppercase">
       <a href="{{ route('home') }}" class="hover:text-brand-gold transition">OUR STORY</a>
       <a href="{{ route('about') }}" class="hover:text-brand-gold transition">EXPERTISE</a>
       <a href="{{ route('services') }}" class="hover:text-brand-gold transition">STUDIO</a>
@@ -22,7 +22,7 @@
   </div>
 
   <!-- Mobile Menu Overlay -->
-  <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-brand-dark text-white p-6 md:hidden shadow-lg">
+  <div id="mobile-menu" class="hidden absolute font-marcellus top-full left-0 w-full bg-brand-dark text-white p-6 md:hidden shadow-lg">
     <div class="flex flex-col space-y-4 text-center">
       <a href="{{ route('home') }}" class="hover:text-brand-gold">Home</a>
       <a href="{{ route('about') }}" class="hover:text-brand-gold">About Us</a>

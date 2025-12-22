@@ -1,7 +1,22 @@
 @extends('layouts.app')
 
 @section('title', 'Satya Architects | Professional Architectural Consultancy')
+@push('styles')
+{{-- Google Fonts for Raleway --}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap" rel="stylesheet">
 
+<style>
+  .font-raleway {
+    font-family: 'Raleway', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  .font-century {
+    font-family: 'Century Gothic', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+</style>
+@endpush
 @section('content')
 <!-- 1. HOME PAGE -->
 <section id="home">
@@ -10,10 +25,9 @@
     {{-- <div class="absolute inset-0 bg-black/10 z-20"></div> --}}
     <!-- 🔹 TOP gradient just behind the header -->
     <div class="absolute inset-x-0 top-0 h-24 md:h-32
-           bg-gradient-to-b from-black/80 via-black/40 to-transparent
-           z-10 pointer-events-none">
+     bg-gradient-to-b from-black/60 via-black/20 to-transparent
+     z-10 pointer-events-none">
     </div>
-
 
 
     <!-- Images from /public/images/hero/01–07 -->
@@ -25,17 +39,25 @@
     <img src="{{ asset('images/hero/n/06.jpg') }}" class="hero-slide" alt="SHUBHANGAN, PANIPAT">
     <img src="{{ asset('images/hero/n/07.jpg') }}" class="hero-slide" alt="DWARKADISH">
 
+    {{-- Center Tagline --}}
+    <div class="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+      <p class="hero-tagline text-[10px] sm:text-xs md:text-sm lg:text-2xl
+           tracking-[0.35em] text-white/90 uppercase font-marcellus text-center px-6">
+        CRAFTING REFINED ARCHITECTURAL &amp; INTERIOR EXPERIENCES
+      </p>
+    </div>
+
     <!-- Bottom-left content: tags, heading, sliders -->
     <div class="absolute bottom-10 left-6 md:bottom-16 md:left-16 z-20 w-[340px] sm:w-[420px] md:w-[720px]">
       <!-- Key tags (chips) -->
       <div id="hero-tags" class="flex flex-wrap gap-2 mb-3">
         <span class="px-3 py-1 text-[10px] md:text-xs font-semibold tracking-wide
-                 bg-brand-gold text-black rounded-full shadow-md shadow-brand-gold/40
+                 bg-grey text-black rounded-full shadow-md shadow-brand-gold/40
                  border border-brand-gold backdrop-blur-sm">
           Industrial
         </span>
         <span class="px-3 py-1 text-[10px] md:text-xs font-semibold tracking-wide
-                 bg-brand-gold text-black rounded-full shadow-md shadow-brand-gold/40
+                 bg-grey text-black rounded-full shadow-md shadow-brand-gold/40
                  border border-brand-gold backdrop-blur-sm">
           Residential
         </span>
@@ -48,28 +70,28 @@
       </h2>
 
       <!-- Sliders / Progress bars -->
-      <div class="w-[260px] sm:w-[320px] md:w-[360px]">
+      <div class="w-[260px] sm:w-[420px] md:w-[860px]">
         <div class="flex gap-3 w-full">
-          <div class="h-1.5 flex-1 bg-white/20 rounded-full overflow-hidden hero-progress-track">
-            <div class="hero-progress-inner h-full bg-brand-gold" data-index="0" style="width: 0;"></div>
+          <div class="h-1 flex-1 bg-white/20 rounded-full overflow-hidden hero-progress-track">
+            <div class="hero-progress-inner h-full bg-white" data-index="0" style="width: 0;"></div>
           </div>
-          <div class="h-1.5 flex-1 bg-white/20 rounded-full overflow-hidden hero-progress-track">
-            <div class="hero-progress-inner h-full bg-brand-gold" data-index="1" style="width: 0;"></div>
+          <div class="h-1 flex-1 bg-white/20 rounded-full overflow-hidden hero-progress-track">
+            <div class="hero-progress-inner h-full bg-white" data-index="1" style="width: 0;"></div>
           </div>
-          <div class="h-1.5 flex-1 bg-white/20 rounded-full overflow-hidden hero-progress-track">
-            <div class="hero-progress-inner h-full bg-brand-gold" data-index="2" style="width: 0;"></div>
+          <div class="h-1 flex-1 bg-white/20 rounded-full overflow-hidden hero-progress-track">
+            <div class="hero-progress-inner h-full bg-white" data-index="2" style="width: 0;"></div>
           </div>
-          <div class="h-1.5 flex-1 bg-white/20 rounded-full overflow-hidden hero-progress-track">
-            <div class="hero-progress-inner h-full bg-brand-gold" data-index="3" style="width: 0;"></div>
+          <div class="h-1 flex-1 bg-white/20 rounded-full overflow-hidden hero-progress-track">
+            <div class="hero-progress-inner h-full bg-white" data-index="3" style="width: 0;"></div>
           </div>
-          <div class="h-1.5 flex-1 bg-white/20 rounded-full overflow-hidden hero-progress-track">
-            <div class="hero-progress-inner h-full bg-brand-gold" data-index="4" style="width: 0;"></div>
+          <div class="h-1 flex-1 bg-white/20 rounded-full overflow-hidden hero-progress-track">
+            <div class="hero-progress-inner h-full bg-white" data-index="4" style="width: 0;"></div>
           </div>
-          <div class="h-1.5 flex-1 bg-white/20 rounded-full overflow-hidden hero-progress-track">
-            <div class="hero-progress-inner h-full bg-brand-gold" data-index="5" style="width: 0;"></div>
+          <div class="h-1 flex-1 bg-white/20 rounded-full overflow-hidden hero-progress-track">
+            <div class="hero-progress-inner h-full bg-white" data-index="5" style="width: 0;"></div>
           </div>
-          <div class="h-1.5 flex-1 bg-white/20 rounded-full overflow-hidden hero-progress-track">
-            <div class="hero-progress-inner h-full bg-brand-gold" data-index="6" style="width: 0;"></div>
+          <div class="h-1 flex-1 bg-white/20 rounded-full overflow-hidden hero-progress-track">
+            <div class="hero-progress-inner h-full bg-white" data-index="6" style="width: 0;"></div>
           </div>
         </div>
       </div>
@@ -80,6 +102,55 @@
       <i class="fas fa-chevron-down text-2xl"></i>
     </div>
   </div>
+
+  {{-- WHO WE ARE / WHAT WE DO --}}
+  <section class="bg-white text-black py-20">
+    <div class="container mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+        {{-- LEFT: TEXT --}}
+        <div class="space-y-10 max-w-2xl">
+          {{-- WHO WE ARE --}}
+          <div class="space-y-4">
+            <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 font-raleway">
+              WHO WE ARE
+            </h2>
+            <p class="text-base md:text-lg leading-relaxed text-slate-700 font-century">
+              Established in 2010, Satya Architects is a Gurugram-based design studio crafting
+              refined Architectural and Interior Experiences. We blend creativity, precision,
+              and innovation to create spaces that feel timeless, purposeful, and deeply human.
+            </p>
+          </div>
+
+          {{-- Divider --}}
+          <div class="h-px w-16 bg-slate-200"></div>
+
+          {{-- WHAT WE DO --}}
+          <div class="space-y-3">
+            <h3 class="text-2xl md:text-5xl font-semibold text-slate-900 font-raleway">
+              WHAT WE DO
+            </h3>
+            <p class="text-base md:text-lg leading-relaxed text-slate-700 font-century">
+              We offer integrated services in Architecture, Interiors, Urban Planning,
+              Landscape Design, and Project Management—delivering seamless, end-to-end
+              solutions across Residential, Commercial, Industrial, Institutional,
+              and Hospitality sectors.
+            </p>
+          </div>
+        </div>
+
+        {{-- RIGHT: IMAGE --}}
+        <div class="flex justify-center lg:justify-end">
+          <div class="w-full max-w-sm md:max-w-md rounded-2xl overflow-hidden shadow-lg bg-slate-50">
+            <img src="{{ asset('images/pngegg.png') }}" alt="Satya Architects Studio" class="w-full h-auto object-cover">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
 
   <!-- Timeline Slider -->
   <section class="bg-white text-black py-14">
@@ -236,6 +307,24 @@
         <div class="mt-2">
           <input id="timeline-range" type="range" min="0" max="100" value="0" step="1" class="w-full timeline-range">
         </div>
+      </div>
+    </div>
+  </section>
+
+  {{-- ===========================
+  OUR APPROACH (after slider)
+  ============================ --}}
+  <section class="bg-white text-slate-900 py-16 border-t border-slate-100">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl">
+        <h3 class="text-xs md:text-sm uppercase tracking-[0.35em] text-slate-500 mb-3" style="font-family: 'Raleway', sans-serif;">
+          Our Approach
+        </h3>
+        <p class="text-base md:text-lg leading-relaxed text-slate-700" style="font-family: 'Century Gothic', sans-serif;">
+          Every project begins with an idea and evolves through collaboration. We focus on clarity, functionality, and
+          elegance, supported by advanced technology and meticulous attention to detail. The result: design that
+          elevates everyday living and stands the test of time.
+        </p>
       </div>
     </div>
   </section>
@@ -470,48 +559,48 @@
 <script>
   // --- Timeline slider (range <-> horizontal scroll) ---
   const timelineTrack = document.getElementById('timeline-track');
-const timelineRange = document.getElementById('timeline-range');
+  const timelineRange = document.getElementById('timeline-range');
 
-if (timelineTrack && timelineRange) {
-    let maxScroll = 0;
+  if (timelineTrack && timelineRange) {
+      let maxScroll = 0;
 
-    const recalcMaxScroll = () => {
-        maxScroll = timelineTrack.scrollWidth - timelineTrack.clientWidth;
-        if (maxScroll < 0) maxScroll = 0;
-    };
+      const recalcMaxScroll = () => {
+          maxScroll = timelineTrack.scrollWidth - timelineTrack.clientWidth;
+          if (maxScroll < 0) maxScroll = 0;
+      };
 
-    recalcMaxScroll();
-    window.addEventListener('resize', recalcMaxScroll);
+      recalcMaxScroll();
+      window.addEventListener('resize', recalcMaxScroll);
 
-    const syncRangeToScroll = () => {
-        if (maxScroll <= 0) {
-            timelineRange.value = 0;
-            return;
-        }
-        const ratio = timelineTrack.scrollLeft / maxScroll;
-        timelineRange.value = Math.round(ratio * 100);
-    };
+      const syncRangeToScroll = () => {
+          if (maxScroll <= 0) {
+              timelineRange.value = 0;
+              return;
+          }
+          const ratio = timelineTrack.scrollLeft / maxScroll;
+          timelineRange.value = Math.round(ratio * 100);
+      };
 
-    const syncScrollToRange = () => {
-        const ratio = timelineRange.value / 100;
-        timelineTrack.scrollLeft = maxScroll * ratio;
-    };
+      const syncScrollToRange = () => {
+          const ratio = timelineRange.value / 100;
+          timelineTrack.scrollLeft = maxScroll * ratio;
+      };
 
-    timelineRange.addEventListener('input', syncScrollToRange);
-    // Scroll horizontally with mouse wheel when cursor is over the timeline
-timelineTrack.addEventListener(
-    'wheel',
-    (e) => {
-        e.preventDefault(); // stop the page from scrolling vertically
-        const scrollAmount = e.deltaY || e.deltaX;
-        timelineTrack.scrollLeft += scrollAmount;
-        syncRangeToScroll(); // keep the range slider in sync
-    },
-    { passive: false } // needed so preventDefault() works
-);
+      timelineRange.addEventListener('input', syncScrollToRange);
 
+      // Scroll horizontally with mouse wheel when cursor is over the timeline
+      timelineTrack.addEventListener(
+          'wheel',
+          (e) => {
+              e.preventDefault(); // stop the page from scrolling vertically
+              const scrollAmount = e.deltaY || e.deltaX;
+              timelineTrack.scrollLeft += scrollAmount;
+              syncRangeToScroll(); // keep the range slider in sync
+          },
+          { passive: false } // needed so preventDefault() works
+      );
 
-    syncRangeToScroll();
-}
+      syncRangeToScroll();
+  }
 </script>
 @endsection

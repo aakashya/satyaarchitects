@@ -120,6 +120,37 @@
             }
         }
     </style>
+    {{-- keep this so pages can still push extra CSS --}}
+    @stack('styles')
+    <style>
+        /* 1. Register the local font */
+        @font-face {
+            font-family: 'MarcellusSC';
+            src: url('{{ asset(' font/marcellussc-regular.ttf') }}') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* 2. Utility class for all headers that should use Marcellus */
+        .font-marcellus {
+            font-family: 'MarcellusSC', serif;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        @font-face {
+            font-family: 'PublicoText';
+            src: url('{{ asset(' font/publico-text-web-regular.ttf') }}') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        .font-publico {
+            font-family: 'PublicoText', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+    </style>
 </head>
 
 <body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden">
@@ -192,8 +223,7 @@
                 const span = document.createElement('span');
                 span.className =
     'px-3 py-1 text-[10px] md:text-xs font-semibold tracking-wide ' +
-    'bg-brand-gold text-black rounded-full shadow-md shadow-brand-gold/40 ' +
-    'border border-brand-gold backdrop-blur-sm';
+    'bg-black/50 text-white rounded-full';
 
                 span.textContent = tag;
                 heroTagsContainer.appendChild(span);
