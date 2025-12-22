@@ -42,7 +42,7 @@
     {{-- Center Tagline --}}
     <div class="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
       <p class="hero-tagline text-[10px] sm:text-xs md:text-sm lg:text-xl
-           tracking-[0.35em] text-black uppercase font-marcellus text-center px-6">
+           tracking-[0.35em] text-black uppercase font-publico text-center px-6">
         Architecture with Purpose, Designing India’s Future, One Space at a Time
       </p>
     </div>
@@ -51,12 +51,12 @@
     <div class="absolute bottom-10 left-6 md:bottom-16 md:left-16 z-20 w-[340px] sm:w-[420px] md:w-[720px]">
       <!-- Key tags (chips) -->
       <div id="hero-tags" class="flex flex-wrap gap-2 mb-3">
-        <span class="px-3 py-1 text-[10px] md:text-xs font-semibold tracking-wide
+        <span class="px-3 py-1 text-[10px] md:text-xs font-railway font-semibold tracking-wide
                  bg-grey text-black rounded-full shadow-md shadow-brand-gold/40
                  border border-brand-gold backdrop-blur-sm">
           Industrial
         </span>
-        <span class="px-3 py-1 text-[10px] md:text-xs font-semibold tracking-wide
+        <span class="px-3 py-1 text-[10px] md:text-xs font-railway font-semibold tracking-wide
                  bg-grey text-black rounded-full shadow-md shadow-brand-gold/40
                  border border-brand-gold backdrop-blur-sm">
           Residential
@@ -64,7 +64,7 @@
       </div>
 
       <!-- Project name for current slide (single line) -->
-      <h2 id="hero-heading" class="text-lg sm:text-xl md:text-2xl font-serif font-semibold text-white mb-5 drop-shadow
+      <h2 id="hero-heading" class="text-lg sm:text-xl md:text-2xl font-marcellus font-semibold text-white mb-5 drop-shadow
                  leading-tight whitespace-nowrap overflow-hidden text-ellipsis">
         FORTEASIA INDUSTRIAL TOWNSHIP, ROHTAK
       </h2>
