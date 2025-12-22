@@ -43,7 +43,7 @@
     <div class="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
       <p class="hero-tagline text-[10px] sm:text-xs md:text-sm lg:text-2xl
            tracking-[0.35em] text-white/90 uppercase font-marcellus text-center px-6">
-        CRAFTING REFINED ARCHITECTURAL &amp; INTERIOR EXPERIENCES
+        Architecture with Purpose, Designing India’s Future, One Space at a Time
       </p>
     </div>
 
