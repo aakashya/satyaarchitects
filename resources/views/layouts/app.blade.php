@@ -159,8 +159,8 @@
             font-display: swap;
         }
 
-        .font-publico {
-            font-family: 'PublicoText', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        .font-railway {
+            font-family: 'Railway', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
     </style>
 </head>

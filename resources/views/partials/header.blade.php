@@ -22,7 +22,7 @@
   </div>
 
   <!-- Mobile Menu Overlay -->
-  <div id="mobile-menu" class="hidden absolute font-marcellus top-full left-0 w-full bg-brand-dark text-white p-6 md:hidden shadow-lg">
+  <div id="mobile-menu" class="hidden absolute font-railway top-full left-0 w-full bg-brand-dark text-white p-6 md:hidden shadow-lg">
     <div class="flex flex-col space-y-4 text-center">
       <a href="{{ route('home') }}" class="hover:text-brand-gold">Home</a>
       <a href="{{ route('about') }}" class="hover:text-brand-gold">About Us</a>
