@@ -166,8 +166,9 @@
     <style>
         .hero-tagline {
             text-shadow:
-                0 0 18px rgba(0, 0, 0, 0.75),
-                0 3px 14px rgba(0, 0, 0, 0.9);
+                0 0 8px rgba(0, 0, 0, 0.9),
+                0 0 16px rgba(0, 0, 0, 0.8),
+                0 0 28px rgba(0, 0, 0, 0.7);
         }
     </style>
 </head>
