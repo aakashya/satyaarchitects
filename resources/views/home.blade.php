@@ -22,7 +22,7 @@
 <section id="home">
   <!-- Hero Section with Slideshow -->
   <div id="home-hero" class="relative h-screen w-full overflow-hidden flex items-center justify-center">
-    {{-- <div class="absolute inset-0 bg-black/10 z-20"></div> --}}
+    <div class="absolute inset-0 bg-black/10 z-20"></div>
     <!-- 🔹 TOP gradient just behind the header -->
     <div class="absolute inset-x-0 top-0 h-24 md:h-32
      bg-gradient-to-b from-black/60 via-black/20 to-transparent
@@ -41,7 +41,7 @@
 
     {{-- Center Tagline --}}
     <div class="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-      <p class="hero-tagline text-[10px] sm:text-xs md:text-sm lg:text-2xl
+      <p class="hero-tagline text-[10px] sm:text-xs md:text-sm lg:text-[22px]
            tracking-[0.25em] text-white font-publico uppercase text-center px-6">
         Architecture with Purpose, Designing India’s Future, One Space at a Time
       </p>
