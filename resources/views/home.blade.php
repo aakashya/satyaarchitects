@@ -42,7 +42,7 @@
     {{-- Center Tagline --}}
     <div class="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
       <p class="hero-tagline text-[10px] sm:text-xs md:text-sm lg:text-xl
-            text-black font-publico text-center px-6">
+            text-black font-publico uppercase text-center px-6">
         Architecture with Purpose, Designing India’s Future, One Space at a Time
       </p>
     </div>
