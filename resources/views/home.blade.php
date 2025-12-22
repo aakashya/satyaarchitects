@@ -41,8 +41,8 @@
 
     {{-- Center Tagline --}}
     <div class="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-      <p class="hero-tagline text-[10px] sm:text-xs md:text-sm lg:text-2xl
-           tracking-[0.35em] text-white/90 uppercase font-marcellus text-center px-6">
+      <p class="hero-tagline text-[10px] sm:text-xs md:text-sm lg:text-xl
+           tracking-[0.35em] text-black uppercase font-marcellus text-center px-6">
         Architecture with Purpose, Designing India’s Future, One Space at a Time
       </p>
     </div>
@@ -142,7 +142,7 @@
         {{-- RIGHT: IMAGE --}}
         <div class="flex justify-center lg:justify-end">
           <div class="w-full max-w-sm md:max-w-md rounded-2xl overflow-hidden shadow-lg bg-slate-50">
-            <img src="{{ asset('images/pngegg.png') }}" alt="Satya Architects Studio" class="w-full h-auto object-cover">
+            <img src="{{ asset('images/pngegg.png') }}" alt="Satya Architects Studio" class="w-full h-full object-cover">
           </div>
         </div>
 

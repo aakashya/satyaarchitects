@@ -150,6 +150,18 @@
         .font-publico {
             font-family: 'PublicoText', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
+
+        @font-face {
+            font-family: 'Railway';
+            src: url('{{ asset(' font/railway.ttf') }}') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        .font-publico {
+            font-family: 'PublicoText', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
     </style>
 </head>
 
