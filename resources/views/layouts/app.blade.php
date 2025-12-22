@@ -126,7 +126,7 @@
         /* 1. Register the local font */
         @font-face {
             font-family: 'MarcellusSC';
-            src: url('{{ asset(' font/marcellussc-regular.ttf') }}') format('truetype');
+            src: url('{{ asset(' font/marcellus-regular.ttf') }}') format('truetype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
