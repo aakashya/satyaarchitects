@@ -134,7 +134,7 @@
 
         /* 2. Utility class for all headers that should use Marcellus */
         .font-marcellus {
-            font-family: 'MarcellusSC', serif;
+            font-family: 'MarcellusSC';
             letter-spacing: 0.08em;
             text-transform: uppercase;
         }
@@ -148,7 +148,7 @@
         }
 
         .font-publico {
-            font-family: 'PublicoText', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'PublicoText';
         }
 
         @font-face {
@@ -160,7 +160,7 @@
         }
 
         .font-railway {
-            font-family: 'Railway', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Railway';
         }
     </style>
 </head>
