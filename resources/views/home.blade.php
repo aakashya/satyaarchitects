@@ -42,17 +42,10 @@
     {{-- Center Tagline --}}
     <div class="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
       <p class="hero-tagline text-[10px] sm:text-xs md:text-sm lg:text-2xl
-           tracking-[0.25em] text-white font-publico uppercase text-center
-           px-8 py-3 rounded-full" style="background: radial-gradient(
-              ellipse closest-side,
-              rgba(0,0,0,0.85) 0%,
-              rgba(0,0,0,0.6) 40%,
-              rgba(0,0,0,0) 100%
-           );">
+            tracking-[0.25em] text-white font-publico uppercase text-center px-6 bg-black/30 rounded-full">
         Architecture with Purpose, Designing India’s Future, One Space at a Time
       </p>
     </div>
-
 
     <!-- Bottom-left content: tags, heading, sliders -->
     <div class="absolute bottom-10 left-6 md:bottom-16 md:left-16 z-20 w-[340px] sm:w-[420px] md:w-[720px]">
