@@ -163,6 +163,13 @@
             font-family: 'Railway';
         }
     </style>
+    <style>
+        .hero-tagline {
+            text-shadow:
+                0 0 10px rgba(0, 0, 0, 0.75),
+                0 2px 8px rgba(0, 0, 0, 0.9);
+        }
+    </style>
 </head>
 
 <body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden">
