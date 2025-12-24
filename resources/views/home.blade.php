@@ -1,4 +1,4 @@
-@extends('layouts.app')
+﻿@extends('layouts.app')
 
 @section('title', 'Satya Architects | Professional Architectural Consultancy')
 @push('styles')
@@ -507,7 +507,7 @@
 
             {{-- Card 2 --}}
             <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[400px]">
-              <div class="group relative overflow-hidden rounded-xl">
+              <div class="group relative overflow-hidden rounded-xl ">
                 <img src="{{ asset('images/slider/forteasia.png') }}" alt="Riverfront Residences – Panipat"
                   loading="lazy" decoding="async"
                   class="timeline-card-image w-full h-auto object-contain group-hover:scale-[1.03] transition duration-500" />
@@ -587,7 +587,8 @@
             <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[400px]">
               <div class="group relative overflow-hidden rounded-xl ">
                 <img src="{{ asset('images/slider/workkplace.png') }}" alt="Logistics & Warehousing Park – NCR"
-                  class="w-full h-auto object-contain group-hover:scale-[1.03] transition duration-500" />
+                  loading="lazy" decoding="async"
+                  class="timeline-card-image w-full h-auto object-contain group-hover:scale-[1.03] transition duration-500" />
 
                 <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
                             opacity-0 group-hover:opacity-100 group-hover:-translate-y-[115%]

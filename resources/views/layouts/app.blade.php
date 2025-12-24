@@ -56,9 +56,7 @@
             height: 20px;
             border-radius: 9999px;
             background: #d4af37;
-            /* your brand gold hex here if different */
             border: 2px solid #020617;
-            /* near-slate-950 */
             box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.25);
             cursor: pointer;
         }
@@ -74,29 +72,20 @@
             cursor: pointer;
         }
 
-        /* Firefox track */
+        /* Cross-browser track */
+        .timeline-range::-webkit-slider-runnable-track {
+            height: 4px;
+            border-radius: 9999px;
+            border: none;
+            background: linear-gradient(to right, rgba(148, 163, 184, 0.5), rgba(15, 23, 42, 0.9));
+        }
+
         .timeline-range::-moz-range-track {
             height: 4px;
             border-radius: 9999px;
             background: linear-gradient(to right, rgba(148, 163, 184, 0.5), rgba(15, 23, 42, 0.9));
         }
 
-        /* Focus style */
-        .timeline-range:focus-visible {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.5);
-        }
-        /* .timeline-range::-webkit-slider-runnable-track {
-            height: 4px;
-            border-radius: 9999px;
-            border: none;
-            background: linear-gradient(to right, rgba(148, 163, 184, 0.5), rgba(15, 23, 42, 0.9));
-        }
-        .timeline-range::-moz-range-track {
-            height: 4px;
-            border-radius: 9999px;
-            background: linear-gradient(to right, rgba(148, 163, 184, 0.5), rgba(15, 23, 42, 0.9));
-        }
         .timeline-range::-ms-track {
             height: 4px;
             border-radius: 9999px;
@@ -104,18 +93,26 @@
             color: transparent;
             border-color: transparent;
         }
+
         .timeline-range::-ms-fill-lower,
         .timeline-range::-ms-fill-upper {
             background: linear-gradient(to right, rgba(148, 163, 184, 0.5), rgba(15, 23, 42, 0.9));
             border-radius: 9999px;
         }
+
+        /* Focus style */
+        .timeline-range:focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.5);
+        }
+
         .timeline-card-image {
             display: block;
             image-rendering: optimizeQuality;
             image-rendering: -webkit-optimize-contrast;
             backface-visibility: hidden;
             will-change: transform;
-        } */
+        }
 
         /* Smooth fade for hero images */
         /* Base hero slide (you may already have something similar) */
