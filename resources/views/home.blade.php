@@ -285,96 +285,17 @@
     stroke-miterlimit: 1;
   }
 
-  .colour0 {
-    fill: #FD5F00;
+  .map-dark {
+    fill: #90B2C9;
   }
 
-  .colour1 {
-    fill: #FF7D2F;
-  }
-
-  .colour2 {
-    fill: #FFA66F;
-  }
-
-  .colour3 {
-    fill: #FFCDAE;
-  }
-
-  .colour4 {
-    fill: #FEE8DB;
-  }
-
-  .colour5 {
-    fill: #FFF8F4;
+  .map-light {
+    fill: #B5C6D2;
   }
 
   path:hover {
     opacity: 0.5;
   }
-
-  .tooltip {
-    font-size: 16px;
-    font-weight: bold;
-  }
-
-  .tooltip_bg {
-    fill: white;
-    stroke: black;
-    stroke-width: 1;
-    opacity: 0.85;
-  }
-
-  .label {
-    font-size: 17px;
-  }
-
-  #border {
-    fill: none;
-    stroke: black;
-    stroke-width: 1;
-  }
-
-  #title {
-    font-size: 25px;
-    fill: black;
-  }
-
-  .land {
-    fill: #FFF8F4;
-    stroke: black;
-    stroke-width: 1;
-    stroke-miterlimit: 1;
-  }
-
-  .colour0 {
-    fill: #FD5F00;
-  }
-
-  .colour1 {
-    fill: #FF7D2F;
-  }
-
-  .colour2 {
-    fill: #FFA66F;
-  }
-
-  .colour3 {
-    fill: #FFCDAE;
-  }
-
-  .colour4 {
-    fill: #FEE8DB;
-  }
-
-  .colour5 {
-    fill: #FFF8F4;
-  }
-
-  path:hover {
-    opacity: 0.5;
-  }
-
 
   .tooltip {
     font-size: 16px;
@@ -561,7 +482,8 @@
             <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[400px]">
               <div class="group relative overflow-hidden rounded-xl">
                 <img src="{{ asset('images/slider/dhoot.jpeg') }}" alt="Industrial Campus – Gurgaon"
-                  class="w-full h-auto object-contain group-hover:scale-[1.03] transition duration-500" />
+                  loading="lazy" decoding="async"
+                  class="timeline-card-image w-full h-auto object-contain group-hover:scale-[1.03] transition duration-500" />
 
                 {{-- Hover dialog --}}
                 <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
@@ -587,7 +509,8 @@
             <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[400px]">
               <div class="group relative overflow-hidden rounded-xl">
                 <img src="{{ asset('images/slider/forteasia.png') }}" alt="Riverfront Residences – Panipat"
-                  class="w-full h-auto object-contain group-hover:scale-[1.03] transition duration-500" />
+                  loading="lazy" decoding="async"
+                  class="timeline-card-image w-full h-auto object-contain group-hover:scale-[1.03] transition duration-500" />
 
                 <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
                             opacity-0 group-hover:opacity-100 group-hover:-translate-y-[115%]
@@ -612,7 +535,8 @@
             <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[400px]">
               <div class="group relative overflow-hidden rounded-xl ">
                 <img src="{{ asset('images/slider/hub.png') }}" alt="Urban Commercial Plaza – Bhiwadi"
-                  class="w-full h-auto object-contain group-hover:scale-[1.03] transition duration-500" />
+                  loading="lazy" decoding="async"
+                  class="timeline-card-image w-full h-auto object-contain group-hover:scale-[1.03] transition duration-500" />
 
                 <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
                             opacity-0 group-hover:opacity-100 group-hover:-translate-y-[115%]
@@ -637,7 +561,8 @@
             <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[400px]">
               <div class="group relative overflow-hidden rounded-xl ">
                 <img src="{{ asset('images/slider/sports.png') }}" alt="Experiential Learning Campus – Gurgaon"
-                  class="w-full h-auto object-contain group-hover:scale-[1.03] transition duration-500" />
+                  loading="lazy" decoding="async"
+                  class="timeline-card-image w-full h-auto object-contain group-hover:scale-[1.03] transition duration-500" />
 
                 <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
                             opacity-0 group-hover:opacity-100 group-hover:-translate-y-[115%]
@@ -1143,6 +1068,7 @@
          ['IN-OR', 'IN-JH', 'IN-TG', 'IN-KL', 'IN-AS', 'IN-PB', 'IN-HR', 'IN-CT', 'IN-UT', 'IN-DL', 'IN-JK'],
          ['IN-HP', 'IN-TR', 'IN-ML', 'IN-MN', 'IN-NL', 'IN-PY', 'IN-GA', 'IN-AR', 'IN-DN', 'IN-MZ', 'IN-CH']
         ];
+  var toneClasses = ['map-dark', 'map-light', 'map-dark', 'map-light', 'map-dark'];
          
     var ids = ['IN-AN', 'IN-AP', 'IN-AR', 'IN-AS', 'IN-BR', 'IN-CH', 'IN-CT', 'IN-DD', 'IN-DL', 'IN-DN', 'IN-GA', 'IN-GJ', 
                'IN-HP', 'IN-HR', 'IN-JH', 'IN-JK', 'IN-KA', 'IN-KL', 'IN-LD', 'IN-MH', 'IN-ML', 'IN-MN', 'IN-MP',
@@ -1173,18 +1099,18 @@
     }
 
     function colourCountries(data) {
-        for (var colour=0; colour<data.length; colour++) {    
-            for (var country=0; country<data[colour].length; country++) {
-            colourCountry(data[colour][country], colour);
-            }
-        }
+        data.forEach(function (group, index) {
+            var toneClass = toneClasses[index % toneClasses.length];
+            group.forEach(function (state) {
+                colourCountry(state, toneClass);
+            });
+        });
     }
   
-    function colourCountry(name, colour) {
+    function colourCountry(name, toneClass) {
         var country = svgDocument.getElementById(name);
-        var oldClass = country.getAttributeNS(null, 'class');
-        var newClass = oldClass + ' colour' + colour;
-        country.setAttributeNS(null, 'class', newClass);
+        if (!country) return;
+        country.classList.add(toneClass);
     }
     
     function showTooltip(evt, mouseovertext) {
