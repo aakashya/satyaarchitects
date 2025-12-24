@@ -59,6 +59,7 @@
             border: 2px solid #020617;
             box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.25);
             cursor: pointer;
+            transform: translateY(-8px);
         }
 
         /* Firefox thumb */
@@ -70,6 +71,7 @@
             border: 2px solid #020617;
             box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.25);
             cursor: pointer;
+            transform: translateY(-8px);
         }
 
         /* Cross-browser track */
@@ -100,6 +102,16 @@
             border-radius: 9999px;
         }
 
+        .timeline-range::-ms-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 9999px;
+            background: #d4af37;
+            border: 2px solid #020617;
+            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.25);
+            cursor: pointer;
+            transform: translateY(-8px);
+        }
         /* Focus style */
         .timeline-range:focus-visible {
             outline: none;
