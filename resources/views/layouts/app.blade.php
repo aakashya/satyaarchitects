@@ -86,6 +86,36 @@
             outline: none;
             box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.5);
         }
+        /* .timeline-range::-webkit-slider-runnable-track {
+            height: 4px;
+            border-radius: 9999px;
+            border: none;
+            background: linear-gradient(to right, rgba(148, 163, 184, 0.5), rgba(15, 23, 42, 0.9));
+        }
+        .timeline-range::-moz-range-track {
+            height: 4px;
+            border-radius: 9999px;
+            background: linear-gradient(to right, rgba(148, 163, 184, 0.5), rgba(15, 23, 42, 0.9));
+        }
+        .timeline-range::-ms-track {
+            height: 4px;
+            border-radius: 9999px;
+            background: transparent;
+            color: transparent;
+            border-color: transparent;
+        }
+        .timeline-range::-ms-fill-lower,
+        .timeline-range::-ms-fill-upper {
+            background: linear-gradient(to right, rgba(148, 163, 184, 0.5), rgba(15, 23, 42, 0.9));
+            border-radius: 9999px;
+        }
+        .timeline-card-image {
+            display: block;
+            image-rendering: optimizeQuality;
+            image-rendering: -webkit-optimize-contrast;
+            backface-visibility: hidden;
+            will-change: transform;
+        } */
 
         /* Smooth fade for hero images */
         /* Base hero slide (you may already have something similar) */
