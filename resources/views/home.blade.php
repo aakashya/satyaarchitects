@@ -457,7 +457,7 @@
 
 
   <!-- Timeline Slider -->
-  <section class="bg-white text-black py-14">
+  <section class="bg-white text-black py-10">
     <div class="container mx-auto px-6">
       <div class="flex flex-col gap-6">
         {{-- Heading --}}
@@ -471,7 +471,7 @@
             </p> --}}
           </div>
           <p class="text-xs md:text-sm text-slate-400 max-w-md">
-            Slide to explore a cross-section of industrial, residential and institutional work developed over the years.
+            Explore a cross-section of industrial, residential and institutional work developed over the years.
           </p>
         </div>
 
