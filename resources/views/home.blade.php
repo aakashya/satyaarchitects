@@ -470,7 +470,7 @@
               A timeline of key projects
             </p> --}}
           </div>
-          <p class="text-xs md:text-sm text-slate-600 max-w-md font-century">
+          <p class="text-xs md:text-sm text-slate-500 max-w-md font-century">
             Explore a cross-section of industrial, residential and institutional work developed over the years.
           </p>
         </div>
