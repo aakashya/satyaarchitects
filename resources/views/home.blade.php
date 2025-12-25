@@ -624,7 +624,8 @@
         <h2 class="text-xs md:text-2xl uppercase tracking-[0.35em] text-slate-500 mb-3 font-raleway">
           Company Overview
         </h2>
-        <p class="max-w-3xl mx-auto text-base md:text-base leading-relaxed text-slate-700 font-century">
+        <br>
+        <p class="max-w-4xl mx-auto text-base md:text-base leading-relaxed text-slate-700 font-century">
           Every project begins with an idea and evolves through collaboration. We focus on clarity, functionality, and
           elegance, supported by advanced technology and meticulous attention to detail. The result: design that
           elevates everyday living and stands the test of time.
