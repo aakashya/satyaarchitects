@@ -368,7 +368,7 @@
       </div>
 
       <!-- Project name for current slide (single line) -->
-      <h2 id="hero-heading" class="text-lg sm:text-xl md:text-[22px] font-marcellus  text-white mb-5 drop-shadow
+      <h2 id="hero-heading" class="text-lg sm:text-xl md:text-[20px] font-marcellus  text-white mb-5 drop-shadow
                  leading-tight whitespace-nowrap overflow-hidden">
         FORTEASIA INDUSTRIAL TOWNSHIP, ROHTAK
       </h2>
