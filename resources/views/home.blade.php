@@ -463,7 +463,7 @@
         {{-- Heading --}}
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div>
-            <h2 class="text-sm md:text-3xl uppercase tracking-[0.35em] text-brand-gold mb-2">
+            <h2 class="text-sm md:text-2xl uppercase tracking-[0.35em] text-brand-gold mb-2">
               Selected Work
             </h2>
             {{-- <p class="text-2xl md:text-3xl font-serif font-semibold">
