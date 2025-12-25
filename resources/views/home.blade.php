@@ -416,7 +416,7 @@
         <div class="space-y-10 max-w-2xl">
           {{-- WHO WE ARE --}}
           <div class="space-y-4">
-            <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 font-raleway">
+            <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 font-railway">
               WHO WE ARE
             </h2>
             <p class="text-base md:text-lg leading-relaxed text-slate-700 font-century">
@@ -425,13 +425,13 @@
               and innovation to create spaces that feel timeless, purposeful, and deeply human.
             </p>
           </div>
-
+<br>
           {{-- Divider --}}
           <div class="h-px w-16 bg-slate-200"></div>
-
+<br>
           {{-- WHAT WE DO --}}
           <div class="space-y-3">
-            <h3 class="text-2xl md:text-5xl font-semibold text-slate-900 font-raleway">
+            <h3 class="text-2xl md:text-5xl font-semibold text-slate-900 font-railway">
               WHAT WE DO
             </h3>
             <p class="text-base md:text-lg leading-relaxed text-slate-700 font-century">
