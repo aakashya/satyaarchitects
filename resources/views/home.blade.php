@@ -457,7 +457,7 @@
 
 
   <!-- Timeline Slider -->
-  <section class="bg-white text-black py-10">
+  <section class="bg-white text-black py-14">
     <div class="container mx-auto px-6">
       <div class="flex flex-col gap-6">
         {{-- Heading --}}
