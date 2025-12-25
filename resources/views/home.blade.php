@@ -457,13 +457,13 @@
 
 
   <!-- Timeline Slider -->
-  <section class="bg-white text-black py-14">
+  <section class="bg-white text-black py-4">
     <div class="container mx-auto px-6">
       <div class="flex flex-col gap-6">
         {{-- Heading --}}
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div>
-            <h2 class="text-sm md:text-2xl uppercase tracking-[0.35em] text-brand-gold mb-6">
+            <h2 class="text-sm md:text-2xl uppercase tracking-[0.35em] text-brand-gold mb-2">
               Selected Work
             </h2>
             {{-- <p class="text-2xl md:text-3xl font-serif font-semibold">
