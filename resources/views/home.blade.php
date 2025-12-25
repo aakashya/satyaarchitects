@@ -419,7 +419,7 @@
             <h2 class="text-4xl md:text-4xl font-semibold tracking-tight text-slate-900 font-raleway">
               WHO WE ARE
             </h2>
-            <p class="text-base md:text-lg leading-relaxed text-slate-700 font-century">
+            <p class="text-base md:text-base leading-relaxed text-slate-700 font-century">
               Established in 2010, Satya Architects is a Gurugram-based design studio crafting
               refined Architectural and Interior Experiences. We blend creativity, precision,
               and innovation to create spaces that feel timeless, purposeful, and deeply human.
@@ -434,7 +434,7 @@
             <h3 class="text-2xl md:text-4xl font-semibold text-slate-900 font-raleway">
               WHAT WE DO
             </h3>
-            <p class="text-base md:text-lg leading-relaxed text-slate-700 font-century">
+            <p class="text-base md:text-base leading-relaxed text-slate-700 font-century">
               We offer integrated services in Architecture, Interiors, Urban Planning,
               Landscape Design, and Project Management—delivering seamless, end-to-end
               solutions across Residential, Commercial, Industrial, Institutional,
