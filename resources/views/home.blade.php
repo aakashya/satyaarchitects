@@ -621,10 +621,15 @@
   <section class="bg-white py-16">
     <div class="container mx-auto px-6">
       <div class="mb-10 text-center">
-        <h2 class="text-xs md:text-sm uppercase tracking-[0.35em] text-slate-500 mb-3 font-raleway">
+        <h2 class="text-xs md:text-2xl uppercase tracking-[0.35em] text-slate-500 mb-3 font-raleway">
           Company Overview
         </h2>
-        <p class="text-2xl md:text-3xl font-serif font-semibold text-slate-900">
+        <p class="text-base md:text-base leading-relaxed text-slate-700 font-century">
+          Every project begins with an idea and evolves through collaboration. We focus on clarity, functionality, and
+          elegance, supported by advanced technology and meticulous attention to detail. The result: design that
+          elevates everyday living and stands the test of time.
+        </p>
+        <p class="text-2xl md:text-3xl font-serif font-semibold text-slate-900 mt-10">
           Presence across India
         </p>
       </div>
