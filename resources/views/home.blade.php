@@ -629,9 +629,9 @@
           elegance, supported by advanced technology and meticulous attention to detail. The result: design that
           elevates everyday living and stands the test of time.
         </p>
-        <p class="text-2xl md:text-3xl font-serif font-semibold text-slate-900 mt-10">
+        {{-- <p class="text-2xl md:text-3xl font-serif font-semibold text-slate-900 mt-10">
           Presence across India
-        </p>
+        </p> --}}
       </div>
 
       <div id="company-map" class="max-w-5xl mx-auto px-4 sm:px-8 relative">
