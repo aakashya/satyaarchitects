@@ -463,12 +463,12 @@
         {{-- Heading --}}
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div>
-            <h2 class="text-sm md:text-base uppercase tracking-[0.35em] text-brand-gold mb-2">
+            <h2 class="text-sm md:text-3xl uppercase tracking-[0.35em] text-brand-gold mb-2">
               Selected Work
             </h2>
-            <p class="text-2xl md:text-3xl font-serif font-semibold">
+            {{-- <p class="text-2xl md:text-3xl font-serif font-semibold">
               A timeline of key projects
-            </p>
+            </p> --}}
           </div>
           <p class="text-xs md:text-sm text-slate-400 max-w-md">
             Slide to explore a cross-section of industrial, residential and institutional work developed over the years.
