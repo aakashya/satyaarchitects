@@ -40,7 +40,7 @@
   /* ===== HEX BADGES ===== */
   #company-overview .hex-badge {
     position: absolute;
-    width: 110px;
+    width: 10px;
     height: 94px;
     display: flex;
     align-items: center;
@@ -167,8 +167,8 @@
 
   #company-map .hex-badge {
     position: absolute;
-    width: 150px;
-    height: 128px;
+    width: 110px;
+    height: 94px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -308,8 +308,8 @@
 
     #company-map .hex-badge {
       position: relative;
-      width: 130px;
-      height: 108px;
+      width: 110px;
+      height: 94px;
       inset: auto;
       animation-delay: var(--hex-delay, 0s), calc(var(--hex-delay, 0s) + 0.35s);
     }
