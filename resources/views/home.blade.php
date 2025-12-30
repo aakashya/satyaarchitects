@@ -173,7 +173,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    border-radius: 50%;
+    
     /* clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%); */
     background: linear-gradient(135deg, #d6e2f0 0%, #93b5ce 100%);
     border: 1px solid rgba(0, 0, 0, 0.8);
