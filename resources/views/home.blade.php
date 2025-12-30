@@ -849,7 +849,8 @@
 
           <div class="hex-badge hex-eight" style="--hex-delay: 1.6s;">
             <div class="hex-inner">
-              <span>Founded 2006</span>
+              <span>Founded</span>
+              <span>2006</span>
             </div>
           </div>
 
