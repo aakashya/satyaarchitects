@@ -207,7 +207,7 @@
     text-transform: uppercase;
     letter-spacing: 0.16em;
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 500;
     color: inherit;
     line-height: 1.5;
     text-shadow: 0 1px 4px rgba(255, 255, 255, 0.55);
