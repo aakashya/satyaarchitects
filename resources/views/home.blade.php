@@ -817,8 +817,8 @@
 
           <div class="hex-badge hex-six" style="--hex-delay: 1.3s;">
             <div class="hex-inner">
-              <span>Projects</span>
-              <span>Over 30+ Cities</span>
+              <span>15+ YR</span>
+              <span>Experience</span>
             </div>
           </div>
 
@@ -839,8 +839,8 @@
 
           <div class="hex-badge hex-nine" style="--hex-delay: 1.75s;">
             <div class="hex-inner">
-              <span>15+ YR</span>
-              <span>Experience</span>
+              <span>Projects</span>
+              <span>Over 30+ Cities</span>
             </div>
           </div>
         </div>
