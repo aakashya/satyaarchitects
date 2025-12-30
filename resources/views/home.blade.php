@@ -797,7 +797,7 @@
         <div class="hex-cluster">
           <div class="hex-badge hex-one" style="--hex-delay: 0.05s;">
             <div class="hex-inner">
-              <span>Co-Founder</span>
+              <span>CoFounder</span>
               <span>Arcon</span>
               <span>Buildwell</span>
             </div>
