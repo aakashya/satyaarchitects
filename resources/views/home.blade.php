@@ -510,7 +510,7 @@
           <div class="space-y-3">
             <h3 class="text-2xl md:text-4xl font-semibold text-slate-900 font-raleway">
               WHAT WE DO
-            </h3>
+            </h3><br>
             <p class="text-base md:text-base leading-relaxed text-slate-700 font-century">
               We offer integrated services <strong>in Architecture, Interiors, Urban Planning,
                 Landscape Design, and Project Management</strong>—delivering seamless, end-to-end
