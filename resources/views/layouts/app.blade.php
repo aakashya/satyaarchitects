@@ -166,7 +166,7 @@
         /* 1. Register the local font */
         @font-face {
             font-family: 'MarcellusSC';
-            src: url('{{ asset(' font/marcellus-regular-jai.ttf') }}') format('truetype');
+            src: url('{{ asset('font/marcellus-regular-jai.ttf') }}') format('truetype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
@@ -181,7 +181,7 @@
 
         @font-face {
             font-family: 'PublicoText';
-            src: url('{{ asset(' font/publico-text-web-regular.ttf') }}') format('truetype');
+            src: url('{{ asset('font/publico-text-web-regular.ttf') }}') format('truetype');
             font-weight: 400;
             font-style: normal;
             font-display: swap;
@@ -193,7 +193,7 @@
 
         @font-face {
             font-family: 'Railway';
-            src: url('{{ asset(' font/railway.otf') }}') format('opentype');
+            src: url('{{ asset('font/railway.otf') }}') format('opentype');
             font-weight: 400;
             font-style: normal;
             font-display: swap;

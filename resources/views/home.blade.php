@@ -181,15 +181,24 @@
     color: #0f2336;
     z-index: 10;
     pointer-events: none;
+    visibility: hidden;
     opacity: 0;
-    transform: translateY(24px) scale(0.92);
-    animation-name: hexIn, hexFloat;
-    animation-duration: 0.9s, 12s;
-    animation-delay: var(--hex-delay, 0s), calc(var(--hex-delay, 0s) + 0.55s);
-    animation-fill-mode: forwards, both;
-    animation-iteration-count: 1, infinite;
-    animation-direction: normal, alternate;
-    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1), ease-in-out;
+    transform: translateY(26px) scale(0.9);
+    filter: blur(6px);
+  }
+
+  #company-map .hex-badge.hex-visible {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+    animation-name: hexIn;
+    animation-duration: 0.9s;
+    animation-delay: var(--hex-delay, 0s);
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   #company-map .hex-inner {
@@ -860,6 +869,57 @@
       </div>
     </div>
   </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mapSection = document.getElementById('company-map');
+      if (!mapSection) return;
+      const badges = Array.from(mapSection.querySelectorAll('.hex-badge'));
+      if (!badges.length) return;
+
+      const timeouts = [];
+      const clearTimers = () => {
+        while (timeouts.length) {
+          clearTimeout(timeouts.pop());
+        }
+      };
+
+      const toggleVisibility = (isVisible) => {
+        clearTimers();
+        if (isVisible) {
+          badges.forEach((badge) => badge.classList.remove('hex-visible'));
+          badges.forEach((badge, idx) => {
+            timeouts.push(
+              setTimeout(() => {
+                badge.classList.add('hex-visible');
+              }, idx * 150)
+            );
+          });
+        } else {
+          badges.forEach((badge) => badge.classList.remove('hex-visible'));
+        }
+      };
+
+      let inView = false;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.target !== mapSection) return;
+            if (entry.isIntersecting === inView) return; // only react on state change
+            inView = entry.isIntersecting;
+            toggleVisibility(inView);
+          });
+        },
+        {
+          threshold: 0.55,
+          rootMargin: '0px 0px -15% 0px'
+        }
+      );
+
+      observer.observe(mapSection);
+    });
+  </script>
 
 
   {{-- ===========================
