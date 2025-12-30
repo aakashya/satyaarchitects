@@ -17,25 +17,23 @@
 
   /* ===== COMPANY MAP COLORS (attach these classes to paths in your SVG) ===== */
   #company-map svg .sa-base {
-    fill: #dfe8f1;
+    fill: #d6e2f0;
   }
 
-  /* lightest */
   #company-map svg .sa-light {
-    fill: #c3d5e6;
+    fill: #e6eef7;
   }
 
   #company-map svg .sa-mid {
-    fill: #9cb8d3;
+    fill: #c4d4e6;
   }
 
   #company-map svg .sa-strong {
-    fill: #6b8fb5;
+    fill: #93b5ce;
   }
 
-  /* darkest */
   #company-map svg .sa-outline {
-    stroke: #ffffff;
+    stroke: #f8fbff;
     stroke-width: 0.6;
   }
 
@@ -158,31 +156,52 @@
   /* Map overlay hex badges */
   #company-map {
     position: relative;
+    overflow: visible;
+  }
+
+  #company-map .hex-cluster {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
   }
 
   #company-map .hex-badge {
     position: absolute;
-    width: 140px;
-    height: 120px;
+    width: 150px;
+    height: 128px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
-    background: #c4d7e8;
-    border: 2px solid #a4bfd7;
-    box-shadow: 0 10px 18px rgba(15, 31, 53, 0.18);
+    background: linear-gradient(135deg, #d6e2f0 0%, #93b5ce 100%);
+    border: 1px solid rgba(147, 181, 206, 0.8);
+    box-shadow: 0 15px 28px rgba(15, 31, 53, 0.18), 0 10px 24px rgba(147, 181, 206, 0.25);
+    backdrop-filter: blur(4px);
+    color: #0f2336;
     z-index: 10;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(24px) scale(0.92);
+    animation-name: hexIn, hexFloat;
+    animation-duration: 0.9s, 12s;
+    animation-delay: var(--hex-delay, 0s), calc(var(--hex-delay, 0s) + 0.55s);
+    animation-fill-mode: forwards, both;
+    animation-iteration-count: 1, infinite;
+    animation-direction: normal, alternate;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1), ease-in-out;
   }
 
   #company-map .hex-inner {
-    padding: 0.6rem 0.9rem;
+    padding: 0.7rem 1rem;
     font-family: 'Raleway', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     text-transform: uppercase;
-    letter-spacing: 0.18em;
-    font-size: 10px;
-    color: #273549;
-    line-height: 1.45;
+    letter-spacing: 0.16em;
+    font-size: 11px;
+    font-weight: 700;
+    color: inherit;
+    line-height: 1.5;
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.55);
   }
 
   #company-map .hex-inner span {
@@ -190,71 +209,110 @@
     white-space: nowrap;
   }
 
-  #company-map .hex-left-top {
-    top: 6%;
-    left: -6%;
+  #company-map .hex-one {
+    top: 4%;
+    left: -3%;
   }
 
-  #company-map .hex-left-mid {
+  #company-map .hex-two {
+    top: 20%;
+    left: 6%;
+  }
+
+  #company-map .hex-three {
     top: 42%;
-    left: -9%;
-  }
-
-  #company-map .hex-left-bottom {
-    bottom: 10%;
     left: -5%;
   }
 
-  #company-map .hex-right-top {
-    top: 8%;
-    right: -7%;
-  }
-
-  #company-map .hex-right-mid {
-    top: 44%;
-    right: -9%;
-  }
-
-  #company-map .hex-right-bottom {
+  #company-map .hex-four {
     bottom: 12%;
-    right: -6%;
+    left: 4%;
+  }
+
+  #company-map .hex-five {
+    top: 4%;
+    right: -3%;
+  }
+
+  #company-map .hex-six {
+    top: 22%;
+    right: 7%;
+  }
+
+  #company-map .hex-seven {
+    top: 44%;
+    right: -4%;
+  }
+
+  #company-map .hex-eight {
+    bottom: 16%;
+    right: 5%;
+  }
+
+  #company-map .hex-nine {
+    bottom: -4%;
+    left: 42%;
+  }
+
+  @keyframes hexIn {
+    0% {
+      opacity: 0;
+      transform: translateY(26px) scale(0.9);
+      filter: blur(6px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes hexFloat {
+    0% {
+      transform: translateY(0) translateX(0);
+    }
+
+    50% {
+      transform: translateY(-10px) translateX(6px);
+    }
+
+    100% {
+      transform: translateY(8px) translateX(-6px);
+    }
   }
 
   @media (max-width: 768px) {
+    #company-map .hex-cluster {
+      position: static;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
     #company-map .hex-badge {
-      width: 110px;
-      height: 94px;
-      font-size: 9px;
+      position: relative;
+      width: 130px;
+      height: 108px;
+      inset: auto;
+      animation-delay: var(--hex-delay, 0s), calc(var(--hex-delay, 0s) + 0.35s);
     }
 
-    #company-map .hex-left-top {
-      top: 2%;
-      left: 2%;
-    }
-
-    #company-map .hex-left-mid {
-      top: 34%;
-      left: 0%;
-    }
-
-    #company-map .hex-left-bottom {
-      bottom: 6%;
-      left: 4%;
-    }
-
-    #company-map .hex-right-top {
-      top: 4%;
-      right: 2%;
-    }
-
-    #company-map .hex-right-mid {
-      top: 36%;
-      right: 0%;
-    }
-
-    #company-map .hex-right-bottom {
-      bottom: 10%;
-      right: 4%;
+    #company-map .hex-one,
+    #company-map .hex-two,
+    #company-map .hex-three,
+    #company-map .hex-four,
+    #company-map .hex-five,
+    #company-map .hex-six,
+    #company-map .hex-seven,
+    #company-map .hex-eight,
+    #company-map .hex-nine {
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
     }
   }
 
@@ -286,11 +344,11 @@
   }
 
   .map-dark {
-    fill: #90B2C9;
+    fill: #93b5ce;
   }
 
   .map-light {
-    fill: #B5C6D2;
+    fill: #d6e2f0;
   }
 
   path:hover {
@@ -720,49 +778,70 @@
 
         </svg>
 
-        <div class="hex-badge hex-left-top">
-          <div class="hex-inner">
-            <span>25+ Years</span>
-            <span>of Experience</span>
+        <div class="hex-cluster">
+          <div class="hex-badge hex-one" style="--hex-delay: 0.05s;">
+            <div class="hex-inner">
+              <span>Warehouse</span>
+              <span>10+</span>
+            </div>
           </div>
-        </div>
 
-        <div class="hex-badge hex-left-mid">
-          <div class="hex-inner">
-            <span>Pan-India</span>
-            <span>Industrial &amp;</span>
-            <span>Warehousing</span>
+          <div class="hex-badge hex-two" style="--hex-delay: 0.25s;">
+            <div class="hex-inner">
+              <span>Location</span>
+              <span>Gurgaon</span>
+            </div>
           </div>
-        </div>
 
-        <div class="hex-badge hex-left-bottom">
-          <div class="hex-inner">
-            <span>Institutional-Grade</span>
-            <span>Assets</span>
+          <div class="hex-badge hex-three" style="--hex-delay: 0.45s;">
+            <div class="hex-inner">
+              <span>Team</span>
+              <span>15 Members</span>
+            </div>
           </div>
-        </div>
 
-        <div class="hex-badge hex-right-top">
-          <div class="hex-inner">
-            <span>Presence in</span>
-            <span>Major Gateway</span>
-            <span>Cities</span>
+          <div class="hex-badge hex-four" style="--hex-delay: 1s;">
+            <div class="hex-inner">
+              <span>Co-Founder</span>
+              <span>Arcon</span>
+              <span>Buildwell</span>
+            </div>
           </div>
-        </div>
 
-        <div class="hex-badge hex-right-mid">
-          <div class="hex-inner">
-            <span>Diverse</span>
-            <span>Tenant</span>
-            <span>Profiles</span>
+          <div class="hex-badge hex-five" style="--hex-delay: 1.15s;">
+            <div class="hex-inner">
+              <span>Group Housing</span>
+              <span>25+</span>
+            </div>
           </div>
-        </div>
 
-        <div class="hex-badge hex-right-bottom">
-          <div class="hex-inner">
-            <span>Focused on</span>
-            <span>Tier I &amp; II</span>
-            <span>Growth</span>
+          <div class="hex-badge hex-six" style="--hex-delay: 1.3s;">
+            <div class="hex-inner">
+              <span>Projects</span>
+              <span>Over 30+ Cities</span>
+            </div>
+          </div>
+
+          <div class="hex-badge hex-seven" style="--hex-delay: 1.45s;">
+            <div class="hex-inner">
+              <span>Institution</span>
+              <span>10+</span>
+            </div>
+          </div>
+
+          <div class="hex-badge hex-eight" style="--hex-delay: 1.6s;">
+            <div class="hex-inner">
+              <span>Industries</span>
+              <span>15+</span>
+              <span>Founded 2006</span>
+            </div>
+          </div>
+
+          <div class="hex-badge hex-nine" style="--hex-delay: 1.75s;">
+            <div class="hex-inner">
+              <span>15+ YR</span>
+              <span>Experience</span>
+            </div>
           </div>
         </div>
       </div>
