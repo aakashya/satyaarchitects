@@ -175,7 +175,7 @@
     text-align: center;
     clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
     background: linear-gradient(135deg, #d6e2f0 0%, #93b5ce 100%);
-    border: 1px solid rgba(147, 181, 206, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
     box-shadow: 0 15px 28px rgba(15, 31, 53, 0.18), 0 10px 24px rgba(147, 181, 206, 0.25);
     backdrop-filter: blur(4px);
     color: #0f2336;
