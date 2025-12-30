@@ -206,7 +206,7 @@
     font-family: 'Raleway', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.16em;
-    font-size: 11px;
+    font-size: 9px;
     font-weight: 700;
     color: inherit;
     line-height: 1.5;
