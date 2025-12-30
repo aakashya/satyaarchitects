@@ -424,7 +424,7 @@
               WHO WE ARE
             </h2>
             <p class="text-base md:text-base leading-relaxed text-slate-700 font-century">
-              Established in 2010, Satya Architects is a Gurugram-based design studio crafting
+              Established in 2010, <strong>Satya Architects</strong> is a Gurugram-based design studio crafting
               refined Architectural and Interior Experiences. We blend creativity, precision,
               and innovation to create spaces that feel timeless, purposeful, and deeply human.
             </p>
@@ -439,8 +439,8 @@
               WHAT WE DO
             </h3>
             <p class="text-base md:text-base leading-relaxed text-slate-700 font-century">
-              We offer integrated services in Architecture, Interiors, Urban Planning,
-              Landscape Design, and Project Management—delivering seamless, end-to-end
+              We offer integrated services <strong>in Architecture, Interiors, Urban Planning,
+                Landscape Design, and Project Management</strong>—delivering seamless, end-to-end
               solutions across Residential, Commercial, Industrial, Institutional,
               and Hospitality sectors.
             </p>
@@ -630,9 +630,8 @@
         </h2>
         <br>
         <p class="max-w-4xl mx-auto text-base md:text-base leading-relaxed text-slate-700 font-century">
-          Every project begins with an idea and evolves through collaboration. We focus on clarity, functionality, and
-          elegance, supported by advanced technology and meticulous attention to detail. The result: design that
-          elevates everyday living and stands the test of time.
+          Driven by our dedication to <strong>professionalism, transparency, and excellence.</strong> Our wide range of expertise enables us to lead diverse and
+          complex projects—consistently creating spaces that inspire, perform, and stand the test of time.
         </p>
 
         {{-- <p class="text-2xl md:text-3xl font-serif font-semibold text-slate-900 mt-10">
@@ -794,8 +793,8 @@
     </div>
   </section> --}}
 
-<script>
-  // --- Timeline slider (range <-> horizontal scroll) ---
+  <script>
+    // --- Timeline slider (range <-> horizontal scroll) ---
   const timelineTrack = document.getElementById('timeline-track');
   const timelineRange = document.getElementById('timeline-range');
 
@@ -840,9 +839,9 @@
 
       syncRangeToScroll();
   }
-</script>
-<script type="text/javascript">
-  var data1 = [['IN-UP'],
+  </script>
+  <script type="text/javascript">
+    var data1 = [['IN-UP'],
          ['IN-BR', 'IN-MH'],
          ['IN-WB', 'IN-MP', 'IN-RJ', 'IN-TN', 'IN-GJ', 'IN-KA', 'IN-AP'],
          ['IN-OR', 'IN-JH', 'IN-TG', 'IN-KL', 'IN-AS', 'IN-PB', 'IN-HR', 'IN-CT', 'IN-UT', 'IN-DL', 'IN-JK'],
@@ -919,5 +918,5 @@
         return string.charAt(0).toUpperCase() + string.slice(1);
     } 
 
-</script>
-@endsection
+  </script>
+  @endsection
