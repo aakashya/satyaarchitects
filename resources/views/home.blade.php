@@ -112,7 +112,7 @@
   /* small screens – shrink badges & stack closer in */
   @media (max-width: 768px) {
     #company-overview .hex-badge {
-      width: 90px;
+      width: 20px;
       height: 74px;
       font-size: 9px;
     }
