@@ -245,13 +245,18 @@
   }
 
   #company-map .hex-eight {
-    bottom: 16%;
-    right: 5%;
+    bottom: 18%;
+    right: 3%;
   }
 
   #company-map .hex-nine {
-    bottom: -4%;
-    left: 42%;
+    bottom: -2%;
+    left: 40%;
+  }
+
+  #company-map .hex-ten {
+    bottom: 6%;
+    left: 58%;
   }
 
   @keyframes hexIn {
@@ -308,7 +313,8 @@
     #company-map .hex-six,
     #company-map .hex-seven,
     #company-map .hex-eight,
-    #company-map .hex-nine {
+    #company-map .hex-nine,
+    #company-map .hex-ten {
       top: auto;
       right: auto;
       bottom: auto;
@@ -803,8 +809,8 @@
           <div class="hex-badge hex-four" style="--hex-delay: 1s;">
             <div class="hex-inner">
               <span>Co-Founder</span>
-              <span>Arcon</span>
-              <span>Buildwell</span>
+              <span>Arcon Buildwell</span>
+              {{-- <span>Buildwell</span> --}}
             </div>
           </div>
 
@@ -817,8 +823,8 @@
 
           <div class="hex-badge hex-six" style="--hex-delay: 1.3s;">
             <div class="hex-inner">
-              <span>15+ YR</span>
-              <span>Experience</span>
+              <span>Industries</span>
+              <span>15+</span>
             </div>
           </div>
 
@@ -839,6 +845,13 @@
             <div class="hex-inner">
               <span>Projects</span>
               <span>Over 30+ Cities</span>
+            </div>
+          </div>
+
+          <div class="hex-badge hex-ten" style="--hex-delay: 1.9s;">
+            <div class="hex-inner">
+              <span>15+ YR</span>
+              <span>Experience</span>
             </div>
           </div>
         </div>
