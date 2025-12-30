@@ -112,6 +112,7 @@
             cursor: pointer;
             transform: translateY(-8px);
         }
+
         /* Focus style */
         .timeline-range:focus-visible {
             outline: none;
@@ -165,7 +166,7 @@
         /* 1. Register the local font */
         @font-face {
             font-family: 'MarcellusSC';
-            src: url('{{ asset('font/marcellus-regular-jai.ttf') }}') format('truetype');
+            src: url('{{ asset(' font/marcellus-regular-jai.ttf') }}') format('truetype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
@@ -180,7 +181,7 @@
 
         @font-face {
             font-family: 'PublicoText';
-            src: url('{{ asset('font/publico-text-web-regular.ttf') }}') format('truetype');
+            src: url('{{ asset(' font/publico-text-web-regular.ttf') }}') format('truetype');
             font-weight: 400;
             font-style: normal;
             font-display: swap;
@@ -192,7 +193,7 @@
 
         @font-face {
             font-family: 'Railway';
-            src: url('{{ asset('font/railway.otf') }}') format('opentype');
+            src: url('{{ asset(' font/railway.otf') }}') format('opentype');
             font-weight: 400;
             font-style: normal;
             font-display: swap;
@@ -362,17 +363,29 @@
 
     // --- Navbar scroll behaviour ---
     const navbar = document.getElementById('navbar');
+    const navbarLogo = document.getElementById('navbar-logo');
     const homeHero = document.getElementById('home-hero');
 
     function setHomeNavbar() {
-        navbar.classList.add('bg-transparent', 'text-white');
-        navbar.classList.remove('bg-white', 'text-slate-900', 'shadow-md');
-    }
+  navbar.classList.add('bg-transparent', 'text-white');
+  navbar.classList.remove('bg-white', 'text-slate-900', 'shadow-md');
 
-    function setSolidNavbar() {
-        navbar.classList.remove('bg-transparent', 'text-white', 'py-4');
-        navbar.classList.add('bg-white', 'text-slate-900', 'shadow-md', 'py-2');
-    }
+  if (navbarLogo) {
+    navbarLogo.src = navbarLogo.dataset.logoTransparent;
+    navbarLogo.classList.add('drop-shadow-[0_0_18px_rgba(255,255,255,1)]');
+  }
+}
+
+function setSolidNavbar() {
+  navbar.classList.remove('bg-transparent', 'text-white', 'py-4');
+  navbar.classList.add('bg-white', 'text-slate-900', 'shadow-md', 'py-2');
+
+  if (navbarLogo) {
+    navbarLogo.src = navbarLogo.dataset.logoSolid;
+    navbarLogo.classList.remove('drop-shadow-[0_0_18px_rgba(255,255,255,1)]');
+  }
+}
+
 
     if (homeHero) {
         setHomeNavbar();
