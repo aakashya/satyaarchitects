@@ -233,33 +233,37 @@
     // Data for each slide: project name + tags
     const slideMeta = [
         {
-            project: 'FORTEASIA INDUSTRIAL TOWNSHIP, ROHTAK',
+            project: 'INFRA ONE TOWNSHIP, ROHTAK',
             tags: ['Urban Design', 'Industrial', 'Residential']
         },
         {
-            project: 'SWARN JYOTI, GURGAON',
-            tags: ['Housing']
+            project: 'SJ HOUSING, GURGAON ',
+            tags: ['High Rise','Residential']
+        },
+        {
+            project: 'INTERNATIONAL EXPERIENTIAL SCHOOL, GURGAON',
+            tags: ['Education', 'Experiential Design']
+        },
+        {
+            project: 'FUTURISTIC THINKING',
+            tags: ['Holistic Approach', 'Biophilic Design']
         },
         {
             project: 'SAGA CASTLE, BHIWADI',
-            tags: ['Commercial']
-        },
-        {
-            project: 'EXPERIENTIAL SCHOOL, GURGAON',
-            tags: ['Education']
+            tags: ['Commercial', 'Interior Design', 'Facade Development']
         },
         {
             project: 'FOOD PARK, MEGHALAYA',
             tags: ['Masterplanning', 'Industry']
         },
         {
+            project: 'SHOPPING MALL',
+            tags: ['Commercial', 'Retail Design']
+        },
+        {
             project: 'SHUBHANGAN, PANIPAT',
             tags: ['Masterplanning', 'Residential', 'Commercial']
         },
-        {
-            project: 'DWARKADISH',
-            tags: ['Commercial']
-        }
     ];
 
     let currentSlide = 0;

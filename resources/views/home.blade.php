@@ -334,13 +334,14 @@
 
 
     <!-- Images from /public/images/hero/01–07 -->
-    <img src="{{ asset('images/hero/n/01.jpg') }}" class="hero-slide active" alt="FORTEASIA INDUSTRIAL TOWNSHIP, ROHTAK">
-    <img src="{{ asset('images/hero/n/02.jpg') }}" class="hero-slide" alt="SWARN JYOTI , GURGAON">
-    <img src="{{ asset('images/hero/n/03.jpg') }}" class="hero-slide" alt="SAGA CASTLE, BHIWADI">
-    <img src="{{ asset('images/hero/n/04.jpg') }}" class="hero-slide" alt="EXPERIENTIAL SCHOOL, GURGAON">
-    <img src="{{ asset('images/hero/n/05.jpg') }}" class="hero-slide" alt="FOOD PARK, MEGHALAYA">
-    <img src="{{ asset('images/hero/n/06.jpg') }}" class="hero-slide" alt="SHUBHANGAN, PANIPAT">
-    <img src="{{ asset('images/hero/n/07.jpg') }}" class="hero-slide" alt="DWARKADISH">
+    <img src="{{ asset('images/hero/01_n.jpg') }}" class="hero-slide active" alt="INFRA ONE TOWNSHIP, ROHTAK">
+    <img src="{{ asset('images/hero/02_n.jpg') }}" class="hero-slide" alt="SJ HOUSING, GURGAON ">
+    <img src="{{ asset('images/hero/03_n.jpg') }}" class="hero-slide" alt="INTERNATIONAL EXPERIENTIAL SCHOOL, GURGAON">
+    <img src="{{ asset('images/hero/04_n.png') }}" class="hero-slide" alt="FUTURISTIC THINKING">
+    <img src="{{ asset('images/hero/05_n.jpg') }}" class="hero-slide" alt="SAGA CASTLE, BHIWADI ">
+    <img src="{{ asset('images/hero/06_n.png') }}" class="hero-slide" alt="FOOD PARK, MEGHALAYA">
+    <img src="{{ asset('images/hero/07_n.jpg') }}" class="hero-slide" alt="SHOPPING MALL">
+    <img src="{{ asset('images/hero/08_n.jpg') }}" class="hero-slide" alt="SHUBHANGAN, PANIPAT">
 
     {{-- Center Tagline --}}
     <div class="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
@@ -396,6 +397,9 @@
           </div>
           <div class="h-1 flex-1 bg-white/20 rounded-full overflow-hidden hero-progress-track">
             <div class="hero-progress-inner h-full bg-white" data-index="6" style="width: 0;"></div>
+          </div>
+          <div class="h-1 flex-1 bg-white/20 rounded-full overflow-hidden hero-progress-track">
+            <div class="hero-progress-inner h-full bg-white" data-index="7" style="width: 0;"></div>
           </div>
         </div>
       </div>
