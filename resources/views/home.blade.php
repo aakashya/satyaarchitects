@@ -210,8 +210,8 @@
   }
 
   #company-map .hex-one {
-    top: 4%;
-    left: -3%;
+    top: 0%;
+    left: 15%;
   }
 
   #company-map .hex-two {
@@ -240,23 +240,23 @@
   }
 
   #company-map .hex-seven {
-    top: 44%;
-    right: -4%;
+    bottom: 25%;
+    right: 20%;
   }
 
   #company-map .hex-eight {
-    bottom: 18%;
-    right: 3%;
+    bottom: 5%;
+    right: 38%;
   }
 
   #company-map .hex-nine {
-    bottom: -2%;
-    left: 40%;
+    bottom: 45%;
+    left: 35%;
   }
 
   #company-map .hex-ten {
-    bottom: 6%;
-    left: 58%;
+    top: 6%;
+    left: 50%;
   }
 
   @keyframes hexIn {
@@ -694,7 +694,8 @@
         </h2>
         <br>
         <p class="max-w-4xl mx-auto text-base md:text-base leading-relaxed text-slate-700 font-century">
-          Driven by our dedication to <strong>professionalism, transparency, and excellence.</strong> Our wide range of expertise enables us to lead diverse and
+          Driven by our dedication to <strong>professionalism, transparency, and excellence.</strong> Our wide range of expertise enables us to lead
+          diverse and
           complex projects—consistently creating spaces that inspire, perform, and stand the test of time.
         </p>
 
@@ -787,8 +788,9 @@
         <div class="hex-cluster">
           <div class="hex-badge hex-one" style="--hex-delay: 0.05s;">
             <div class="hex-inner">
-              <span>Warehouse</span>
-              <span>10+</span>
+              <span>Co-Founder</span>
+              <span>Arcon Buildwell</span>
+              {{-- <span>Buildwell</span> --}}
             </div>
           </div>
 
@@ -808,10 +810,10 @@
 
           <div class="hex-badge hex-four" style="--hex-delay: 1s;">
             <div class="hex-inner">
-              <span>Co-Founder</span>
-              <span>Arcon Buildwell</span>
-              {{-- <span>Buildwell</span> --}}
+              <span>Warehouse</span>
+              <span>10+</span>
             </div>
+
           </div>
 
           <div class="hex-badge hex-five" style="--hex-delay: 1.15s;">
