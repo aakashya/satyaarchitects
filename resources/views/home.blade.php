@@ -831,8 +831,6 @@
 
           <div class="hex-badge hex-eight" style="--hex-delay: 1.6s;">
             <div class="hex-inner">
-              <span>Industries</span>
-              <span>15+</span>
               <span>Founded 2006</span>
             </div>
           </div>
@@ -847,11 +845,6 @@
       </div>
     </div>
   </section>
-
-
-
-
-
 
 
   {{-- ===========================
