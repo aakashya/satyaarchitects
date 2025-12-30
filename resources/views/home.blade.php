@@ -798,8 +798,8 @@
           <div class="hex-badge hex-one" style="--hex-delay: 0.05s;">
             <div class="hex-inner">
               <span>Co-Founder</span>
-              <span>Arcon Buildwell</span>
-              {{-- <span>Buildwell</span> --}}
+              <span>Arcon</span>
+              <span>Buildwell</span>
             </div>
           </div>
 
@@ -827,7 +827,8 @@
 
           <div class="hex-badge hex-five" style="--hex-delay: 1.15s;">
             <div class="hex-inner">
-              <span>Group Housing</span>
+              <span>Group</span>
+              <span>Housing</span>
               <span>25+</span>
             </div>
           </div>
@@ -855,7 +856,8 @@
           <div class="hex-badge hex-nine" style="--hex-delay: 1.75s;">
             <div class="hex-inner">
               <span>Projects</span>
-              <span>Over 30+ Cities</span>
+              <span>Over</span>
+              <span>30+ Cities</span>
             </div>
           </div>
 
