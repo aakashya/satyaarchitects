@@ -40,8 +40,8 @@
   /* ===== HEX BADGES ===== */
   #company-overview .hex-badge {
     position: absolute;
-    width: 140px;
-    height: 120px;
+    width: 110px;
+    height: 94px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -112,8 +112,8 @@
   /* small screens – shrink badges & stack closer in */
   @media (max-width: 768px) {
     #company-overview .hex-badge {
-      width: 20px;
-      height: 74px;
+      width: 110px;
+      height: 94px;
       font-size: 9px;
     }
 
