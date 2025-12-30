@@ -502,7 +502,7 @@
               and innovation to create spaces that feel timeless, purposeful, and deeply human.
             </p>
           </div>
-          <br>
+          <br><br>
           {{-- Divider --}}
           <div class="h-px w-16 bg-slate-200"></div>
           <br>
