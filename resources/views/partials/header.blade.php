@@ -2,7 +2,7 @@
   <div class="container mx-auto px-6 flex justify-between items-center">
     <!-- Logo -->
     <a href="{{ route('home') }}" class="flex items-center gap-3">
-      <img id="navbar-logo" src="{{ asset('images/logo/logo-white.png') }}" data-logo-transparent="{{ asset('images/logo/logo-white.png') }}"
+      <img id="navbar-logo" src="{{ asset('images/logo/logo2.png') }}" data-logo-transparent="{{ asset('images/logo/logo2.png') }}"
         data-logo-solid="{{ asset('images/logo/satya-new-logoo.png') }}" alt="Satya Architects"
         class="h-20 w-auto object-contain drop-shadow-[0_0_18px_rgba(255,255,255,1)]" />
     </a>
