@@ -165,7 +165,7 @@
     pointer-events: none;
   }
 
-  #company-map .hex-badge {
+  /* #company-map .hex-badge {
     position: absolute;
     width: 110px;
     height: 94px;
@@ -185,6 +185,33 @@
     opacity: 0;
     transform: translateY(26px) scale(0.9);
     filter: blur(6px);
+  } */
+   
+  #company-map .hex-badge {
+    position: absolute;
+    width: 120px;
+    height: 104px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+    background: linear-gradient(135deg, #d6e2f0 30%, #93b5ce 100%);
+    border: 1px solid rgba(147, 181, 206, 0.8);
+    box-shadow: 0 15px 28px rgba(15, 31, 53, 0.18), 0 10px 24px rgba(147, 181, 206, 0.25);
+    backdrop-filter: blur(4px);
+    color: #0f2336;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(24px) scale(0.92);
+    animation-name: hexIn, hexFloat;
+    animation-duration: 0.9s, 12s;
+    animation-delay: var(--hex-delay, 0s), calc(var(--hex-delay, 0s) + 0.55s);
+    animation-fill-mode: forwards, both;
+    animation-iteration-count: 1, infinite;
+    animation-direction: normal, alternate;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1), ease-in-out;
   }
 
   #company-map .hex-badge.hex-visible {
@@ -873,7 +900,7 @@
     </div>
   </section>
 
-  <script>
+  {{-- <script>
     document.addEventListener('DOMContentLoaded', () => {
       const mapSection = document.getElementById('company-map');
       if (!mapSection) return;
@@ -922,7 +949,7 @@
 
       observer.observe(mapSection);
     });
-  </script>
+  </script> --}}
 
 
   {{-- ===========================
