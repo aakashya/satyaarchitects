@@ -38,132 +38,6 @@
   }
 
   /* ===== HEX BADGES ===== */
-  #company-overview .hex-badge {
-    position: absolute;
-    width: 10px;
-    height: 94px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
-    background: #c4d7e8;
-    border: 2px solid #a4bfd7;
-    box-shadow: 0 10px 18px rgba(15, 31, 53, 0.18);
-  }
-
-  #company-overview .hex-inner {
-    padding: 0.6rem 0.9rem;
-    font-family: 'Raleway', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    font-size: 10px;
-    color: #273549;
-    line-height: 1.45;
-  }
-
-  #company-overview .hex-inner span {
-    display: block;
-    white-space: nowrap;
-  }
-
-  /* positions – tweak to taste */
-  #company-overview .hex-exp {
-    top: 8%;
-    left: 3%;
-  }
-
-  #company-overview .hex-founded {
-    top: 40%;
-    left: 4%;
-  }
-
-  #company-overview .hex-industry {
-    bottom: 6%;
-    left: 5%;
-  }
-
-  #company-overview .hex-warehouse {
-    top: 10%;
-    right: 4%;
-  }
-
-  #company-overview .hex-location {
-    top: 35%;
-    right: 1%;
-  }
-
-  #company-overview .hex-team {
-    bottom: 28%;
-    right: 8%;
-  }
-
-  #company-overview .hex-cofound {
-    bottom: 4%;
-    right: 8%;
-  }
-
-  #company-overview .hex-center {
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  /* small screens – shrink badges & stack closer in */
-  @media (max-width: 768px) {
-    #company-overview .hex-badge {
-      width: 110px;
-      height: 94px;
-      font-size: 9px;
-    }
-
-    #company-overview .hex-exp {
-      top: 3%;
-      left: 4%;
-    }
-
-    #company-overview .hex-founded {
-      top: 32%;
-      left: 2%;
-    }
-
-    #company-overview .hex-industry {
-      bottom: 4%;
-      left: 6%;
-    }
-
-    #company-overview .hex-warehouse {
-      top: 5%;
-      right: 4%;
-    }
-
-    #company-overview .hex-location {
-      top: 30%;
-      right: 2%;
-    }
-
-    #company-overview .hex-team {
-      bottom: 28%;
-      right: 6%;
-    }
-
-    #company-overview .hex-cofound {
-      bottom: 6%;
-      right: 6%;
-    }
-  }
-
-  /* Map overlay hex badges */
-  #company-map {
-    position: relative;
-    overflow: visible;
-  }
-
-  #company-map .hex-cluster {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-  }
 
   /* #company-map .hex-badge {
     position: absolute;
@@ -186,7 +60,7 @@
     transform: translateY(26px) scale(0.9);
     filter: blur(6px);
   } */
-   
+
   #company-map .hex-badge {
     position: absolute;
     width: 120px;
@@ -203,30 +77,44 @@
     color: #0f2336;
     z-index: 10;
     pointer-events: none;
+
+    /* hidden state */
     opacity: 0;
     transform: translateY(24px) scale(0.92);
-    animation-name: hexIn, hexFloat;
-    animation-duration: 0.9s, 12s;
-    animation-delay: var(--hex-delay, 0s), calc(var(--hex-delay, 0s) + 0.55s);
-    animation-fill-mode: forwards, both;
-    animation-iteration-count: 1, infinite;
-    animation-direction: normal, alternate;
-    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1), ease-in-out;
+    filter: blur(6px);
+    animation: none;
+    will-change: transform, opacity, filter;
   }
 
   #company-map .hex-badge.hex-visible {
-    visibility: visible;
     opacity: 1;
     transform: translateY(0) scale(1);
     filter: blur(0);
-    animation-name: hexIn;
-    animation-duration: 0.9s;
-    animation-delay: var(--hex-delay, 0s);
-    animation-fill-mode: forwards;
-    animation-iteration-count: 1;
-    animation-direction: normal;
-    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* animate ONLY when visible */
+    animation: hexIn 1.2s ease var(--hex-delay, 0s) both;
   }
+
+  #company-map .hex-badge:nth-of-type(1) {
+    --hex-delay: 0s;
+  }
+
+  #company-map .hex-badge:nth-of-type(2) {
+    --hex-delay: 10s;
+  }
+
+  #company-map .hex-badge:nth-of-type(3) {
+    --hex-delay: 20s;
+  }
+
+  #company-map .hex-badge:nth-of-type(4) {
+    --hex-delay: 30s;
+  }
+
+
+  /* keep going... */
+
+
 
   #company-map .hex-inner {
     padding: 0.7rem 1rem;
@@ -900,56 +788,35 @@
     </div>
   </section>
 
-  {{-- <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const mapSection = document.getElementById('company-map');
-      if (!mapSection) return;
-      const badges = Array.from(mapSection.querySelectorAll('.hex-badge'));
-      if (!badges.length) return;
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const map = document.querySelector("#company-map");
+  const badges = document.querySelectorAll("#company-map .hex-badge");
+  const gapMs = 2000;
+  let started = false;
 
-      const timeouts = [];
-      const clearTimers = () => {
-        while (timeouts.length) {
-          clearTimeout(timeouts.pop());
-        }
-      };
+  badges.forEach(b => b.classList.remove("hex-visible"));
 
-      const toggleVisibility = (isVisible) => {
-        clearTimers();
-        if (isVisible) {
-          badges.forEach((badge) => badge.classList.remove('hex-visible'));
-          badges.forEach((badge, idx) => {
-            timeouts.push(
-              setTimeout(() => {
-                badge.classList.add('hex-visible');
-              }, idx * 150)
-            );
-          });
-        } else {
-          badges.forEach((badge) => badge.classList.remove('hex-visible'));
-        }
-      };
+  const startSequence = () => {
+    if (started) return;
+    started = true;
 
-      let inView = false;
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.target !== mapSection) return;
-            if (entry.isIntersecting === inView) return; // only react on state change
-            inView = entry.isIntersecting;
-            toggleVisibility(inView);
-          });
-        },
-        {
-          threshold: 0.55,
-          rootMargin: '0px 0px -15% 0px'
-        }
-      );
-
-      observer.observe(mapSection);
+    badges.forEach((badge, i) => {
+      setTimeout(() => badge.classList.add("hex-visible"), i * gapMs);
     });
-  </script> --}}
+  };
+
+  const obs = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) startSequence();
+  }, { threshold: 0.3 });
+
+  if (map) obs.observe(map);
+});
+  </script>
+
+
+
+
 
 
   {{-- ===========================
