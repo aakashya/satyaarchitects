@@ -52,7 +52,7 @@
       </h1>
 
       {{-- Intro text --}}
-      <p class="mt-5 text-center text-sm md:text-lg text-gray-600 max-w-5xl mx-auto leading-relaxed font-century">
+      <p class="mt-5 text-center text-sm md:text-base text-gray-600 max-w-5xl mx-auto leading-relaxed font-century">
         Every project begins with an idea and evolves through collaboration. We focus on clarity,
         functionality, and elegance, supported by advanced technology and meticulous attention to detail.
         The result: design that elevates everyday living and stands the test of time.
