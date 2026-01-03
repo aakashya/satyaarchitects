@@ -72,14 +72,14 @@
           {{-- Content overlay --}}
           <div class="absolute inset-x-0 bottom-0 p-6">
             {{-- Title (bottom by default; moves up on hover) --}}
-            <h3 class="text-white text-xl md:text-2xl font-semibold
+            <h3 class="text-white text-xl md:text-2xl font-railway
                                    transform transition-all duration-500
                                    translate-y-0 group-hover:-translate-y-1">
               {{ $item['title'] }}
             </h3>
 
             {{-- Description (hidden by default; visible on hover) --}}
-            <p class="mt-1 text-white/90 text-sm md:text-base leading-relaxed
+            <p class="mt-1 text-white/90 text-sm md:text-base leading-relaxed font-century
                                   opacity-0 max-h-0 overflow-hidden transform transition-all duration-500
                                   translate-y-1 group-hover:opacity-100 group-hover:max-h-40 group-hover:translate-y-0">
               {{ $item['desc'] }}
