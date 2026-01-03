@@ -10,7 +10,7 @@
     <!-- Desktop Menu -->
     <div class="hidden md:flex space-x-8 text-base font-railway font-medium tracking-wide uppercase">
       <a href="{{ route('home') }}" class="hover:text-brand-gold transition">OUR STORY</a>
-      <a href="{{ route('about') }}" class="hover:text-brand-gold transition">EXPERTISE</a>
+      <a href="{{ route('expertise') }}" class="hover:text-brand-gold transition">EXPERTISE</a>
       <a href="{{ route('services') }}" class="hover:text-brand-gold transition">STUDIO</a>
       <a href="{{ route('projects') }}" class="hover:text-brand-gold transition">PROJECTS</a>
       <a href="{{ route('clients') }}" class="hover:text-brand-gold transition">INSIGHTS</a>

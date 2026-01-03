@@ -2,22 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
-
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
-
-Route::get('/services', function () {
-    return view('services');
-})->name('services');
-
-Route::get('/projects', function () {
-    return view('projects');
-})->name('projects');
-
-Route::get('/clients', function () {
-    return view('clients');
-})->name('clients');
+// Simple view routes for static pages
+Route::view('/', 'home')->name('home');
+Route::view('/about', 'about')->name('about');
+Route::view('/expertise', 'expertise')->name('expertise');
+Route::view('/services', 'services')->name('services');
+Route::view('/projects', 'projects')->name('projects');
+Route::view('/clients', 'clients')->name('clients');

@@ -10,7 +10,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Raleway:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
     <!-- Font Awesome -->
@@ -119,6 +122,19 @@
             box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.5);
         }
 
+        /* Global font helper classes */
+        .font-railway {
+            font-family: 'Railway', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        .font-raleway {
+            font-family: 'Raleway', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        .font-century {
+            font-family: 'Century Gothic', 'CenturyGothic', AppleGothic, sans-serif;
+        }
+
         .timeline-card-image {
             display: block;
             image-rendering: optimizeQuality;
@@ -197,10 +213,6 @@
             font-weight: 400;
             font-style: normal;
             font-display: swap;
-        }
-
-        .font-railway {
-            font-family: 'Railway';
         }
     </style>
     <style>
