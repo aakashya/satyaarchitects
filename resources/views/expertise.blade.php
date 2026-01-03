@@ -7,7 +7,7 @@
   [
   "title" => "Architecture and Design Consultancy",
   "desc" => "Comprehensive architectural and design services delivering functional, sustainable, and cost-effective solutions.",
-  "image" => "architecture.png",
+  "image" => "infra.jpg",
   ],
   [
   "title" => "Masterplanning and Urban Design",
