@@ -44,7 +44,7 @@
   @endphp
 
   <section class="w-full py-16 md:py-24 bg-white">
-    <div class="container mx-auto px-10 mt-10">
+    <div class="container mx-auto px-12 mt-10">
 
       {{-- Heading --}}
       <h1 class="text-center font-semibold tracking-[0.18em] uppercase text-3xl md:text-3xl font-railway">
@@ -59,7 +59,7 @@
       </p>
 
       {{-- Grid --}}
-      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
         @foreach ($expertiseItems as $item)
         <article class="group relative overflow-hidden shadow-lg">
           {{-- Image --}}
