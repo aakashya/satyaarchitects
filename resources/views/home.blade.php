@@ -118,7 +118,7 @@
 
   #company-map .hex-inner {
     padding: 0.7rem 1rem;
-    font-family: 'Century Gothic', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Railway', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.16em;
     font-size: 10.5px;
