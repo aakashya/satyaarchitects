@@ -47,12 +47,12 @@
     <div class="container mx-auto px-6 mt-10">
 
       {{-- Heading --}}
-      <h1 class="text-center font-semibold tracking-[0.18em] uppercase text-3xl md:text-4xl font-railway">
+      <h1 class="text-center font-semibold tracking-[0.18em] uppercase text-3xl md:text-3xl font-railway">
         Our Expertise
       </h1>
 
       {{-- Intro text --}}
-      <p class="mt-5 text-center text-base md:text-lg text-gray-600 max-w-5xl mx-auto leading-relaxed font-century">
+      <p class="mt-5 text-center text-sm md:text-lg text-gray-600 max-w-5xl mx-auto leading-relaxed font-century">
         Every project begins with an idea and evolves through collaboration. We focus on clarity,
         functionality, and elegance, supported by advanced technology and meticulous attention to detail.
         The result: design that elevates everyday living and stands the test of time.
@@ -72,14 +72,14 @@
           {{-- Content overlay --}}
           <div class="absolute inset-x-0 bottom-0 p-6">
             {{-- Title (bottom by default; moves up on hover) --}}
-            <h3 class="text-white text-xl md:text-2xl font-railway
+            <h3 class="text-white uppercase text-xl md:text-xl font-railway
                                    transform transition-all duration-500
                                    translate-y-0 group-hover:-translate-y-1">
               {{ $item['title'] }}
             </h3>
 
             {{-- Description (hidden by default; visible on hover) --}}
-            <p class="mt-1 text-white/90 text-sm md:text-base leading-relaxed font-century
+            <p class="mt-1 text-white/90 text-sm md:text-sm leading-relaxed font-century
                                   opacity-0 max-h-0 overflow-hidden transform transition-all duration-500
                                   translate-y-1 group-hover:opacity-100 group-hover:max-h-40 group-hover:translate-y-0">
               {{ $item['desc'] }}
