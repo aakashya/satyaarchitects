@@ -44,7 +44,7 @@
   @endphp
 
   <section class="w-full py-16 md:py-24 bg-white">
-    <div class="container mx-auto px-6 mt-10">
+    <div class="container mx-auto px-10 mt-10">
 
       {{-- Heading --}}
       <h1 class="text-center font-semibold tracking-[0.18em] uppercase text-3xl md:text-3xl font-railway">
