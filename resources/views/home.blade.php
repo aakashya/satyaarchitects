@@ -792,7 +792,7 @@
     document.addEventListener("DOMContentLoaded", () => {
   const map = document.querySelector("#company-map");
   const badges = document.querySelectorAll("#company-map .hex-badge");
-  const gapMs = 2000;
+  const gapMs = 1000;
   let started = false;
 
   badges.forEach(b => b.classList.remove("hex-visible"));
