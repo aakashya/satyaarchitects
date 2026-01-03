@@ -122,7 +122,7 @@
     text-transform: uppercase;
     letter-spacing: 0.16em;
     font-size: 10.5px;
-    font-weight: 500;
+    font-weight: 600;
     color: inherit;
     line-height: 1.5;
     text-shadow: 0 1px 4px rgba(255, 255, 255, 0.55);
