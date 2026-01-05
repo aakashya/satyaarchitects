@@ -27,7 +27,7 @@
           craft, and timeless intent.
         </p>
 
-        <p class="text-xs text-white/45">Typically replies within 24 hours.</p>
+        {{-- <p class="text-xs text-white/45">Typically replies within 24 hours.</p> --}}
       </div>
 
       {{-- 2) Visit --}}
