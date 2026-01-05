@@ -7,7 +7,7 @@
   [
   "title" => "Architecture and Design Consultancy",
   "desc" => "Comprehensive architectural and design services delivering functional, sustainable, and cost-effective solutions.",
-  "image" => "infra.jpg",
+  "image" => "architecture.jpg",
   ],
   [
   "title" => "Masterplanning and Urban Design",
@@ -28,17 +28,17 @@
   "title" => "Industrial Design",
   "desc" => "Innovative industrial design services translating ideas into market-ready products. Balancing aesthetics, usability, and manufacturing
   efficiency.",
-  "image" => "industrial.jpg",
+  "image" => "indus.jpg",
   ],
   [
   "title" => "Project Management Consultancy",
   "desc" => "End-to-end project management ensuring timelines, budgets, and quality standards are met. Delivering certainty at every stage.",
-  "image" => "pmc.png",
+  "image" => "pmcs.jpg",
   ],
   [
   "title" => "Workplace Consultancy",
   "desc" => "Strategic workplace planning aligned with organizational goals and workforce needs. Enhancing performance through design.",
-  "image" => "workplace.png",
+  "image" => "workplace.jpg",
   ],
   ];
   @endphp
@@ -63,7 +63,7 @@
         @foreach ($expertiseItems as $item)
         <article class="group relative overflow-hidden shadow-lg">
           {{-- Image --}}
-          <img src="{{ asset('images/expertise/' . $item['image']) }}" alt="{{ $item['title'] }}"
+          <img src="{{ asset('images/expertise/new/' . $item['image']) }}" alt="{{ $item['title'] }}"
             class="h-auto w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
 
           {{-- Dark gradient overlay (bottom only to lift text) --}}
