@@ -43,11 +43,11 @@
   ];
   @endphp
 
-  <section class="w-full py-16 md:py-24 bg-slate-50">
+  <section class="w-full py-16 md:py-24 bg-white">
     <div class="container mx-auto px-12 mt-10">
 
       {{-- Heading --}}
-      <h1 class="text-center font-semibold tracking-[0.18em] uppercase text-3xl md:text-3xl font-railway inline-block border-b-2 border-brand-gold pb-2">
+      <h1 class="text-center font-semibold tracking-[0.18em] uppercase text-3xl md:text-3xl font-railway">
         Our Expertise
       </h1>
 
