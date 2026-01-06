@@ -59,7 +59,7 @@
       </p>
 
       {{-- Grid --}}
-      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 px-40">
         @foreach ($expertiseItems as $item)
         <article class="group relative overflow-hidden shadow-lg h-80">
           {{-- Image --}}
