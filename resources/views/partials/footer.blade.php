@@ -44,7 +44,7 @@
           <a href="tel:01244380570" class="group flex items-center gap-3 text-white/70 transition">
             <span class="h-9 w-9 rounded-full border border-white/10 bg-white/5 flex items-center justify-center
                          transition group-hover:border-sky-400/50 group-hover:bg-sky-400/10">
-              <i class="fas fa-phone-alt text-[13px] text-white/70 transition group-hover:text-sky-400"></i>
+              <i class="fas fa-phone text-[13px] text-white/70 transition group-hover:text-sky-400"></i>
             </span>
             <span class="tracking-wide transition group-hover:text-sky-400">0124-4380570</span>
           </a>
@@ -104,17 +104,13 @@
           </a>
         </div>
 
-        <div class="pt-2 flex">
+        {{-- <div class="pt-2 flex">
           <a href="mailto:info@satyaarchitects.com" class="inline-flex items-center justify-center rounded-xl px-4 py-3 text-sm font-semibold
                     bg-white text-black hover:bg-sky-300 transition shadow-[0_12px_40px_rgba(0,0,0,0.45)]">
             Schedule a Consultation
           </a>
-        </div>
+        </div> --}}
 
-        <div class="pt-1 text-xs text-white/45 space-y-2">
-          <p>For collaborations & consultations.</p>
-          <p class="text-white/35">Mon–Sat • 10:00–18:00</p>
-        </div>
       </div>
 
     </div>

@@ -10,17 +10,16 @@
       <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">Contact</h1>
     </div>
 
-    {{-- Top 3 Info Boxes (white cards + blue accent) --}}
+    {{-- Top 3 Info Boxes --}}
     <div class="mt-10 px-6 lg:px-40">
       <div class="grid gap-6 md:grid-cols-3">
 
         {{-- Address --}}
-        <div class="group rounded-2xl bg-white border border-black/10 shadow-sm hover:shadow-md transition overflow-hidden">
-          <div class="h-1 w-full bg-sky-500"></div>
+        <div class="group rounded-2xl bg-white border border-slate-200 shadow-md hover:shadow-lg transition overflow-hidden">
           <div class="p-6 text-center">
-            <div class="mx-auto h-12 w-12 rounded-2xl bg-sky-50 border border-sky-100 flex items-center justify-center
-                    group-hover:bg-sky-100 transition">
-              <i class="fas fa-map-marker-alt text-lg text-sky-600"></i>
+            <div class="mx-auto h-12 w-12 rounded-2xl bg-brand-gold/15 border border-brand-gold/30 flex items-center justify-center
+                    group-hover:bg-brand-gold/20 transition">
+              <i class="fas fa-map-marker-alt text-lg text-brand-gold"></i>
             </div>
             <p class="mt-3 text-[11px] tracking-[0.28em] uppercase text-black/50">Location</p>
             <p class="mt-2 text-sm leading-relaxed text-black/70">
@@ -32,16 +31,15 @@
         </div>
 
         {{-- Email --}}
-        <div class="group rounded-2xl bg-white border border-black/10 shadow-sm hover:shadow-md transition overflow-hidden">
-          <div class="h-1 w-full bg-sky-500"></div>
+        <div class="group rounded-2xl bg-white border border-slate-200 shadow-md hover:shadow-lg transition overflow-hidden">
           <div class="p-6 text-center">
-            <div class="mx-auto h-12 w-12 rounded-2xl bg-sky-50 border border-sky-100 flex items-center justify-center
-                    group-hover:bg-sky-100 transition">
-              <i class="fas fa-envelope text-lg text-sky-600"></i>
+            <div class="mx-auto h-12 w-12 rounded-2xl bg-brand-gold/15 border border-brand-gold/30 flex items-center justify-center
+                    group-hover:bg-brand-gold/20 transition">
+              <i class="fas fa-envelope text-lg text-brand-gold"></i>
             </div>
             <p class="mt-3 text-[11px] tracking-[0.28em] uppercase text-black/50">Email</p>
             <p class="mt-2 text-sm text-black/70">
-              <a href="mailto:info@satyaarchitects.com" class="hover:text-sky-600 transition">
+              <a href="mailto:info@satyaarchitects.com" class="hover:text-brand-gold transition">
                 info@satyaarchitects.com
               </a>
             </p>
@@ -49,17 +47,16 @@
         </div>
 
         {{-- Phone --}}
-        <div class="group rounded-2xl bg-white border border-black/10 shadow-sm hover:shadow-md transition overflow-hidden">
-          <div class="h-1 w-full bg-sky-500"></div>
+        <div class="group rounded-2xl bg-white border border-slate-200 shadow-md hover:shadow-lg transition overflow-hidden">
           <div class="p-6 text-center">
-            <div class="mx-auto h-12 w-12 rounded-2xl bg-sky-50 border border-sky-100 flex items-center justify-center
-                    group-hover:bg-sky-100 transition">
-              <i class="fas fa-phone-alt text-lg text-sky-600"></i>
+            <div class="mx-auto h-12 w-12 rounded-2xl bg-brand-gold/15 border border-brand-gold/30 flex items-center justify-center
+                    group-hover:bg-brand-gold/20 transition">
+              <i class="fas fa-phone-alt text-lg text-brand-gold"></i>
             </div>
             <p class="mt-3 text-[11px] tracking-[0.28em] uppercase text-black/50">Contact</p>
             <div class="mt-2 text-sm text-black/70 space-y-1">
-              <a href="tel:01244380570" class="block hover:text-sky-600 transition">0124-4380570</a>
-              <a href="tel:9810757750" class="block hover:text-sky-600 transition">9810757750</a>
+              <a href="tel:01244380570" class="block hover:text-brand-gold transition">0124-4380570</a>
+              <a href="tel:9810757750" class="block hover:text-brand-gold transition">9810757750</a>
             </div>
           </div>
         </div>
@@ -90,33 +87,33 @@
           <div class="space-y-2">
             <label class="text-xs tracking-[0.28em] uppercase text-black/50">Full Name</label>
             <input type="text" name="full_name" required placeholder="Your name" class="w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-black placeholder:text-black/35
-                     focus:outline-none focus:ring-2 focus:ring-sky-500/30 focus:border-sky-500/40" />
+                     focus:outline-none focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-gold/40" />
           </div>
 
           <div class="grid gap-4 md:grid-cols-2">
             <div class="space-y-2">
               <label class="text-xs tracking-[0.28em] uppercase text-black/50">Phone</label>
               <input type="tel" name="phone" required placeholder="Your phone number" class="w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-black placeholder:text-black/35
-                       focus:outline-none focus:ring-2 focus:ring-sky-500/30 focus:border-sky-500/40" />
+                       focus:outline-none focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-gold/40" />
             </div>
             <div class="space-y-2">
               <label class="text-xs tracking-[0.28em] uppercase text-black/50">Email</label>
               <input type="email" name="email" required placeholder="you@example.com" class="w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-black placeholder:text-black/35
-                       focus:outline-none focus:ring-2 focus:ring-sky-500/30 focus:border-sky-500/40" />
+                       focus:outline-none focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-gold/40" />
             </div>
           </div>
 
           <div class="space-y-2">
             <label class="text-xs tracking-[0.28em] uppercase text-black/50">Select a Service</label>
             <select name="service" required class="w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-black
-                     focus:outline-none focus:ring-2 focus:ring-sky-500/30 focus:border-sky-500/40">
+                     focus:outline-none focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-gold/40">
               <option value="" disabled selected>Choose one</option>
               <option value="Architecture & Design Consultancy">Architecture and Design Consultancy</option>
               <option value="Masterplanning & Urban Design">Masterplanning and Urban Design</option>
               <option value="Interior & Experiential Design">Interior and Experiential Design</option>
               <option value="Landscape Architecture">Landscape Architecture</option>
               <option value="Industrial Design">Industrial Design</option>
-              <option value="Project Management Consultancy">Project Management Consultancy</option>
+              <option value="project">Project Management Consultancy</option>
               <option value="Workplace Consultancy">Workplace Consultancy</option>
             </select>
           </div>
@@ -125,12 +122,12 @@
             <div class="space-y-2">
               <label class="text-xs tracking-[0.28em] uppercase text-black/50">Date</label>
               <input type="date" name="date" required class="w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-black
-                       focus:outline-none focus:ring-2 focus:ring-sky-500/30 focus:border-sky-500/40" />
+                       focus:outline-none focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-gold/40" />
             </div>
             <div class="space-y-2">
               <label class="text-xs tracking-[0.28em] uppercase text-black/50">Time</label>
               <select name="time" required class="w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-black
-                       focus:outline-none focus:ring-2 focus:ring-sky-500/30 focus:border-sky-500/40">
+                       focus:outline-none focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-gold/40">
                 <option value="" disabled selected>Select a time</option>
                 <option value="10:00">10:00</option>
                 <option value="11:00">11:00</option>
@@ -147,13 +144,13 @@
 
           <div class="space-y-2">
             <label class="text-xs tracking-[0.28em] uppercase text-black/50">Comment</label>
-            <textarea name="comment" rows="4" placeholder="Tell us about your project…" class="w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-black placeholder:text-black/35
-                     focus:outline-none focus:ring-2 focus:ring-sky-500/30 focus:border-sky-500/40"></textarea>
+            <textarea name="comment" rows="4" placeholder="Tell us about your project" class="w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-black placeholder:text-black/35
+                     focus:outline-none focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-gold/40"></textarea>
           </div>
 
           <div class="pt-2 flex items-center justify-end">
             <button type="submit" class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold
-                     bg-black text-white hover:bg-sky-600 transition shadow-sm">
+                     bg-brand-gold text-black hover:bg-black hover:text-white transition shadow-sm">
               Send Request
             </button>
           </div>
@@ -165,3 +162,4 @@
   </div>
 </section>
 @endsection
+
