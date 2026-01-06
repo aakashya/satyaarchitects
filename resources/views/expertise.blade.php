@@ -61,10 +61,10 @@
       {{-- Grid --}}
       <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
         @foreach ($expertiseItems as $item)
-        <article class="group relative overflow-hidden shadow-lg">
+        <article class="group relative overflow-hidden shadow-lg h-80">
           {{-- Image --}}
           <img src="{{ asset('images/expertise/new/' . $item['image']) }}" alt="{{ $item['title'] }}"
-            class="h-auto w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
 
           {{-- Dark gradient overlay (bottom only to lift text) --}}
           <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 via-black/35 to-transparent"></div>
