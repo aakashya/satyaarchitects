@@ -118,30 +118,6 @@
             </select>
           </div>
 
-          <div class="grid gap-4 md:grid-cols-2">
-            <div class="space-y-2">
-              <label class="text-xs tracking-[0.28em] uppercase text-black/50">Date</label>
-              <input type="date" name="date" required class="w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-black
-                       focus:outline-none focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-gold/40" />
-            </div>
-            <div class="space-y-2">
-              <label class="text-xs tracking-[0.28em] uppercase text-black/50">Time</label>
-              <select name="time" required class="w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-black
-                       focus:outline-none focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-gold/40">
-                <option value="" disabled selected>Select a time</option>
-                <option value="10:00">10:00</option>
-                <option value="11:00">11:00</option>
-                <option value="12:00">12:00</option>
-                <option value="13:00">13:00</option>
-                <option value="14:00">14:00</option>
-                <option value="15:00">15:00</option>
-                <option value="16:00">16:00</option>
-                <option value="17:00">17:00</option>
-                <option value="18:00">18:00</option>
-              </select>
-            </div>
-          </div>
-
           <div class="space-y-2">
             <label class="text-xs tracking-[0.28em] uppercase text-black/50">Comment</label>
             <textarea name="comment" rows="4" placeholder="Tell us about your project" class="w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-black placeholder:text-black/35
