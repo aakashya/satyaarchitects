@@ -61,7 +61,7 @@
       {{-- Grid --}}
       <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 px-5">
         @foreach ($expertiseItems as $item)
-        <article class="group relative overflow-hidden shadow-lg h-80">
+        <article class="group relative overflow-hidden shadow-lg h-96">
           {{-- Image --}}
           <img src="{{ asset('images/expertise/new/' . $item['image']) }}" alt="{{ $item['title'] }}"
             class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
