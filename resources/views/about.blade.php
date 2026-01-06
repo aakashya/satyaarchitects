@@ -2,12 +2,12 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="bg-white text-black">
+<section class="bg-slate-50 text-black">
   <div class="container mx-auto px-6 py-16 lg:py-24">
 
     {{-- Header (center) --}}
     <div class="text-center">
-      <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">Contact</h1>
+      <h1 class="text-center font-semibold tracking-[0.18em] uppercase text-3xl md:text-3xl font-railway inline-block border-b-2 border-brand-gold pb-2">Contact</h1>
     </div>
 
     {{-- Top 3 Info Boxes --}}
@@ -113,7 +113,7 @@
               <option value="Interior & Experiential Design">Interior and Experiential Design</option>
               <option value="Landscape Architecture">Landscape Architecture</option>
               <option value="Industrial Design">Industrial Design</option>
-              <option value="project">Project Management Consultancy</option>
+              <option value="Project Management Consultancy">Project Management Consultancy</option>
               <option value="Workplace Consultancy">Workplace Consultancy</option>
             </select>
           </div>

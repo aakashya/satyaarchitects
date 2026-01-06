@@ -3,7 +3,7 @@
 @section('title', 'Projects | Satya Architects')
 
 @section('content')
-<section id="projects" class="pt-32 pb-20 min-h-screen">
+<section id="projects" class="pt-32 pb-20 min-h-screen bg-slate-50">
   @php
     $projects = [
       [
@@ -70,7 +70,7 @@
 
   <div class="container mx-auto px-6">
     <div class="text-center">
-      <h1 class="text-4xl font-serif font-bold text-slate-900 mb-12 border-b-2 border-brand-gold inline-block pb-2">Our Projects</h1>
+      <h1 class="text-center font-semibold tracking-[0.18em] uppercase text-3xl md:text-3xl font-railway text-slate-900 mb-12 border-b-2 border-brand-gold inline-block pb-2">Our Projects</h1>
     </div>
 
     <div class="max-w-4xl mx-auto mb-12">
