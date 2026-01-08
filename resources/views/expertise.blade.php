@@ -45,12 +45,13 @@
 
   <section class="w-full py-16 md:py-24 bg-white">
     <div class="container mx-auto px-12 mt-10">
-
-      {{-- Heading --}}
-      <h1 class="text-center font-semibold tracking-[0.18em] uppercase text-3xl md:text-3xl font-railway">
-        Our Expertise
-      </h1>
-
+      <div class="text-center">
+        {{-- Heading --}}
+        <h1
+          class="text-center font-semibold tracking-[0.18em] uppercase text-3xl md:text-3xl font-railway text-slate-900 border-b-2 border-brand-gold inline-block pb-2">
+          Our Expertise
+        </h1>
+      </div>
       {{-- Intro text --}}
       <p class="mt-7 text-center text-sm md:text-base text-gray-600 max-w-6xl mx-auto leading-relaxed font-century">
         Every project begins with an idea and evolves through collaboration. We focus on clarity,

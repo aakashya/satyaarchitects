@@ -5,67 +5,51 @@
 @section('content')
 <section id="projects" class="pt-32 pb-20 min-h-screen bg-slate-50">
   @php
-    $projects = [
-      [
-        'name' => 'INFRA ONE TOWNSHIP',
-        'type' => 'Urban Design',
-        'location' => 'Rohtak',
-        'image' => asset('images/hero/nn/01.jpg'),
-        'url' => url('/projects/infra-one-township-rohtak'),
-      ],
-      [
-        'name' => 'SJ HOUSING',
-        'type' => 'High Rise',
-        'location' => 'Gurgaon',
-        'image' => asset('images/hero/nn/02.jpg'),
-        'url' => url('/projects/sj-housing-gurgaon'),
-      ],
-      [
-        'name' => 'INTERNATIONAL EXPERIENTIAL SCHOOL',
-        'type' => 'Education',
-        'location' => 'Gurgaon',
-        'image' => asset('images/hero/nn/03.jpg'),
-        'url' => url('/projects/international-experiential-school-gurgaon'),
-      ],
-      [
-        'name' => 'FUTURISTIC THINKING',
-        'type' => 'Holistic Approach',
-        'location' => 'Concept',
-        'image' => asset('images/hero/nn/04.jpg'),
-        'url' => url('/projects/futuristic-thinking'),
-      ],
-      [
-        'name' => 'SAGA CASTLE',
-        'type' => 'Commercial',
-        'location' => 'Bhiwadi',
-        'image' => asset('images/hero/nn/05.jpg'),
-        'url' => url('/projects/saga-castle-bhiwadi'),
-      ],
-      [
-        'name' => 'FOOD PARK',
-        'type' => 'Masterplanning',
-        'location' => 'Meghalaya',
-        'image' => asset('images/hero/nn/06.png'),
-        'url' => url('/projects/food-park-meghalaya'),
-      ],
-      [
-        'name' => 'SHOPPING MALL',
-        'type' => 'Commercial',
-        'location' => 'India',
-        'image' => asset('images/hero/nn/07.jpg'),
-        'url' => url('/projects/shopping-mall'),
-      ],
-      [
-        'name' => 'SHUBHANGAN',
-        'type' => 'Masterplanning',
-        'location' => 'Panipat',
-        'image' => asset('images/hero/nn/08.jpg'),
-        'url' => url('/projects/shubhangan-panipat'),
-      ],
+    use Illuminate\Support\Facades\File;
+    use Illuminate\Support\Str;
+
+    $projectBase = public_path('images/projects');
+    $chipColors = [
+      'linear-gradient(135deg,#0ea5e9,#1d4ed8)',
+      'linear-gradient(135deg,#f59e0b,#d97706)',
+      'linear-gradient(135deg,#10b981,#047857)',
+      'linear-gradient(135deg,#a855f7,#7c3aed)',
+      'linear-gradient(135deg,#f97316,#ea580c)',
+      'linear-gradient(135deg,#ef4444,#b91c1c)',
+      'linear-gradient(135deg,#14b8a6,#0f766e)',
     ];
 
-    $projectTypes = collect($projects)->pluck('type')->unique()->values();
-    $projectLocations = collect($projects)->pluck('location')->unique()->values();
+    $rawCategories = collect(File::directories($projectBase))->values();
+    $categories = $rawCategories->map(function ($path, $index) use ($chipColors) {
+      $folder = basename($path);
+      $label = preg_replace('/^\\d+\\.\\s*/', '', $folder);
+      return [
+        'label' => $label,
+        'slug' => Str::slug($label),
+        'folder' => $folder,
+        'color' => $chipColors[$index % count($chipColors)],
+      ];
+    });
+
+    $projects = collect(File::allFiles($projectBase))
+      ->filter(fn($file) => in_array(strtolower($file->getExtension()), ['jpg', 'jpeg', 'png', 'webp']))
+      ->map(function ($file) {
+        $folder = basename($file->getPath());
+        $category = preg_replace('/^\\d+\\.\\s*/', '', $folder);
+        $slug = Str::slug($category);
+        $filename = pathinfo($file->getFilename(), PATHINFO_FILENAME);
+        [$name, $location] = array_pad(array_map('trim', explode(',', $filename, 2)), 2, '');
+
+        return [
+          'name' => $name ?: $filename,
+          'location' => $location ?: $category,
+          'category' => $category,
+          'slug' => $slug,
+          'image' => asset('images/projects/' . $folder . '/' . $file->getFilename()),
+        ];
+      })
+      ->sortBy('name')
+      ->values();
   @endphp
 
   <div class="container mx-auto px-6">
@@ -73,36 +57,26 @@
       <h1 class="text-center font-semibold tracking-[0.18em] uppercase text-3xl md:text-3xl font-railway text-slate-900 mb-12 border-b-2 border-brand-gold inline-block pb-2">Our Projects</h1>
     </div>
 
-    <div class="max-w-4xl mx-auto mb-12">
-      <div class="flex flex-col md:flex-row gap-4 items-center justify-center bg-white/70 backdrop-blur-lg border border-slate-200/70 rounded-2xl px-6 py-4 shadow-lg">
-        <div class="flex flex-col w-full md:w-1/2">
-          <label for="filter-type" class="text-xs uppercase tracking-[0.2em] text-slate-500 mb-1">Type</label>
-          <select id="filter-type"
-            class="w-full bg-white border border-slate-200 rounded-lg px-4 py-2.5 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-gold/70 focus:border-brand-gold/70 shadow-sm">
-            <option value="all">All</option>
-            @foreach ($projectTypes as $type)
-              <option value="{{ $type }}">{{ $type }}</option>
-            @endforeach
-          </select>
-        </div>
-        <div class="flex flex-col w-full md:w-1/2">
-          <label for="filter-location" class="text-xs uppercase tracking-[0.2em] text-slate-500 mb-1">Location</label>
-          <select id="filter-location"
-            class="w-full bg-white border border-slate-200 rounded-lg px-4 py-2.5 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-gold/70 focus:border-brand-gold/70 shadow-sm">
-            <option value="all">All</option>
-            @foreach ($projectLocations as $location)
-              <option value="{{ $location }}">{{ $location }}</option>
-            @endforeach
-          </select>
-        </div>
+    <div class="max-w-5xl mx-auto mb-12">
+      <div class="flex flex-wrap justify-center gap-3">
+        <button type="button" data-category-chip="all"
+          class="chip active px-4 py-2 rounded-full text-xs md:text-sm font-semibold uppercase tracking-[0.15em] text-white shadow"
+          style="background: linear-gradient(135deg,#111827,#1f2937);">All</button>
+        @foreach ($categories as $category)
+          <button type="button" data-category-chip="{{ $category['slug'] }}"
+            class="chip px-4 py-2 rounded-full text-xs md:text-sm font-semibold uppercase tracking-[0.15em] text-white shadow"
+            style="background: {{ $category['color'] }};">
+            {{ $category['label'] }}
+          </button>
+        @endforeach
       </div>
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       @foreach ($projects as $project)
-        <a href="{{ $project['url'] }}" class="group block relative overflow-hidden rounded-xl shadow-md cursor-pointer"
-          data-project-card data-type="{{ $project['type'] }}" data-location="{{ $project['location'] }}">
-          <img src="{{ $project['image'] }}" class="w-full h-auto object-cover transform group-hover:scale-110 transition duration-500"
+        <div class="group block relative overflow-hidden rounded-xl shadow-md cursor-pointer"
+          data-project-card data-category="{{ $project['slug'] }}">
+          <img src="{{ $project['image'] }}" class="w-full h-80 object-cover transform group-hover:scale-110 transition duration-500"
             alt="{{ $project['name'] }}">
           <div
             class="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 via-black/60 to-transparent transition duration-300">
@@ -110,7 +84,7 @@
           <div class="absolute inset-x-0 bottom-0 p-5 flex items-end justify-between gap-3">
             <div>
               <p class="text-xs uppercase tracking-[0.2em] text-white/80"
-                style="text-shadow:0 10px 20px rgba(0,0,0,0.7)">{{ $project['type'] }}</p>
+                style="text-shadow:0 10px 20px rgba(0,0,0,0.7)">{{ $project['category'] }}</p>
               <h3 class="text-xl font-semibold text-white leading-tight mt-1"
                 style="text-shadow:0 18px 36px rgba(0,0,0,0.7)">{{ $project['name'] }}</h3>
             </div>
@@ -118,7 +92,7 @@
               class="px-3 py-1 rounded-full text-[11px] uppercase tracking-wide bg-white/10 text-white/90 backdrop-blur-sm border border-white/15"
               style="text-shadow:0 14px 28px rgba(0,0,0,0.55)">{{ $project['location'] }}</span>
           </div>
-        </a>
+        </div>
       @endforeach
     </div>
   </div>
@@ -126,23 +100,22 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const typeFilter = document.getElementById('filter-type');
-    const locationFilter = document.getElementById('filter-location');
+    const chips = document.querySelectorAll('[data-category-chip]');
     const cards = document.querySelectorAll('[data-project-card]');
 
-    function applyFilters() {
-      const typeValue = typeFilter.value;
-      const locationValue = locationFilter.value;
+    chips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        const target = chip.dataset.categoryChip;
 
-      cards.forEach((card) => {
-        const matchesType = typeValue === 'all' || card.dataset.type === typeValue;
-        const matchesLocation = locationValue === 'all' || card.dataset.location === locationValue;
-        card.classList.toggle('hidden', !(matchesType && matchesLocation));
+        chips.forEach(c => c.classList.remove('ring-2', 'ring-white/80', 'ring-offset-2', 'ring-offset-slate-50'));
+        chip.classList.add('ring-2', 'ring-white/80', 'ring-offset-2', 'ring-offset-slate-50');
+
+        cards.forEach((card) => {
+          const isMatch = target === 'all' || card.dataset.category === target;
+          card.classList.toggle('hidden', !isMatch);
+        });
       });
-    }
-
-    typeFilter.addEventListener('change', applyFilters);
-    locationFilter.addEventListener('change', applyFilters);
+    });
   });
 </script>
 @endsection
