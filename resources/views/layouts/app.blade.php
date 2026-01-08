@@ -242,6 +242,10 @@
     const heroTagsContainer = document.getElementById('hero-tags');
     const progressBars = document.querySelectorAll('.hero-progress-inner');
     const progressTracks = document.querySelectorAll('.hero-progress-track');
+    const workCards = document.querySelectorAll('[data-work-card]');
+    const workTooltip = document.getElementById('work-tooltip');
+    const workTooltipTitle = document.getElementById('work-tooltip-title');
+    const workTooltipMeta = document.getElementById('work-tooltip-meta');
     const heroPrevBtn = document.getElementById('hero-prev');
     const heroNextBtn = document.getElementById('hero-next');
 
@@ -387,6 +391,35 @@
                 goToSlide(index);
                 startTimer(); // restart timer from this slide
             });
+        });
+    }
+
+    // Work card hover tooltip
+    if (workCards.length && workTooltip) {
+        const showTooltip = (e) => {
+            const card = e.currentTarget;
+            workTooltipTitle.textContent = card.dataset.workTitle || '';
+            workTooltipMeta.textContent = card.dataset.workMeta || '';
+            workTooltip.classList.remove('hidden');
+            const offsetX = 16;
+            const offsetY = 16;
+            workTooltip.style.left = `${e.clientX + offsetX}px`;
+            workTooltip.style.top = `${e.clientY + offsetY}px`;
+        };
+        const moveTooltip = (e) => {
+            const offsetX = 16;
+            const offsetY = 16;
+            workTooltip.style.left = `${e.clientX + offsetX}px`;
+            workTooltip.style.top = `${e.clientY + offsetY}px`;
+        };
+        const hideTooltip = () => {
+            workTooltip.classList.add('hidden');
+        };
+
+        workCards.forEach(card => {
+            card.addEventListener('mouseenter', showTooltip);
+            card.addEventListener('mousemove', moveTooltip);
+            card.addEventListener('mouseleave', hideTooltip);
         });
     }
 

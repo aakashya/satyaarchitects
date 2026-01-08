@@ -518,10 +518,10 @@
         <div class="relative">
           <div id="timeline-track" class="flex gap-6 overflow-hidden pb-4">
             @foreach ($selectedWork as $work)
-              <div class="relative flex-none w-[300px] sm:w-[340px] lg:w-[400px]">
+              <div class="relative flex-none" data-work-card data-work-title="{{ $work['title'] }}" data-work-meta="{{ $work['meta'] }}">
                 <div class="group relative overflow-hidden rounded-xl h-72 md:h-80">
                   <img src="{{ asset($work['image']) }}" alt="{{ $work['alt'] }}" loading="lazy" decoding="async"
-                    class="timeline-card-image w-full h-64 md:h-72 lg:h-80 object-cover group-hover:scale-[1.03] transition duration-500" />
+                    class="timeline-card-image h-64 md:h-72 lg:h-80 w-auto max-w-none mx-auto object-contain group-hover:scale-[1.03] transition duration-500" />
 
                   {{-- Hover dialog --}}
                   <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
@@ -545,6 +545,10 @@
             @endforeach
 
           </div>
+        </div>
+        <div id="work-tooltip" class="hidden pointer-events-none fixed z-50 bg-white text-slate-900 text-xs sm:text-sm rounded-lg shadow-2xl shadow-black/30 border border-brand-gold/60 px-3 py-2">
+          <div id="work-tooltip-title" class="font-semibold"></div>
+          <div id="work-tooltip-meta" class="text-[11px] text-slate-600"></div>
         </div>
         <div class="mt-2">
           <input id="timeline-range" type="range" min="0" max="100" value="0" step="1" class="w-full timeline-range">
