@@ -62,7 +62,7 @@
       </p> --}}
     </div>
 
-    <div class="max-w-4xl mx-auto mb-12 mt-12">
+    <div class="max-w-4xl mx-auto mb-12">
       {{-- Original gradient chip filter (commented out) --}}
       {{-- <div class="flex flex-wrap justify-center gap-3"> ... </div> --}}
 
