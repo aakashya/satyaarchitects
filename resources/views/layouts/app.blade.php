@@ -242,6 +242,8 @@
     const heroTagsContainer = document.getElementById('hero-tags');
     const progressBars = document.querySelectorAll('.hero-progress-inner');
     const progressTracks = document.querySelectorAll('.hero-progress-track');
+    const heroPrevBtn = document.getElementById('hero-prev');
+    const heroNextBtn = document.getElementById('hero-next');
 
     // Data for each slide: project name + tags
     const slideMeta = [
@@ -360,6 +362,21 @@
         // Init first slide and timer
         goToSlide(0);
         startTimer();
+    }
+
+    // Manual navigation buttons
+    if (heroPrevBtn && heroNextBtn) {
+        heroPrevBtn.addEventListener('click', () => {
+            const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+            goToSlide(prevIndex);
+            startTimer();
+        });
+
+        heroNextBtn.addEventListener('click', () => {
+            const nextIndex = (currentSlide + 1) % slides.length;
+            goToSlide(nextIndex);
+            startTimer();
+        });
     }
 
     // Make progress bars clickable (use track, not inner bar)

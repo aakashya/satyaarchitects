@@ -43,7 +43,7 @@
   ];
   @endphp
 
-  <section class="w-full py-16 md:py-24 bg-white">
+  <section class="w-full py-16 md:py-24 bg-slate-50 text-slate-900">
     <div class="container mx-auto px-12 mt-10">
       <div class="text-center">
         {{-- Heading --}}

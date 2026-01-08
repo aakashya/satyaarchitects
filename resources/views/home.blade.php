@@ -331,11 +331,21 @@
     <img src="{{ asset('images/hero/nn/07.jpg') }}" class="hero-slide" alt="SHOPPING MALL">
     <img src="{{ asset('images/hero/nn/08.jpg') }}" class="hero-slide" alt="SHUBHANGAN, PANIPAT">
 
+    <!-- Hero Navigation Arrows -->
+    <button id="hero-prev"
+      class="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-brand-gold transition z-30">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button id="hero-next"
+      class="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-brand-gold transition z-30">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+
     {{-- Center Tagline --}}
     <div class="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
       <p class="hero-tagline text-[10px] sm:text-xs md:text-sm lg:text-[22px]
            tracking-[0.25em] text-white font-publico uppercase text-center px-6">
-        Architecture with Purpose, Designing India’s Future, One Space at a Time
+        Architecture with Purpose, Designing India's Future, One Space at a Time
       </p>
     </div>
 
