@@ -95,7 +95,7 @@
             <div>
               {{-- <p class="text-xs uppercase tracking-[0.2em] text-white/80"
                 style="text-shadow:0 10px 20px rgba(0,0,0,0.7)">{{ $project['category'] }}</p> --}}
-              <h3 class="text-lg uppercase font-semibold text-white leading-tight mt-1"
+              <h3 class="text-[17px] uppercase font-semibold text-white leading-tight mt-1"
                 style="text-shadow:0 18px 36px rgba(0,0,0,0.7)">{{ $project['name'] }}</h3>
             </div>
             <span
