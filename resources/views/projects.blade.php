@@ -84,7 +84,7 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       @foreach ($projects as $project)
-        <div class="group block relative overflow-hidden rounded-xl shadow-md cursor-pointer"
+        <div class="group block relative overflow-hidden shadow-md cursor-pointer"
           data-project-card data-category="{{ $project['slug'] }}">
           <img src="{{ $project['image'] }}" class="w-full h-96 object-cover transform group-hover:scale-110 transition duration-500"
             alt="{{ $project['name'] }}">
