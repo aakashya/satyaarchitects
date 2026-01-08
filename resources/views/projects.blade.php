@@ -93,14 +93,14 @@
           </div>
           <div class="absolute inset-x-0 bottom-0 p-5 flex items-end justify-between gap-3">
             <div>
-              <p class="text-xs uppercase tracking-[0.2em] text-white/80"
-                style="text-shadow:0 10px 20px rgba(0,0,0,0.7)">{{ $project['category'] }}</p>
+              {{-- <p class="text-xs uppercase tracking-[0.2em] text-white/80"
+                style="text-shadow:0 10px 20px rgba(0,0,0,0.7)">{{ $project['category'] }}</p> --}}
               <h3 class="text-lg uppercase font-semibold text-white leading-tight mt-1"
                 style="text-shadow:0 18px 36px rgba(0,0,0,0.7)">{{ $project['name'] }}</h3>
             </div>
-            <span
+            {{-- <span
               class="px-3 py-1 rounded-full text-[11px] uppercase tracking-wide bg-white/10 text-white/90 backdrop-blur-sm border border-white/15"
-              style="text-shadow:0 14px 28px rgba(0,0,0,0.55)">{{ $project['location'] }}</span>
+              style="text-shadow:0 14px 28px rgba(0,0,0,0.55)">{{ $project['location'] }}</span> --}}
           </div>
         </div>
       @endforeach
