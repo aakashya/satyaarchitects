@@ -314,7 +314,7 @@
   <!-- Hero Section with Slideshow -->
   <div id="home-hero" class="relative h-screen w-full overflow-hidden flex items-center justify-center">
     {{-- <div class="absolute inset-0 bg-black/10 z-10"></div> --}}
-    <!-- 🔹 TOP gradient just behind the header -->
+    <!-- ?? TOP gradient just behind the header -->
     <div class="absolute inset-x-0 top-0 h-24 md:h-32
      bg-gradient-to-b from-black/60 via-black/20 to-transparent
      z-10 pointer-events-none">
@@ -332,12 +332,10 @@
     <img src="{{ asset('images/hero/nn/08.jpg') }}" class="hero-slide" alt="SHUBHANGAN, PANIPAT">
 
     <!-- Hero Navigation Arrows -->
-    <button id="hero-prev"
-      class="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-brand-gold transition z-30">
+    <button id="hero-prev" class="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-brand-gold transition z-30">
       <i class="fas fa-chevron-left"></i>
     </button>
-    <button id="hero-next"
-      class="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-brand-gold transition z-30">
+    <button id="hero-next" class="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-brand-gold transition z-30">
       <i class="fas fa-chevron-right"></i>
     </button>
 
@@ -481,10 +479,10 @@
         <div class="relative">
           <div id="timeline-track" class="flex gap-6 overflow-hidden pb-4">
             {{-- Card 1 --}}
-            <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[400px]">
-              <div class="group relative overflow-hidden rounded-xl">
-                <img src="{{ asset('images/slider/dhoot.jpeg') }}" alt="Industrial Campus – Gurgaon" loading="lazy" decoding="async"
-                  class="timeline-card-image w-full h-auto object-contain group-hover:scale-[1.03] transition duration-500" />
+            <div class="relative flex-none min-w-[260px] sm:min-w-[300px] lg:min-w-[380px]">
+              <div class="group relative overflow-hidden rounded-xl h-72 md:h-80">
+                <img src="{{ asset('images/slider/dhoot.jpeg') }}" alt="Industrial Campus - Gurgaon" loading="lazy" decoding="async"
+                  class="timeline-card-image w-full h-64 md:h-72 lg:h-80 object-cover group-hover:scale-[1.03] transition duration-500" />
 
                 {{-- Hover dialog --}}
                 <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
@@ -507,10 +505,10 @@
             </div>
 
             {{-- Card 2 --}}
-            <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[400px]">
-              <div class="group relative overflow-hidden rounded-xl ">
-                <img src="{{ asset('images/slider/forteasia.png') }}" alt="Riverfront Residences – Panipat" loading="lazy" decoding="async"
-                  class="timeline-card-image w-full h-auto object-contain group-hover:scale-[1.03] transition duration-500" />
+            <div class="relative flex-none min-w-[260px] sm:min-w-[300px] lg:min-w-[380px]">
+              <div class="group relative overflow-hidden rounded-xl h-72 md:h-80">
+                <img src="{{ asset('images/slider/forteasia.png') }}" alt="Riverfront Residences - Panipat" loading="lazy" decoding="async"
+                  class="timeline-card-image w-full h-64 md:h-72 lg:h-80 object-cover group-hover:scale-[1.03] transition duration-500" />
 
                 <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
                             opacity-0 group-hover:opacity-100 group-hover:-translate-y-[115%]
@@ -532,10 +530,10 @@
             </div>
 
             {{-- Card 3 --}}
-            <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[400px]">
-              <div class="group relative overflow-hidden rounded-xl ">
-                <img src="{{ asset('images/slider/hub.png') }}" alt="Urban Commercial Plaza – Bhiwadi" loading="lazy" decoding="async"
-                  class="timeline-card-image w-full h-auto object-contain group-hover:scale-[1.03] transition duration-500" />
+            <div class="relative flex-none min-w-[260px] sm:min-w-[300px] lg:min-w-[380px]">
+              <div class="group relative overflow-hidden rounded-xl h-72 md:h-80">
+                <img src="{{ asset('images/slider/hub.png') }}" alt="Urban Commercial Plaza - Bhiwadi" loading="lazy" decoding="async"
+                  class="timeline-card-image w-full h-64 md:h-72 lg:h-80 object-cover group-hover:scale-[1.03] transition duration-500" />
 
                 <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
                             opacity-0 group-hover:opacity-100 group-hover:-translate-y-[115%]
@@ -557,10 +555,10 @@
             </div>
 
             {{-- Card 4 --}}
-            <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[400px]">
-              <div class="group relative overflow-hidden rounded-xl ">
-                <img src="{{ asset('images/slider/sports.png') }}" alt="Experiential Learning Campus – Gurgaon" loading="lazy" decoding="async"
-                  class="timeline-card-image w-full h-auto object-contain group-hover:scale-[1.03] transition duration-500" />
+            <div class="relative flex-none min-w-[260px] sm:min-w-[300px] lg:min-w-[380px]">
+              <div class="group relative overflow-hidden rounded-xl h-72 md:h-80">
+                <img src="{{ asset('images/slider/sports.png') }}" alt="Experiential Learning Campus - Gurgaon" loading="lazy" decoding="async"
+                  class="timeline-card-image w-full h-64 md:h-72 lg:h-80 object-cover group-hover:scale-[1.03] transition duration-500" />
 
                 <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
                             opacity-0 group-hover:opacity-100 group-hover:-translate-y-[115%]
@@ -582,10 +580,10 @@
             </div>
 
             {{-- Card 5 --}}
-            <div class="relative min-w-[230px] sm:min-w-[260px] lg:min-w-[400px]">
-              <div class="group relative overflow-hidden rounded-xl ">
+            <div class="relative flex-none min-w-[260px] sm:min-w-[300px] lg:min-w-[380px]">
+              <div class="group relative overflow-hidden rounded-xl h-72 md:h-80">
                 <img src="{{ asset('images/slider/workkplace.png') }}" alt="Logistics & Warehousing Park – NCR" loading="lazy" decoding="async"
-                  class="timeline-card-image w-full h-auto object-contain group-hover:scale-[1.03] transition duration-500" />
+                  class="timeline-card-image w-full h-64 md:h-72 lg:h-80 object-cover group-hover:scale-[1.03] transition duration-500" />
 
                 <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
                             opacity-0 group-hover:opacity-100 group-hover:-translate-y-[115%]

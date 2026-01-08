@@ -4,46 +4,49 @@
 
 @section('content')
 @php
-  $leaders = [
-    [
-      'name' => 'Aarav Mehta',
-      'role' => 'Founder & Principal Architect',
-      'bio' => 'Leads strategy and design direction across urban, commercial, and experiential projects with a focus on resilient, context-aware architecture.',
-      'image' => 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&auto=format&fit=crop',
-    ],
-    [
-      'name' => 'Diya Kapoor',
-      'role' => 'Design Director',
-      'bio' => 'Drives concept development and interior narratives, aligning materiality, lighting, and user journeys for hospitality and workplace programs.',
-      'image' => 'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=800&auto=format&fit=crop',
-    ],
-    [
-      'name' => 'Karan Sethi',
-      'role' => 'Head of Urban Planning',
-      'bio' => 'Oversees large-scale masterplans, integrating mobility, landscape, and sustainability frameworks across multi-phased developments.',
-      'image' => 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&auto=format&fit=crop',
-    ],
-    [
-      'name' => 'Meera Balasubramaniam',
-      'role' => 'Projects & Delivery Lead',
-      'bio' => 'Champions execution excellence, coordinating consultants, budgets, and build sequencing to uphold design intent on every site.',
-      'image' => 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800&auto=format&fit=crop',
-    ],
-  ];
+$leaders = [
+[
+'name' => 'Aarav Mehta',
+'role' => 'Founder & Principal Architect',
+'bio' => 'Leads strategy and design direction across urban, commercial, and experiential projects with a focus on resilient, context-aware
+architecture.',
+'image' => 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&auto=format&fit=crop',
+],
+[
+'name' => 'Diya Kapoor',
+'role' => 'Design Director',
+'bio' => 'Drives concept development and interior narratives, aligning materiality, lighting, and user journeys for hospitality and workplace
+programs.',
+'image' => 'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=800&auto=format&fit=crop',
+],
+[
+'name' => 'Karan Sethi',
+'role' => 'Head of Urban Planning',
+'bio' => 'Oversees large-scale masterplans, integrating mobility, landscape, and sustainability frameworks across multi-phased developments.',
+'image' => 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&auto=format&fit=crop',
+],
+[
+'name' => 'Meera Balasubramaniam',
+'role' => 'Projects & Delivery Lead',
+'bio' => 'Champions execution excellence, coordinating consultants, budgets, and build sequencing to uphold design intent on every site.',
+'image' => 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800&auto=format&fit=crop',
+],
+];
 
-  $teamGallery = [
-    'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1529333166433-0410f2b3c2ce?w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1200&auto=format&fit=crop',
-  ];
+$teamGallery = [
+'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=1200&auto=format&fit=crop',
+'https://images.unsplash.com/photo-1529333166433-0410f2b3c2ce?w=1200&auto=format&fit=crop',
+'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&auto=format&fit=crop',
+'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&auto=format&fit=crop',
+'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1200&auto=format&fit=crop',
+];
 @endphp
 
 <section class="pt-32 pb-24 bg-slate-50 text-slate-900">
   <div class="container mx-auto px-6">
     <div class="text-center">
-      <h1 class="text-center font-semibold tracking-[0.18em] uppercase text-3xl md:text-3xl font-railway text-slate-900 mb-12 border-b-2 border-brand-gold inline-block pb-2">
+      <h1
+        class="text-center font-semibold tracking-[0.18em] uppercase text-3xl md:text-3xl font-railway text-slate-900 mb-12 border-b-2 border-brand-gold inline-block pb-2">
         Our Team
       </h1>
       <p class="max-w-3xl mx-auto text-sm md:text-base text-slate-600">
@@ -54,23 +57,17 @@
     {{-- Leadership Headshots --}}
     <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
       @foreach ($leaders as $leader)
-        <button type="button"
-          class="group relative w-full overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition"
-          data-leader
-          data-index="{{ $loop->index }}"
-          data-name="{{ $leader['name'] }}"
-          data-role="{{ $leader['role'] }}"
-          data-bio="{{ $leader['bio'] }}"
-          data-image="{{ $leader['image'] }}">
-          <img src="{{ $leader['image'] }}" alt="{{ $leader['name'] }}"
-            class="h-64 w-full object-cover transition duration-500 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-          <div class="absolute bottom-0 inset-x-0 p-4 text-left">
-            {{-- <p class="text-xs uppercase tracking-[0.2em] text-white/80">Leadership</p> --}}
-            <p class="text-lg font-semibold text-white leading-tight">{{ $leader['name'] }}</p>
-            <p class="text-sm text-white/80">{{ $leader['role'] }}</p>
-          </div>
-        </button>
+      <button type="button" class="group relative w-full overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition" data-leader
+        data-index="{{ $loop->index }}" data-name="{{ $leader['name'] }}" data-role="{{ $leader['role'] }}" data-bio="{{ $leader['bio'] }}"
+        data-image="{{ $leader['image'] }}">
+        <img src="{{ $leader['image'] }}" alt="{{ $leader['name'] }}" class="h-64 w-full object-cover transition duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-0 inset-x-0 p-4 text-left">
+          {{-- <p class="text-xs uppercase tracking-[0.2em] text-white/80">Leadership</p> --}}
+          <p class="text-lg font-semibold text-white leading-tight">{{ $leader['name'] }}</p>
+          <p class="text-sm text-white/80">{{ $leader['role'] }}</p>
+        </div>
+      </button>
       @endforeach
     </div>
 
@@ -79,7 +76,8 @@
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
         <div>
           <h2 class="text-xl md:text-2xl font-semibold text-slate-900">Meet the Team</h2>
-          <p class="text-sm text-slate-600 max-w-2xl">Snapshots from our studio floor, site visits, and collaboration sessions that power our work.</p>
+          <p class="text-sm text-slate-600 max-w-2xl">Snapshots from our studio floor, site visits, and collaboration sessions that power our work.
+          </p>
         </div>
         <div class="flex items-center gap-3">
           <button type="button" id="carousel-prev"
@@ -96,10 +94,9 @@
       <div class="relative overflow-hidden rounded-2xl shadow-lg bg-white">
         <div id="team-carousel-track" class="flex transition-transform duration-500 ease-out">
           @foreach ($teamGallery as $image)
-            <div class="min-w-full">
-              <img src="{{ $image }}" alt="Team and office"
-                class="w-full h-[320px] md:h-[420px] object-cover" loading="lazy">
-            </div>
+          <div class="min-w-full">
+            <img src="{{ $image }}" alt="Team and office" class="w-full h-[320px] md:h-[420px] object-cover" loading="lazy">
+          </div>
           @endforeach
         </div>
       </div>
