@@ -5,7 +5,7 @@
     $links = [
     ['label' => 'Our Story', 'route' => 'home'],
     ['label' => 'Expertise', 'route' => 'expertise'],
-    ['label' => 'Studio', 'route' => 'services'],
+    ['label' => 'Team', 'route' => 'team'],
     ['label' => 'Projects', 'route' => 'projects'],
     ['label' => 'Insights', 'route' => 'clients'],
     ['label' => 'Contact Us', 'route' => 'about'],
@@ -21,12 +21,10 @@
       {{-- 1) Brand --}}
       <div class="space-y-5">
         <img src="{{ asset('images/logo/logo2.png') }}" alt="Satya Architects" class="h-16 w-auto object-contain" />
-
         <p class="text-sm leading-relaxed text-white/70 max-w-sm">
           A multidisciplinary studio shaping refined architecture, interiors, and masterplans — built with clarity,
           craft, and timeless intent.
         </p>
-
         {{-- <p class="text-xs text-white/45">Typically replies within 24 hours.</p> --}}
       </div>
 
@@ -41,21 +39,21 @@
         </p>
 
         <div class="space-y-3 text-sm">
-          <a href="tel:01244380570" class="group flex items-center gap-3 text-white/70 transition">
+          <a href="tel:9717676052" class="group flex items-center gap-3 text-white/70 transition">
             <span class="h-9 w-9 rounded-full border border-white/10 bg-white/5 flex items-center justify-center
                          transition group-hover:border-sky-400/50 group-hover:bg-sky-400/10">
               <i class="fas fa-phone text-[13px] text-white/70 transition group-hover:text-sky-400"></i>
             </span>
-            <span class="tracking-wide transition group-hover:text-sky-400">0124-4380570</span>
+            <span class="tracking-wide transition group-hover:text-sky-400">+91 9717676052</span>
           </a>
 
-          <a href="tel:9810757750" class="group flex items-center gap-3 text-white/70 transition">
+          {{-- <a href="tel:9810757750" class="group flex items-center gap-3 text-white/70 transition">
             <span class="h-9 w-9 rounded-full border border-white/10 bg-white/5 flex items-center justify-center
                          transition group-hover:border-sky-400/50 group-hover:bg-sky-400/10">
               <i class="fas fa-mobile-alt text-[14px] text-white/70 transition group-hover:text-sky-400"></i>
             </span>
             <span class="tracking-wide transition group-hover:text-sky-400">9810757750</span>
-          </a>
+          </a> --}}
 
           <a href="mailto:info@satyaarchitects.com" class="group flex items-center gap-3 text-white/70 transition">
             <span class="h-9 w-9 rounded-full border border-white/10 bg-white/5 flex items-center justify-center

@@ -11,8 +11,8 @@
     <div class="hidden md:flex space-x-8 text-base font-railway font-medium tracking-wide uppercase">
       <a href="{{ route('home') }}" class="hover:text-brand-gold transition">OUR STORY</a>
       <a href="{{ route('expertise') }}" class="hover:text-brand-gold transition">EXPERTISE</a>
-      <a href="{{ route('services') }}" class="hover:text-brand-gold transition">STUDIO</a>
       <a href="{{ route('projects') }}" class="hover:text-brand-gold transition">PROJECTS</a>
+      <a href="{{ route('team') }}" class="hover:text-brand-gold transition">TEAM</a>
       <a href="{{ route('clients') }}" class="hover:text-brand-gold transition">INSIGHTS</a>
       <a href="{{ route('about') }}" class="hover:text-brand-gold transition">CONTACT US</a>
     </div>
@@ -29,7 +29,7 @@
       <a href="{{ route('home') }}" class="hover:text-brand-gold">Home</a>
       <a href="{{ route('about') }}" class="hover:text-brand-gold">About Us</a>
       <a href="{{ route('projects') }}" class="hover:text-brand-gold">Projects</a>
-      <a href="{{ route('services') }}" class="hover:text-brand-gold">Services</a>
+      <a href="{{ route('team') }}" class="hover:text-brand-gold">Team</a>
       <a href="{{ route('clients') }}" class="hover:text-brand-gold">Clients</a>
     </div>
   </div>

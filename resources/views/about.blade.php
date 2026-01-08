@@ -2,8 +2,8 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="bg-slate-50 text-black">
-  <div class="container mx-auto px-6 py-16 lg:py-24">
+<section class="pt-32 bg-slate-50 text-black">
+  <div class="container mx-auto px-6">
 
     {{-- Header (center) --}}
     <div class="text-center">
