@@ -516,12 +516,12 @@
           ];
         @endphp
         <div class="relative">
-          <div id="timeline-track" class="flex gap-6 overflow-hidden pb-4">
+          <div id="timeline-track" class="flex gap-6 overflow-hidden pb-4 pr-10">
             @foreach ($selectedWork as $work)
-              <div class="relative flex-none" data-work-card data-work-title="{{ $work['title'] }}" data-work-meta="{{ $work['meta'] }}">
+              <div class="relative flex-none min-w-[300px] sm:min-w-[340px] lg:min-w-[400px]" data-work-card data-work-title="{{ $work['title'] }}" data-work-meta="{{ $work['meta'] }}">
                 <div class="group relative overflow-hidden rounded-xl h-72 md:h-80">
                   <img src="{{ asset($work['image']) }}" alt="{{ $work['alt'] }}" loading="lazy" decoding="async"
-                    class="timeline-card-image h-64 md:h-72 lg:h-80 w-auto max-w-none mx-auto object-contain group-hover:scale-[1.03] transition duration-500" />
+                    class="timeline-card-image w-full h-64 md:h-72 lg:h-80 object-cover group-hover:scale-[1.03] transition duration-500" />
 
                   {{-- Hover dialog --}}
                   <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
@@ -543,6 +543,7 @@
                 </div>
               </div>
             @endforeach
+            <div class="flex-none min-w-[300px] sm:min-w-[340px] lg:min-w-[400px]"></div>
 
           </div>
         </div>
