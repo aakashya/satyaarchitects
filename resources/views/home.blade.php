@@ -475,139 +475,77 @@
           </p>
         </div>
 
-        {{-- Timeline Track --}}
+                {{-- Timeline Track --}}
+        @php
+          $selectedWork = [
+            [
+              'image' => 'images/slider/dhoot.jpeg',
+              'title' => 'Industrial Campus - Gurgaon',
+              'meta' => '2014 - Gurgaon, Haryana',
+              'tags' => 'Industrial - Masterplanning',
+              'alt' => 'Industrial Campus - Gurgaon',
+            ],
+            [
+              'image' => 'images/slider/forteasia.png',
+              'title' => 'Riverfront Residences - Panipat',
+              'meta' => '2016 - Panipat, Haryana',
+              'tags' => 'Residential - Group Housing',
+              'alt' => 'Riverfront Residences - Panipat',
+            ],
+            [
+              'image' => 'images/slider/hub.png',
+              'title' => 'Urban Commercial Plaza - Bhiwadi',
+              'meta' => '2018 - Bhiwadi, Rajasthan',
+              'tags' => 'Retail - Commercial',
+              'alt' => 'Urban Commercial Plaza - Bhiwadi',
+            ],
+            [
+              'image' => 'images/slider/sports.png',
+              'title' => 'Experiential Learning Campus - Gurgaon',
+              'meta' => '2020 - Gurgaon, Haryana',
+              'tags' => 'Institutional - Education',
+              'alt' => 'Experiential Learning Campus - Gurgaon',
+            ],
+            [
+              'image' => 'images/slider/workkplace.png',
+              'title' => 'Logistics & Warehousing Park - NCR',
+              'meta' => '2022 - NCR Region, India',
+              'tags' => 'Industrial - Warehousing',
+              'alt' => 'Logistics & Warehousing Park - NCR',
+            ],
+          ];
+        @endphp
         <div class="relative">
           <div id="timeline-track" class="flex gap-6 overflow-hidden pb-4">
-            {{-- Card 1 --}}
-            <div class="relative flex-none min-w-[260px] sm:min-w-[300px] lg:min-w-[380px]">
-              <div class="group relative overflow-hidden rounded-xl h-72 md:h-80">
-                <img src="{{ asset('images/slider/dhoot.jpeg') }}" alt="Industrial Campus - Gurgaon" loading="lazy" decoding="async"
-                  class="timeline-card-image w-full h-64 md:h-72 lg:h-80 object-cover group-hover:scale-[1.03] transition duration-500" />
+            @foreach ($selectedWork as $work)
+              <div class="relative flex-none w-[300px] sm:w-[340px] lg:w-[400px]">
+                <div class="group relative overflow-hidden rounded-xl h-72 md:h-80">
+                  <img src="{{ asset($work['image']) }}" alt="{{ $work['alt'] }}" loading="lazy" decoding="async"
+                    class="timeline-card-image w-full h-64 md:h-72 lg:h-80 object-cover group-hover:scale-[1.03] transition duration-500" />
 
-                {{-- Hover dialog --}}
-                <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
-                            opacity-0 group-hover:opacity-100 group-hover:-translate-y-[115%]
-                            transition duration-300 ease-out z-30">
-                  <div class="bg-white text-slate-900 text-xs sm:text-sm rounded-xl shadow-2xl shadow-black/40
-                              border border-brand-gold/70 px-4 py-3 min-w-[220px]">
-                    <div class="text-[10px] uppercase tracking-[0.22em] text-slate-500 mb-1">
-                      2014 · Gurgaon, Haryana
-                    </div>
-                    <div class="font-semibold whitespace-nowrap overflow-hidden text-ellipsis mb-1">
-                      Industrial Campus – Gurgaon
-                    </div>
-                    <div class="text-[11px] text-slate-600">
-                      Industrial · Masterplanning
+                  {{-- Hover dialog --}}
+                  <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
+                              opacity-0 group-hover:opacity-100 group-hover:-translate-y-[115%]
+                              transition duration-300 ease-out z-30">
+                    <div class="bg-white text-slate-900 text-xs sm:text-sm rounded-xl shadow-2xl shadow-black/40
+                                border border-brand-gold/70 px-4 py-3 min-w-[220px]">
+                      <div class="text-[10px] uppercase tracking-[0.22em] text-slate-500 mb-1">
+                        {{ $work['meta'] }}
+                      </div>
+                      <div class="font-semibold whitespace-nowrap overflow-hidden text-ellipsis mb-1">
+                        {{ $work['title'] }}
+                      </div>
+                      <div class="text-[11px] text-slate-600">
+                        {{ $work['tags'] }}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-
-            {{-- Card 2 --}}
-            <div class="relative flex-none min-w-[260px] sm:min-w-[300px] lg:min-w-[380px]">
-              <div class="group relative overflow-hidden rounded-xl h-72 md:h-80">
-                <img src="{{ asset('images/slider/forteasia.png') }}" alt="Riverfront Residences - Panipat" loading="lazy" decoding="async"
-                  class="timeline-card-image w-full h-64 md:h-72 lg:h-80 object-cover group-hover:scale-[1.03] transition duration-500" />
-
-                <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
-                            opacity-0 group-hover:opacity-100 group-hover:-translate-y-[115%]
-                            transition duration-300 ease-out z-30">
-                  <div class="bg-white text-slate-900 text-xs sm:text-sm rounded-xl shadow-2xl shadow-black/40
-                              border border-brand-gold/70 px-4 py-3 min-w-[220px]">
-                    <div class="text-[10px] uppercase tracking-[0.22em] text-slate-500 mb-1">
-                      2016 · Panipat, Haryana
-                    </div>
-                    <div class="font-semibold whitespace-nowrap overflow-hidden text-ellipsis mb-1">
-                      Riverfront Residences – Panipat
-                    </div>
-                    <div class="text-[11px] text-slate-600">
-                      Residential · Group Housing
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {{-- Card 3 --}}
-            <div class="relative flex-none min-w-[260px] sm:min-w-[300px] lg:min-w-[380px]">
-              <div class="group relative overflow-hidden rounded-xl h-72 md:h-80">
-                <img src="{{ asset('images/slider/hub.png') }}" alt="Urban Commercial Plaza - Bhiwadi" loading="lazy" decoding="async"
-                  class="timeline-card-image w-full h-64 md:h-72 lg:h-80 object-cover group-hover:scale-[1.03] transition duration-500" />
-
-                <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
-                            opacity-0 group-hover:opacity-100 group-hover:-translate-y-[115%]
-                            transition duration-300 ease-out z-30">
-                  <div class="bg-white text-slate-900 text-xs sm:text-sm rounded-xl shadow-2xl shadow-black/40
-                              border border-brand-gold/70 px-4 py-3 min-w-[220px]">
-                    <div class="text-[10px] uppercase tracking-[0.22em] text-slate-500 mb-1">
-                      2018 · Bhiwadi, Rajasthan
-                    </div>
-                    <div class="font-semibold whitespace-nowrap overflow-hidden text-ellipsis mb-1">
-                      Urban Commercial Plaza – Bhiwadi
-                    </div>
-                    <div class="text-[11px] text-slate-600">
-                      Retail · Commercial
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {{-- Card 4 --}}
-            <div class="relative flex-none min-w-[260px] sm:min-w-[300px] lg:min-w-[380px]">
-              <div class="group relative overflow-hidden rounded-xl h-72 md:h-80">
-                <img src="{{ asset('images/slider/sports.png') }}" alt="Experiential Learning Campus - Gurgaon" loading="lazy" decoding="async"
-                  class="timeline-card-image w-full h-64 md:h-72 lg:h-80 object-cover group-hover:scale-[1.03] transition duration-500" />
-
-                <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
-                            opacity-0 group-hover:opacity-100 group-hover:-translate-y-[115%]
-                            transition duration-300 ease-out z-30">
-                  <div class="bg-white text-slate-900 text-xs sm:text-sm rounded-xl shadow-2xl shadow-black/40
-                              border border-brand-gold/70 px-4 py-3 min-w-[220px]">
-                    <div class="text-[10px] uppercase tracking-[0.22em] text-slate-500 mb-1">
-                      2020 · Gurgaon, Haryana
-                    </div>
-                    <div class="font-semibold whitespace-nowrap overflow-hidden text-ellipsis mb-1">
-                      Experiential Learning Campus – Gurgaon
-                    </div>
-                    <div class="text-[11px] text-slate-600">
-                      Institutional · Education
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {{-- Card 5 --}}
-            <div class="relative flex-none min-w-[260px] sm:min-w-[300px] lg:min-w-[380px]">
-              <div class="group relative overflow-hidden rounded-xl h-72 md:h-80">
-                <img src="{{ asset('images/slider/workkplace.png') }}" alt="Logistics & Warehousing Park – NCR" loading="lazy" decoding="async"
-                  class="timeline-card-image w-full h-64 md:h-72 lg:h-80 object-cover group-hover:scale-[1.03] transition duration-500" />
-
-                <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
-                            opacity-0 group-hover:opacity-100 group-hover:-translate-y-[115%]
-                            transition duration-300 ease-out z-30">
-                  <div class="bg-white text-slate-900 text-xs sm:text-sm rounded-xl shadow-2xl shadow-black/40
-                              border border-brand-gold/70 px-4 py-3 min-w-[220px]">
-                    <div class="text-[10px] uppercase tracking-[0.22em] text-slate-500 mb-1">
-                      2022 · NCR Region, India
-                    </div>
-                    <div class="font-semibold whitespace-nowrap overflow-hidden text-ellipsis mb-1">
-                      Logistics &amp; Warehousing Park – NCR
-                    </div>
-                    <div class="text-[11px] text-slate-600">
-                      Industrial · Warehousing
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            @endforeach
 
           </div>
         </div>
-
-        {{-- Range Slider --}}
         <div class="mt-2">
           <input id="timeline-range" type="range" min="0" max="100" value="0" step="1" class="w-full timeline-range">
         </div>
