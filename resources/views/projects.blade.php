@@ -88,9 +88,6 @@
           data-project-card data-category="{{ $project['slug'] }}">
           <img src="{{ $project['image'] }}" class="w-full h-96 object-cover transform group-hover:scale-110 transition duration-500"
             alt="{{ $project['name'] }}">
-          <span
-            class="absolute top-3 right-3 px-3 py-1 rounded-full text-[11px] uppercase tracking-wide bg-white/10 text-white/90 backdrop-blur-sm border border-white/15"
-            style="text-shadow:0 14px 28px rgba(0,0,0,0.55)">{{ $project['location'] }}</span>
           <div
             class="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 via-black/60 to-transparent transition duration-300">
           </div>
@@ -101,6 +98,9 @@
               <h3 class="text-lg uppercase font-semibold text-white leading-tight mt-1"
                 style="text-shadow:0 18px 36px rgba(0,0,0,0.7)">{{ $project['name'] }}</h3>
             </div>
+            <span
+              class="px-3 py-1 rounded-full text-[11px] uppercase tracking-wide bg-white/10 text-white/90 backdrop-blur-sm border border-white/15"
+              style="text-shadow:0 14px 28px rgba(0,0,0,0.55)">{{ $project['location'] }}</span>
           </div>
         </div>
       @endforeach
