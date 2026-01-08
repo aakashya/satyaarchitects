@@ -66,7 +66,7 @@
       {{-- Original gradient chip filter (commented out) --}}
       {{-- <div class="flex flex-wrap justify-center gap-3"> ... </div> --}}
 
-      <div class="flex flex-wrap justify-center gap-4 text-xs md:text-base font-semibold uppercase tracking-[0.15em] font-marcellus">
+      <div class="flex flex-wrap justify-center gap-8 text-xs md:text-base font-semibold uppercase tracking-[0.15em] font-marcellus">
         <button type="button" data-category-chip="all" data-chip-color="#cba135"
           class="chip chip-filter active pb-1 border-b-2 border-brand-gold text-slate-900"
           style="--chip-color:#cba135; color: var(--chip-color);">
