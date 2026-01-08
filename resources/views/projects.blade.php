@@ -55,9 +55,14 @@
   <div class="container mx-auto px-6">
     <div class="text-center">
       <h1 class="text-center font-semibold tracking-[0.18em] uppercase text-3xl md:text-3xl font-railway text-slate-900 mb-12 border-b-2 border-brand-gold inline-block pb-2">Our Projects</h1>
+      <p class="max-w-5xl mx-auto text-sm md:text-base text-slate-600 leading-relaxed">
+        Over the years, Satya Architects has delivered a diverse portfolio across various sectors.
+        Every project represents a dialogue between client vision and design intent—translated into spaces that respond to people, place, and time.
+        This collection showcases our evolution, our expertise, and our commitment to quality at every scale.
+      </p>
     </div>
 
-    <div class="max-w-4xl mx-auto mb-12">
+    <div class="max-w-4xl mx-auto mb-12 mt-12">
       {{-- Original gradient chip filter (commented out) --}}
       {{-- <div class="flex flex-wrap justify-center gap-3"> ... </div> --}}
 
