@@ -1,4 +1,4 @@
-@extends('layouts.app')
+﻿@extends('layouts.app')
 
 @section('title', 'Projects | Satya Architects')
 
@@ -9,57 +9,106 @@
     use Illuminate\Support\Str;
 
     $projectBase = public_path('images/projects');
-    $chipTextColors = [
-      '#0ea5e9',
-      '#f59e0b',
-      '#10b981',
-      '#a855f7',
-      '#f97316',
-      '#ef4444',
-      '#14b8a6',
+    $categoryOrder = [
+      [
+        'label' => 'URBANDESIGN AND TOWNSHIP',
+        'folder' => '01. URBANDESIGN AND TOWNSHIP',
+        'color' => '#0ea5e9',
+      ],
+      [
+        'label' => 'RESIDENTIAL AND HOUSING',
+        'folder' => '02. RESIDENTIAL AND HOUSING',
+        'color' => '#f59e0b',
+      ],
+      [
+        'label' => 'INDUSTRIES',
+        'folder' => '03. INDUSTRIES',
+        'color' => '#10b981',
+      ],
+      [
+        'label' => 'EDUCATION',
+        'folder' => '04. EDUCATION',
+        'color' => '#a855f7',
+      ],
+      [
+        'label' => 'COMMERCIAL',
+        'folder' => '05. COMMERCIAL',
+        'color' => '#f97316',
+      ],
+      [
+        'label' => 'HOSPITALITY',
+        'folder' => '06. HOSPITALITY',
+        'color' => '#ef4444',
+      ],
+      [
+        'label' => 'HEALTHCARE',
+        'folder' => '07. HEALTHCARE',
+        'color' => '#14b8a6',
+      ],
     ];
 
-    $rawCategories = collect(File::directories($projectBase))->values();
-    $categories = $rawCategories->map(function ($path, $index) use ($chipTextColors) {
-      $folder = basename($path);
-      $label = preg_replace('/^\\d+\\.\\s*/', '', $folder);
+    $categories = collect($categoryOrder)->map(function ($category) {
       return [
-        'label' => $label,
-        'slug' => Str::slug($label),
-        'folder' => $folder,
-        'color' => $chipTextColors[$index % count($chipTextColors)],
+        'label' => $category['label'],
+        'slug' => Str::slug($category['label']),
+        'folder' => $category['folder'],
+        'color' => $category['color'],
       ];
     });
 
-    $projects = collect(File::allFiles($projectBase))
-      ->filter(fn($file) => in_array(strtolower($file->getExtension()), ['jpg', 'jpeg', 'png', 'webp']))
-      ->map(function ($file) {
-        $folder = basename($file->getPath());
-        $category = preg_replace('/^\\d+\\.\\s*/', '', $folder);
-        $slug = Str::slug($category);
-        $filename = pathinfo($file->getFilename(), PATHINFO_FILENAME);
-        [$name, $location] = array_pad(array_map('trim', explode(',', $filename, 2)), 2, '');
+    $projectsByCategory = [];
 
-        return [
-          'name' => $name ?: $filename,
-          'location' => $location ?: $category,
-          'category' => $category,
-          'slug' => $slug,
-          'image' => asset('images/projects/' . $folder . '/' . $file->getFilename()),
-        ];
-      })
-      ->sortBy('name')
-      ->values();
+    foreach ($categories as $category) {
+      $folderPath = $projectBase . DIRECTORY_SEPARATOR . $category['folder'];
+      $files = File::exists($folderPath) ? File::files($folderPath) : [];
+
+      $items = collect($files)
+        ->filter(fn($file) => in_array(strtolower($file->getExtension()), ['jpg', 'jpeg', 'png', 'webp']))
+        ->map(function ($file) use ($category) {
+          $filename = pathinfo($file->getFilename(), PATHINFO_FILENAME);
+          $index = 9999;
+
+          if (preg_match('/^(\\d+)\\./', $filename, $match)) {
+            $index = (int) $match[1];
+          } elseif (preg_match('/^0I\\./i', $filename)) {
+            $index = 1;
+          }
+
+          $cleanName = preg_replace('/^(\\d+|0I)\\.\\s*/i', '', $filename);
+          [$name, $location] = array_pad(array_map('trim', explode(',', $cleanName, 2)), 2, '');
+
+          return [
+            'index' => $index,
+            'name' => $name ?: $cleanName,
+            'location' => $location ?: $category['label'],
+            'category' => $category['label'],
+            'slug' => $category['slug'],
+            'image' => asset('images/projects/' . $category['folder'] . '/' . $file->getFilename()),
+          ];
+        })
+        ->sortBy('index')
+        ->values();
+
+      $projectsByCategory[$category['slug']] = $items;
+    }
+
+    $firsts = collect();
+    $rest = collect();
+
+    foreach ($categories as $category) {
+      $items = $projectsByCategory[$category['slug']] ?? collect();
+      if ($items->isNotEmpty()) {
+        $firsts->push($items->first());
+        $rest = $rest->merge($items->slice(1)->values());
+      }
+    }
+
+    $projects = $firsts->merge($rest)->values();
   @endphp
 
   <div class="container mx-auto px-6">
     <div class="text-center">
       <h1 class="text-center font-semibold tracking-[0.18em] uppercase text-3xl md:text-3xl font-railway text-slate-900 mb-12 border-b-2 border-brand-gold inline-block pb-2">Our Projects</h1>
-      {{-- <p class="max-w-5xl mx-auto text-sm md:text-base text-slate-600 leading-relaxed font-century">
-        Over the years, Satya Architects has delivered a diverse portfolio across various sectors. <br>
-        Every project represents a dialogue between client vision and design intent—translated into spaces that respond to people, place, and time.
-        This collection showcases our evolution, our expertise, and our commitment to quality at every scale.
-      </p> --}}
     </div>
 
     <div class="max-w-4xl mx-auto mb-12">
@@ -93,8 +142,6 @@
           </div>
           <div class="absolute inset-x-0 bottom-0 p-5 flex items-end justify-between gap-3">
             <div>
-              {{-- <p class="text-xs uppercase tracking-[0.2em] text-white/80"
-                style="text-shadow:0 10px 20px rgba(0,0,0,0.7)">{{ $project['category'] }}</p> --}}
               <h3 class="text-[17px] uppercase font-semibold text-white leading-tight mt-1"
                 style="text-shadow:0 18px 36px rgba(0,0,0,0.7)">{{ $project['name'] }}</h3>
             </div>
