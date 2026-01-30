@@ -533,7 +533,9 @@
           ];
         @endphp
         <div class="relative">
-          <div id="timeline-track" class="flex gap-6 overflow-hidden pb-4">
+          <div id="timeline-track"
+            class="flex gap-6 pb-4 overflow-x-auto md:overflow-hidden touch-pan-y"
+            style="-webkit-overflow-scrolling: touch; scroll-behavior: smooth;">
             @foreach ($selectedWork as $work)
               <div class="relative flex-none min-w-[260px] sm:min-w-[320px] lg:min-w-[380px]" data-work-card data-work-title="{{ $work['title'] }}" data-work-meta="{{ $work['meta'] }}">
                 <div class="group relative overflow-hidden rounded-xl h-56 sm:h-64 md:h-72 lg:h-80">
