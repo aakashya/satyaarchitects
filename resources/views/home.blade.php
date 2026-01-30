@@ -534,13 +534,13 @@
         @endphp
         <div class="relative">
           <div id="timeline-track"
-            class="flex gap-6 pb-4 overflow-x-auto md:overflow-hidden touch-pan-x snap-x snap-mandatory"
+            class="flex gap-4 sm:gap-6 pb-4 overflow-x-auto touch-pan-x snap-x snap-mandatory"
             style="-webkit-overflow-scrolling: touch; scroll-behavior: smooth;">
             @foreach ($selectedWork as $work)
-              <div class="relative flex-none min-w-[280px] sm:min-w-[320px] lg:min-w-[380px] snap-start shrink-0" data-work-card data-work-title="{{ $work['title'] }}" data-work-meta="{{ $work['meta'] }}">
-                <div class="group relative overflow-hidden rounded-xl h-64 sm:h-72 md:h-80">
+              <div class="relative flex-none w-[82vw] min-w-[82vw] sm:w-[320px] sm:min-w-[320px] lg:min-w-[380px] snap-start shrink-0" data-work-card data-work-title="{{ $work['title'] }}" data-work-meta="{{ $work['meta'] }}">
+                <div class="group relative overflow-hidden rounded-xl aspect-[4/3]">
                   <img src="{{ asset($work['image']) }}" alt="{{ $work['alt'] }}" loading="lazy" decoding="async"
-                    class="timeline-card-image w-full h-full object-contain md:object-cover object-center group-hover:scale-[1.03] transition duration-500" />
+                    class="timeline-card-image w-full h-full object-cover object-center group-hover:scale-[1.03] transition duration-500" />
 
                   {{-- Hover dialog --}}
                   <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
