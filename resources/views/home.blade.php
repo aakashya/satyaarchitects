@@ -61,10 +61,16 @@
     filter: blur(6px);
   } */
 
+  #company-map .hex-cluster {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
   #company-map .hex-badge {
     position: absolute;
-    width: 120px;
-    height: 104px;
+    width: clamp(70px, 12vw, 120px);
+    height: clamp(60px, 10vw, 104px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -100,15 +106,15 @@
   }
 
   #company-map .hex-badge:nth-of-type(2) {
-    --hex-delay: 10s;
+    --hex-delay: 0.25s;
   }
 
   #company-map .hex-badge:nth-of-type(3) {
-    --hex-delay: 20s;
+    --hex-delay: 0.45s;
   }
 
   #company-map .hex-badge:nth-of-type(4) {
-    --hex-delay: 30s;
+    --hex-delay: 1s;
   }
 
 
@@ -121,7 +127,7 @@
     font-family: 'Railway', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.16em;
-    font-size: 11px;
+    font-size: clamp(8px, 2.4vw, 11px);
     font-weight: 500;
     color: inherit;
     line-height: 1.5;
@@ -134,52 +140,52 @@
   }
 
   #company-map .hex-one {
-    top: 0%;
+    top: 2%;
     left: 15%;
   }
 
   #company-map .hex-two {
     top: 20%;
-    left: 6%;
+    left: 8%;
   }
 
   #company-map .hex-three {
-    top: 42%;
-    left: -5%;
+    top: 44%;
+    left: 2%;
   }
 
   #company-map .hex-four {
-    bottom: 12%;
-    left: 4%;
+    bottom: 14%;
+    left: 7%;
   }
 
   #company-map .hex-five {
-    top: 4%;
-    right: -3%;
+    top: 6%;
+    right: 4%;
   }
 
   #company-map .hex-six {
-    top: 22%;
-    right: 7%;
+    top: 24%;
+    right: 9%;
   }
 
   #company-map .hex-seven {
-    bottom: 25%;
-    right: 20%;
+    bottom: 26%;
+    right: 18%;
   }
 
   #company-map .hex-eight {
-    bottom: 5%;
-    right: 38%;
+    bottom: 8%;
+    right: 36%;
   }
 
   #company-map .hex-nine {
-    bottom: 45%;
+    bottom: 46%;
     left: 35%;
   }
 
   #company-map .hex-ten {
-    top: 6%;
+    top: 8%;
     left: 50%;
   }
 
@@ -212,21 +218,24 @@
   }
 
   @media (max-width: 768px) {
+    #company-map .hex-inner {
+      font-size: clamp(7px, 3vw, 9px);
+      letter-spacing: 0.12em;
+      padding: 0.55rem 0.75rem;
+      line-height: 1.3;
+    }
     #company-map .hex-cluster {
-      position: static;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 12px;
+      position: absolute;
+      inset: 0;
+      transform: scale(0.72);
+      transform-origin: center;
     }
 
     #company-map .hex-badge {
-      position: relative;
-      width: 110px;
-      height: 94px;
+      position: absolute;
+      width: clamp(58px, 18vw, 88px);
+      height: clamp(48px, 16vw, 72px);
       inset: auto;
-      animation-delay: var(--hex-delay, 0s), calc(var(--hex-delay, 0s) + 0.35s);
     }
 
     #company-map .hex-one,
@@ -239,11 +248,19 @@
     #company-map .hex-eight,
     #company-map .hex-nine,
     #company-map .hex-ten {
-      top: auto;
-      right: auto;
-      bottom: auto;
-      left: auto;
+      position: absolute;
     }
+
+    #company-map .hex-one { top: 4%; left: 16%; }
+    #company-map .hex-two { top: 21%; left: 10%; }
+    #company-map .hex-three { top: 44%; left: 6%; }
+    #company-map .hex-four { bottom: 12%; left: 10%; }
+    #company-map .hex-five { top: 6%; right: 6%; }
+    #company-map .hex-six { top: 24%; right: 12%; }
+    #company-map .hex-seven { bottom: 24%; right: 18%; }
+    #company-map .hex-eight { bottom: 6%; right: 34%; }
+    #company-map .hex-nine { bottom: 44%; left: 34%; }
+    #company-map .hex-ten { top: 8%; left: 50%; }
   }
 
   /* India map styles */
@@ -463,14 +480,14 @@
         {{-- Heading --}}
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div>
-            <h2 class="text-sm md:text-2xl uppercase tracking-[0.35em] text-brand-gold mb-2">
+            <h2 class="text-2xl md:text-4xl font-semibold uppercase tracking-[0.2em] text-brand-gold mb-3">
               Selected Work
             </h2>
             {{-- <p class="text-2xl md:text-3xl font-serif font-semibold">
               A timeline of key projects
             </p> --}}
           </div>
-          <p class="text-xs md:text-sm text-slate-500 max-w-md font-century">
+          <p class="text-sm md:text-sm text-slate-500 max-w-md font-century">
             Explore a cross-section of industrial, residential and institutional work developed over the years.
           </p>
         </div>
@@ -516,12 +533,12 @@
           ];
         @endphp
         <div class="relative">
-          <div id="timeline-track" class="flex gap-6 overflow-hidden pb-4 pr-10">
+          <div id="timeline-track" class="flex gap-6 overflow-hidden pb-4">
             @foreach ($selectedWork as $work)
-              <div class="relative flex-none min-w-[300px] sm:min-w-[340px] lg:min-w-[400px]" data-work-card data-work-title="{{ $work['title'] }}" data-work-meta="{{ $work['meta'] }}">
-                <div class="group relative overflow-hidden rounded-xl h-72 md:h-80">
+              <div class="relative flex-none min-w-[260px] sm:min-w-[320px] lg:min-w-[380px]" data-work-card data-work-title="{{ $work['title'] }}" data-work-meta="{{ $work['meta'] }}">
+                <div class="group relative overflow-hidden rounded-xl h-56 sm:h-64 md:h-72 lg:h-80">
                   <img src="{{ asset($work['image']) }}" alt="{{ $work['alt'] }}" loading="lazy" decoding="async"
-                    class="timeline-card-image w-full h-64 md:h-72 lg:h-80 object-cover group-hover:scale-[1.03] transition duration-500" />
+                    class="timeline-card-image w-full h-56 sm:h-64 md:h-72 lg:h-80 object-cover group-hover:scale-[1.03] transition duration-500" />
 
                   {{-- Hover dialog --}}
                   <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-3 -translate-y-full
@@ -543,7 +560,6 @@
                 </div>
               </div>
             @endforeach
-            <div class="flex-none min-w-[300px] sm:min-w-[340px] lg:min-w-[400px]"></div>
 
           </div>
         </div>
@@ -564,7 +580,7 @@
   <section class="bg-white py-16">
     <div class="container mx-auto px-6">
       <div class="mb-10 text-center">
-        <h2 class="text-xs md:text-2xl uppercase tracking-[0.35em] text-slate-500 mb-3 font-raleway">
+        <h2 class="text-2xl md:text-4xl font-semibold uppercase tracking-[0.2em] text-slate-500 mb-4 font-raleway">
           Company Overview
         </h2>
         <br>
@@ -815,10 +831,12 @@
 
       const syncScrollToRange = () => {
           const ratio = timelineRange.value / 100;
-          timelineTrack.scrollLeft = maxScroll * ratio;
+          // Snap hard to the end to guarantee the final card is fully visible.
+          timelineTrack.scrollLeft = (ratio >= 0.999) ? maxScroll : maxScroll * ratio;
       };
 
       timelineRange.addEventListener('input', syncScrollToRange);
+      timelineRange.addEventListener('change', syncScrollToRange);
 
       // Scroll horizontally with mouse wheel when cursor is over the timeline
       timelineTrack.addEventListener(
@@ -832,6 +850,7 @@
           { passive: false } // needed so preventDefault() works
       );
 
+      window.addEventListener('load', recalcMaxScroll);
       syncRangeToScroll();
   }
   </script>
