@@ -534,10 +534,10 @@
         @endphp
         <div class="relative">
           <div id="timeline-track"
-            class="flex gap-6 pb-4 overflow-x-auto md:overflow-hidden touch-pan-y"
+            class="flex gap-6 pb-4 overflow-x-auto md:overflow-hidden touch-pan-x snap-x snap-mandatory"
             style="-webkit-overflow-scrolling: touch; scroll-behavior: smooth;">
             @foreach ($selectedWork as $work)
-              <div class="relative flex-none min-w-[260px] sm:min-w-[320px] lg:min-w-[380px]" data-work-card data-work-title="{{ $work['title'] }}" data-work-meta="{{ $work['meta'] }}">
+              <div class="relative flex-none min-w-[260px] sm:min-w-[320px] lg:min-w-[380px] snap-start" data-work-card data-work-title="{{ $work['title'] }}" data-work-meta="{{ $work['meta'] }}">
                 <div class="group relative overflow-hidden rounded-xl h-56 sm:h-64 md:h-72 lg:h-80">
                   <img src="{{ asset($work['image']) }}" alt="{{ $work['alt'] }}" loading="lazy" decoding="async"
                     class="timeline-card-image w-full h-56 sm:h-64 md:h-72 lg:h-80 object-cover group-hover:scale-[1.03] transition duration-500" />
@@ -839,6 +839,8 @@
 
       timelineRange.addEventListener('input', syncScrollToRange);
       timelineRange.addEventListener('change', syncScrollToRange);
+
+      timelineTrack.addEventListener('scroll', syncRangeToScroll, { passive: true });
 
       // Scroll horizontally with mouse wheel when cursor is over the timeline
       timelineTrack.addEventListener(
