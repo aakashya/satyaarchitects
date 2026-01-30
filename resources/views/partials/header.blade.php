@@ -12,8 +12,6 @@
       <a href="{{ route('home') }}" class="hover:text-brand-gold transition">OUR STORY</a>
       <a href="{{ route('expertise') }}" class="hover:text-brand-gold transition">EXPERTISE</a>
       <a href="{{ route('projects') }}" class="hover:text-brand-gold transition">PROJECTS</a>
-      <a href="{{ route('team') }}" class="hover:text-brand-gold transition">TEAM</a>
-      <a href="{{ route('clients') }}" class="hover:text-brand-gold transition">INSIGHTS</a>
       <a href="{{ route('about') }}" class="hover:text-brand-gold transition">CONTACT US</a>
     </div>
 
@@ -24,13 +22,19 @@
   </div>
 
   <!-- Mobile Menu Overlay -->
-  <div id="mobile-menu" class="hidden absolute font-railway top-full left-0 w-full bg-brand-dark text-white p-6 md:hidden shadow-lg">
-    <div class="flex flex-col space-y-4 text-center">
-      <a href="{{ route('home') }}" class="hover:text-brand-gold">Home</a>
-      <a href="{{ route('about') }}" class="hover:text-brand-gold">About Us</a>
-      <a href="{{ route('projects') }}" class="hover:text-brand-gold">Projects</a>
-      <a href="{{ route('team') }}" class="hover:text-brand-gold">Team</a>
-      <a href="{{ route('clients') }}" class="hover:text-brand-gold">Clients</a>
+  <div id="mobile-menu" class="hidden fixed inset-0 z-60 bg-brand-dark/95 text-white font-railway md:hidden">
+    <div class="relative flex h-full flex-col px-6 py-8">
+      <div class="flex justify-end">
+        <button id="mobile-menu-close-button" class="text-3xl leading-none focus:outline-none" aria-label="Close menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="mt-12 flex flex-1 flex-col items-center justify-center gap-8 text-center text-2xl uppercase tracking-[0.3em]">
+        <a href="{{ route('home') }}" class="hover:text-brand-gold transition">Our Story</a>
+        <a href="{{ route('expertise') }}" class="hover:text-brand-gold transition">Expertise</a>
+        <a href="{{ route('projects') }}" class="hover:text-brand-gold transition">Projects</a>
+        <a href="{{ route('about') }}" class="hover:text-brand-gold transition">Contact Us</a>
+      </div>
     </div>
   </div>
 </nav>

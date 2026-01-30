@@ -474,9 +474,27 @@ function setSolidNavbar() {
     // Mobile menu toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuCloseBtn = document.getElementById('mobile-menu-close-button');
     if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', function () {
+        const toggleMobileMenu = (isOpen) => {
+            if (isOpen === true) {
+                mobileMenu.classList.remove('hidden');
+                return;
+            }
+            if (isOpen === false) {
+                mobileMenu.classList.add('hidden');
+                return;
+            }
             mobileMenu.classList.toggle('hidden');
+        };
+
+        mobileMenuBtn.addEventListener('click', () => toggleMobileMenu());
+        if (mobileMenuCloseBtn) {
+            mobileMenuCloseBtn.addEventListener('click', () => toggleMobileMenu(false));
+        }
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => toggleMobileMenu(false));
         });
     }
 });

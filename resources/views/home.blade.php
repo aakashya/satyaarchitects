@@ -416,7 +416,7 @@
         <div class="space-y-10 max-w-2xl">
           {{-- WHO WE ARE --}}
           <div class="space-y-4">
-            <h2 class="text-4xl md:text-4xl font-semibold tracking-tight text-slate-900 font-raleway">
+            <h2 class="text-2xl md:text-4xl font-semibold tracking-tight text-slate-900 font-raleway">
               WHO WE ARE
             </h2><br>
             <p class="text-base md:text-base leading-relaxed text-slate-700 font-century">

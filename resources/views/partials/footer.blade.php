@@ -5,9 +5,7 @@
     $links = [
     ['label' => 'Our Story', 'route' => 'home'],
     ['label' => 'Expertise', 'route' => 'expertise'],
-    ['label' => 'Team', 'route' => 'team'],
     ['label' => 'Projects', 'route' => 'projects'],
-    ['label' => 'Insights', 'route' => 'clients'],
     ['label' => 'Contact Us', 'route' => 'about'],
     ];
 
