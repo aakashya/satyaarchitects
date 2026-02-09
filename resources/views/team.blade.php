@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('title', 'Our Team | Satya Architects')
+@section('meta_description', 'Meet the Satya Architects team of architects, designers, and project leaders delivering high-quality built environments.')
+@section('meta_image', asset('images/hero/nn/02.jpg'))
 
 @section('content')
 @php

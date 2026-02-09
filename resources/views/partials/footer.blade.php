@@ -33,17 +33,17 @@
         <p class="text-sm text-white/60">Follow us on social media</p>
 
         <div class="flex items-center justify-center md:justify-start gap-3">
-          <a href="https://www.instagram.com" target="_blank" rel="noreferrer" class="h-11 w-11 flex items-center justify-center rounded-full border border-white/10 bg-white/5
+          <a href="https://www.instagram.com/satya_architects_" target="_blank" rel="noreferrer" class="h-11 w-11 flex items-center justify-center rounded-full border border-white/10 bg-white/5
                     transition-all duration-200 hover:border-sky-400/60 hover:bg-sky-400/10 hover:text-sky-400">
             <i class="fab fa-instagram text-lg"></i>
           </a>
 
-          <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" class="h-11 w-11 flex items-center justify-center rounded-full border border-white/10 bg-white/5
+          <a href="https://www.linkedin.com/company/satya-architectss/" target="_blank" rel="noreferrer" class="h-11 w-11 flex items-center justify-center rounded-full border border-white/10 bg-white/5
                     transition-all duration-200 hover:border-sky-400/60 hover:bg-sky-400/10 hover:text-sky-400">
             <i class="fab fa-linkedin-in text-lg"></i>
           </a>
 
-          <a href="https://www.facebook.com" target="_blank" rel="noreferrer" class="h-11 w-11 flex items-center justify-center rounded-full border border-white/10 bg-white/5
+          <a href="https://www.facebook.com/SatyaArchitects/" target="_blank" rel="noreferrer" class="h-11 w-11 flex items-center justify-center rounded-full border border-white/10 bg-white/5
                     transition-all duration-200 hover:border-sky-400/60 hover:bg-sky-400/10 hover:text-sky-400">
             <i class="fab fa-facebook-f text-lg"></i>
           </a>

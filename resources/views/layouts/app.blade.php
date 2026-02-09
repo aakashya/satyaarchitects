@@ -4,7 +4,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Satya Architects | Professional Architectural Consultancy')</title>
+    @php
+        $metaTitle = trim($__env->yieldContent('title', 'Satya Architects | Professional Architectural Consultancy'));
+        $metaDescription = trim($__env->yieldContent(
+            'meta_description',
+            'Satya Architects is a Gurugram-based architecture and interior design studio delivering refined residential, commercial, and institutional projects across India.'
+        ));
+        $metaImage = trim($__env->yieldContent('meta_image', asset('images/logo/logo2.png')));
+        $metaUrl = trim($__env->yieldContent('canonical', request()->url()));
+        $metaType = trim($__env->yieldContent('meta_type', 'website'));
+        $siteName = 'Satya Architects';
+        $siteUrl = rtrim(config('app.url') ?: request()->getSchemeAndHttpHost(), '/');
+    @endphp
+
+    <title>{{ $metaTitle }}</title>
+    <meta name="description" content="{{ $metaDescription }}">
+    <link rel="canonical" href="{{ $metaUrl }}">
+    <meta name="robots" content="index,follow">
+
+    <meta property="og:title" content="{{ $metaTitle }}">
+    <meta property="og:description" content="{{ $metaDescription }}">
+    <meta property="og:image" content="{{ $metaImage }}">
+    <meta property="og:url" content="{{ $metaUrl }}">
+    <meta property="og:type" content="{{ $metaType }}">
+    <meta property="og:site_name" content="{{ $siteName }}">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $metaTitle }}">
+    <meta name="twitter:description" content="{{ $metaDescription }}">
+    <meta name="twitter:image" content="{{ $metaImage }}">
+
+    <script type="application/ld+json">
+        {!! json_encode([
+            '@context' => 'https://schema.org',
+            '@graph' => [
+                [
+                    '@type' => 'Organization',
+                    'name' => $siteName,
+                    'url' => $siteUrl,
+                    'logo' => asset('images/logo/logo2.png'),
+                    'sameAs' => [
+                        'https://www.instagram.com/satya_architects_',
+                        'https://www.linkedin.com/company/satya-architectss/',
+                        'https://www.facebook.com/SatyaArchitects/',
+                    ],
+                    'contactPoint' => [
+                        [
+                            '@type' => 'ContactPoint',
+                            'telephone' => '+91-9717676052',
+                            'contactType' => 'customer service',
+                            'areaServed' => 'IN',
+                            'availableLanguage' => ['en'],
+                        ],
+                    ],
+                    'address' => [
+                        '@type' => 'PostalAddress',
+                        'streetAddress' => '80-01, Emaar The Palm Square, Golf Course Extension Road, Sector 66',
+                        'addressLocality' => 'Gurugram',
+                        'addressRegion' => 'Haryana',
+                        'postalCode' => '122102',
+                        'addressCountry' => 'IN',
+                    ],
+                ],
+                [
+                    '@type' => 'WebSite',
+                    'url' => $siteUrl,
+                    'name' => $siteName,
+                    'publisher' => [
+                        '@type' => 'Organization',
+                        'name' => $siteName,
+                    ],
+                ],
+            ],
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5BF3J9MD3P"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-5BF3J9MD3P');
+    </script>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>

@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title', 'Expertise | Satya Architects')
+@section('meta_description', "Explore Satya Architects' expertise in architecture, masterplanning, interiors, landscape, industrial design, and project management.")
+@section('meta_image', asset('images/expertise/new/architecture.jpg'))
+
 @section('content')
 @php
 // Put images in: public/images/expertise/<filename>

@@ -1,6 +1,8 @@
 ﻿@extends('layouts.app')
 
 @section('title', 'Projects | Satya Architects')
+@section('meta_description', 'Browse selected projects by Satya Architects across residential, commercial, industrial, education, hospitality, and healthcare sectors.')
+@section('meta_image', asset('images/slider/forteasia.png'))
 
 @section('content')
 <section id="projects" class="pt-32 pb-20 min-h-screen bg-slate-50">

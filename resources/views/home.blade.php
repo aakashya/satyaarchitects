@@ -1,6 +1,8 @@
 ﻿@extends('layouts.app')
 
 @section('title', 'Satya Architects | Professional Architectural Consultancy')
+@section('meta_description', 'Satya Architects is a Gurugram-based architecture and interior design studio creating refined residential, commercial, industrial, and institutional projects across India.')
+@section('meta_image', asset('images/hero/nn/01.jpg'))
 @push('styles')
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -340,6 +342,7 @@
 @section('content')
 <!-- 1. HOME PAGE -->
 <section id="home">
+  <h1 class="sr-only">Satya Architects</h1>
   <!-- Hero Section with Slideshow -->
   <div id="home-hero" class="relative h-screen w-full overflow-hidden flex items-center justify-center">
     {{-- <div class="absolute inset-0 bg-black/10 z-10"></div> --}}

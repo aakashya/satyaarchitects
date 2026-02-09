@@ -1,6 +1,10 @@
 {{-- resources/views/contact.blade.php --}}
 @extends('layouts.app')
 
+@section('title', 'Contact Us | Satya Architects')
+@section('meta_description', 'Get in touch with Satya Architects for architectural, interior, and planning projects. Visit our Gurugram studio or book a consultation.')
+@section('meta_image', asset('images/hero/nn/03.jpg'))
+
 @section('content')
 <section class="pt-32 pb-20 bg-slate-50 text-black">
   <div class="container mx-auto px-6">

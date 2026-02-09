@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('title', 'Clients | Satya Architects')
+@section('meta_description', 'A selection of clients and collaborators who trust Satya Architects for architecture and design projects across India.')
+@section('meta_image', asset('images/hero/nn/05.jpg'))
 
 @section('content')
 <section id="clients" class="pt-32 pb-20 min-h-screen">

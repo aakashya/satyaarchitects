@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('title', 'Services | Satya Architects')
+@section('meta_description', 'Satya Architects provides architecture, interior design, masterplanning, landscape, and project management services tailored to your project.')
+@section('meta_image', asset('images/hero/nn/06.png'))
 
 @section('content')
 <section id="services" class="pt-32 pb-20 bg-slate-50 min-h-screen">
