@@ -143,6 +143,8 @@
   #company-map .hex-one {
     top: 2%;
     left: 15%;
+    width: clamp(78px, 13vw, 132px);
+    height: clamp(66px, 11vw, 114px);
   }
 
   #company-map .hex-two {
@@ -219,6 +221,10 @@
   }
 
   @media (max-width: 768px) {
+    #company-map .hex-two {
+      display: none;
+    }
+
     #company-map .hex-inner {
       font-size: clamp(7px, 3vw, 9px);
       letter-spacing: 0.12em;
@@ -252,7 +258,12 @@
       position: absolute;
     }
 
-    #company-map .hex-one { top: 4%; left: 16%; }
+    #company-map .hex-one {
+      top: 4%;
+      left: 16%;
+      width: clamp(66px, 20vw, 98px);
+      height: clamp(54px, 17vw, 82px);
+    }
     #company-map .hex-two { top: 21%; left: 10%; }
     #company-map .hex-three { top: 44%; left: 6%; }
     #company-map .hex-four { bottom: 12%; left: 10%; }
