@@ -5,6 +5,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="{{ asset('images/hero/nn/01.jpg') }}">
 
 <style>
   .font-railway {
@@ -339,14 +340,14 @@
 
 
     <!-- Images from /public/images/hero/01–07 -->
-    <img src="{{ asset('images/hero/nn/01.jpg') }}" class="hero-slide active" alt="INFRA ONE TOWNSHIP, ROHTAK">
-    <img src="{{ asset('images/hero/nn/02.jpg') }}" class="hero-slide" alt="SJ HOUSING, GURGAON ">
-    <img src="{{ asset('images/hero/nn/03.jpg') }}" class="hero-slide" alt="INTERNATIONAL EXPERIENTIAL SCHOOL, GURGAON">
-    <img src="{{ asset('images/hero/nn/04.jpg') }}" class="hero-slide" alt="FUTURISTIC THINKING">
-    <img src="{{ asset('images/hero/nn/05.jpg') }}" class="hero-slide" alt="SAGA CASTLE, BHIWADI ">
-    <img src="{{ asset('images/hero/nn/06.png') }}" class="hero-slide" alt="FOOD PARK, MEGHALAYA">
-    <img src="{{ asset('images/hero/nn/07.jpg') }}" class="hero-slide" alt="SHOPPING MALL">
-    <img src="{{ asset('images/hero/nn/08.jpg') }}" class="hero-slide" alt="SHUBHANGAN, PANIPAT">
+    <img src="{{ asset('images/hero/nn/01.jpg') }}" class="hero-slide active" alt="INFRA ONE TOWNSHIP, ROHTAK" loading="eager" decoding="async" fetchpriority="high">
+    <img src="{{ asset('images/hero/nn/02.jpg') }}" class="hero-slide" alt="SJ HOUSING, GURGAON " loading="lazy" decoding="async">
+    <img src="{{ asset('images/hero/nn/03.jpg') }}" class="hero-slide" alt="INTERNATIONAL EXPERIENTIAL SCHOOL, GURGAON" loading="lazy" decoding="async">
+    <img src="{{ asset('images/hero/nn/04.jpg') }}" class="hero-slide" alt="FUTURISTIC THINKING" loading="lazy" decoding="async">
+    <img src="{{ asset('images/hero/nn/05.jpg') }}" class="hero-slide" alt="SAGA CASTLE, BHIWADI " loading="lazy" decoding="async">
+    <img src="{{ asset('images/hero/nn/06.png') }}" class="hero-slide" alt="FOOD PARK, MEGHALAYA" loading="lazy" decoding="async">
+    <img src="{{ asset('images/hero/nn/07.jpg') }}" class="hero-slide" alt="SHOPPING MALL" loading="lazy" decoding="async">
+    <img src="{{ asset('images/hero/nn/08.jpg') }}" class="hero-slide" alt="SHUBHANGAN, PANIPAT" loading="lazy" decoding="async">
 
     <!-- Hero Navigation Arrows -->
     <button id="hero-prev" class="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-brand-gold transition z-30">
