@@ -2,12 +2,12 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="pt-32 bg-slate-50 text-black">
+<section class="pt-32 pb-20 bg-slate-50 text-black">
   <div class="container mx-auto px-6">
 
     {{-- Header (center) --}}
     <div class="text-center">
-      <h1 class="text-center font-semibold tracking-[0.18em] uppercase text-3xl md:text-3xl font-railway inline-block border-b-2 border-brand-gold pb-2">Contact</h1>
+      <h1 class="text-center font-semibold tracking-[0.18em] uppercase text-3xl md:text-3xl font-railway inline-block border-b-2 border-brand-gold pb-2">Contact US</h1>
     </div>
 
     {{-- Top 3 Info Boxes --}}
@@ -51,12 +51,12 @@
           <div class="p-6 text-center">
             <div class="mx-auto h-12 w-12 rounded-2xl bg-brand-gold/15 border border-brand-gold/30 flex items-center justify-center
                     group-hover:bg-brand-gold/20 transition">
-              <i class="fas fa-phone-alt text-lg text-brand-gold"></i>
+              <i class="fas fa-phone text-lg text-brand-gold"></i>
             </div>
             <p class="mt-3 text-[11px] tracking-[0.28em] uppercase text-black/50">Contact</p>
             <div class="mt-2 text-sm text-black/70 space-y-1">
-              <a href="tel:01244380570" class="block hover:text-brand-gold transition">0124-4380570</a>
-              <a href="tel:9810757750" class="block hover:text-brand-gold transition">9810757750</a>
+              <a href="tel:+919717676052" class="block hover:text-brand-gold transition">+91 9717676052</a>
+              <a href="tel:+919810757750" class="block hover:text-brand-gold transition">+91 9810757750</a>
             </div>
           </div>
         </div>

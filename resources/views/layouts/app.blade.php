@@ -19,6 +19,14 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/logo/favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/logo/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/logo/favicon/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('images/logo/favicon/site.webmanifest') }}">
+    <link rel="shortcut icon" href="{{ asset('images/logo/favicon/favicon.ico') }}">
+    <meta name="theme-color" content="#ffffff">
+
     <script>
         tailwind.config = {
             theme: {
