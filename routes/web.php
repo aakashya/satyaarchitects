@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
 
 // Simple view routes for static pages
 Route::view('/', 'home')->name('home');
@@ -9,3 +10,5 @@ Route::view('/expertise', 'expertise')->name('expertise');
 Route::view('/team', 'team')->name('team');
 Route::view('/projects', 'projects')->name('projects');
 Route::view('/clients', 'clients')->name('clients');
+
+Route::post('/about', [ContactController::class, 'submit'])->name('contact.submit');

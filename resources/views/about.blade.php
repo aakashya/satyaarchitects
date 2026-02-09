@@ -83,9 +83,15 @@
 
       {{-- Form (Right) --}}
       <div class="rounded-2xl border border-black/10 bg-white p-6 md:p-8 shadow-sm">
+        @if (session('status'))
+          <div class="mb-4 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800">
+            {{ session('status') }}
+          </div>
+        @endif
+
         <h2 class="text-xl md:text-2xl font-semibold">Book a Consultation</h2>
 
-        <form method="POST" class="mt-6 space-y-5">
+        <form method="POST" action="{{ route('contact.submit') }}" class="mt-6 space-y-5">
           @csrf
 
           <div class="space-y-2">
