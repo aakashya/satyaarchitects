@@ -354,7 +354,7 @@
 
 
     <!-- Images from /public/images/hero/01–07 -->
-    <img src="{{ asset('images/hero/nn/01.jpg') }}" class="hero-slide active" alt="INFRA ONE TOWNSHIP, ROHTAK" loading="eager" decoding="async" fetchpriority="high">
+    <img src="{{ asset('images/hero/c/01_s.webp') }}" class="hero-slide active" alt="INFRA ONE TOWNSHIP, ROHTAK" loading="eager" decoding="async" fetchpriority="high">
     <img src="{{ asset('images/hero/nn/02.jpg') }}" class="hero-slide" alt="SJ HOUSING, GURGAON " loading="lazy" decoding="async">
     <img src="{{ asset('images/hero/nn/03.jpg') }}" class="hero-slide" alt="INTERNATIONAL EXPERIENTIAL SCHOOL, GURGAON" loading="lazy" decoding="async">
     <img src="{{ asset('images/hero/nn/04.jpg') }}" class="hero-slide" alt="FUTURISTIC THINKING" loading="lazy" decoding="async">

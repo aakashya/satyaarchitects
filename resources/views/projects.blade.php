@@ -1,131 +1,26 @@
-﻿@extends('layouts.app')
+@extends('layouts.app')
 
 @section('title', 'Projects | Satya Architects')
 @section('meta_description', 'Browse selected projects by Satya Architects across residential, commercial, industrial, education, hospitality, and healthcare sectors.')
 @section('meta_image', asset('images/slider/forteasia.png'))
 
 @section('content')
-<section id="projects" class="pt-32 pb-20 min-h-screen bg-slate-50">
-  @php
-    use Illuminate\Support\Facades\File;
-    use Illuminate\Support\Str;
-
-    $projectBase = public_path('images/projects');
-    $categoryOrder = [
-      [
-        'label' => 'URBANDESIGN AND TOWNSHIP',
-        'folder' => '01. URBANDESIGN AND TOWNSHIP',
-        'color' => '#0ea5e9',
-      ],
-      [
-        'label' => 'RESIDENTIAL AND HOUSING',
-        'folder' => '02. RESIDENTIAL AND HOUSING',
-        'color' => '#f59e0b',
-      ],
-      [
-        'label' => 'INDUSTRIES',
-        'folder' => '03. INDUSTRIES',
-        'color' => '#10b981',
-      ],
-      [
-        'label' => 'EDUCATION',
-        'folder' => '04. EDUCATION',
-        'color' => '#a855f7',
-      ],
-      [
-        'label' => 'COMMERCIAL',
-        'folder' => '05. COMMERCIAL',
-        'color' => '#f97316',
-      ],
-      [
-        'label' => 'HOSPITALITY',
-        'folder' => '06. HOSPITALITY',
-        'color' => '#ef4444',
-      ],
-      [
-        'label' => 'HEALTHCARE',
-        'folder' => '07. HEALTHCARE',
-        'color' => '#14b8a6',
-      ],
-    ];
-
-    $categories = collect($categoryOrder)->map(function ($category) {
-      return [
-        'label' => $category['label'],
-        'slug' => Str::slug($category['label']),
-        'folder' => $category['folder'],
-        'color' => $category['color'],
-      ];
-    });
-
-    $projectsByCategory = [];
-
-    foreach ($categories as $category) {
-      $folderPath = $projectBase . DIRECTORY_SEPARATOR . $category['folder'];
-      $files = File::exists($folderPath) ? File::files($folderPath) : [];
-
-      $items = collect($files)
-        ->filter(fn($file) => in_array(strtolower($file->getExtension()), ['jpg', 'jpeg', 'png', 'webp']))
-        ->map(function ($file) use ($category) {
-          $filename = pathinfo($file->getFilename(), PATHINFO_FILENAME);
-          $index = 9999;
-
-          if (preg_match('/^(\\d+)\\./', $filename, $match)) {
-            $index = (int) $match[1];
-          } elseif (preg_match('/^0I\\./i', $filename)) {
-            $index = 1;
-          }
-
-          $cleanName = preg_replace('/^(\\d+|0I)\\.\\s*/i', '', $filename);
-          [$name, $location] = array_pad(array_map('trim', explode(',', $cleanName, 2)), 2, '');
-
-          return [
-            'index' => $index,
-            'name' => $name ?: $cleanName,
-            'location' => $location ?: $category['label'],
-            'category' => $category['label'],
-            'slug' => $category['slug'],
-            'image' => asset('images/projects/' . $category['folder'] . '/' . $file->getFilename()),
-          ];
-        })
-        ->sortBy('index')
-        ->values();
-
-      $projectsByCategory[$category['slug']] = $items;
-    }
-
-    $firsts = collect();
-    $rest = collect();
-
-    foreach ($categories as $category) {
-      $items = $projectsByCategory[$category['slug']] ?? collect();
-      if ($items->isNotEmpty()) {
-        $firsts->push($items->first());
-        $rest = $rest->merge($items->slice(1)->values());
-      }
-    }
-
-    $projects = $firsts->merge($rest)->values();
-  @endphp
-
+<section id="projects" class="min-h-screen bg-slate-50 pt-32 pb-20">
   <div class="container mx-auto px-6">
     <div class="text-center">
-      <h1 class="text-center font-semibold tracking-[0.18em] uppercase text-3xl md:text-3xl font-railway text-slate-900 mb-12 border-b-2 border-brand-gold inline-block pb-2">Our Projects</h1>
+      <h1 class="mb-12 inline-block border-b-2 border-brand-gold pb-2 text-center font-railway text-3xl font-semibold uppercase tracking-[0.18em] text-slate-900 md:text-3xl">Our Projects</h1>
     </div>
 
-    <div class="max-w-4xl mx-auto mb-12">
-      {{-- Original gradient chip filter (commented out) --}}
-      {{-- <div class="flex flex-wrap justify-center gap-3"> ... </div> --}}
-
-      <div class="flex flex-wrap justify-center gap-8 text-sm md:text-lg font-semibold uppercase tracking-[0.15em] font-marcellus">
+    <div class="mx-auto mb-12 max-w-4xl">
+      <div class="flex flex-wrap justify-center gap-8 font-marcellus text-sm font-semibold uppercase tracking-[0.15em] md:text-lg">
         <button type="button" data-category-chip="all" data-chip-color="#cba135"
-          class="chip chip-filter active pb-1 border-b-2 border-brand-gold text-slate-900"
+          class="chip chip-filter active border-b-2 border-brand-gold pb-1 text-slate-900"
           style="--chip-color:#cba135; color: var(--chip-color);">
           All
         </button>
         @foreach ($categories as $category)
           <button type="button" data-category-chip="{{ $category['slug'] }}" data-chip-color="{{ $category['color'] }}"
-            class="chip chip-filter pb-1 border-b-2 border-transparent text-slate-700 transition-colors"
+            class="chip chip-filter border-b-2 border-transparent pb-1 text-slate-700 transition-colors"
             style="--chip-color: {{ $category['color'] }}; color: var(--chip-color);">
             {{ $category['label'] }}
           </button>
@@ -133,25 +28,52 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
       @foreach ($projects as $project)
-        <div class="group block relative overflow-hidden shadow-md cursor-pointer"
-          data-project-card data-category="{{ $project['slug'] }}">
-          <img src="{{ $project['image'] }}" class="w-full h-96 object-cover transform group-hover:scale-110 transition duration-500"
-            alt="{{ $project['name'] }}">
-          <div
-            class="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 via-black/60 to-transparent transition duration-300">
-          </div>
-          <div class="absolute inset-x-0 bottom-0 p-5 flex items-end justify-between gap-3">
-            <div>
-              <h3 class="text-[17px] uppercase font-semibold text-white leading-tight mt-1"
-                style="text-shadow:0 18px 36px rgba(0,0,0,0.7)">{{ $project['name'] }}</h3>
+        @php
+          $hasDetailPage = $project['project_slug'] === 'dhoot-transmission-jhajjar';
+        @endphp
+
+        @if ($hasDetailPage)
+          <a href="{{ route('projects.show', ['category' => $project['category_slug'], 'project' => $project['project_slug']]) }}"
+            class="group relative block overflow-hidden shadow-md"
+            data-project-card data-category="{{ $project['category_slug'] }}">
+            <img src="{{ $project['image'] }}" class="h-96 w-full object-cover transition duration-500 group-hover:scale-110"
+              alt="{{ $project['name'] }}" loading="lazy" decoding="async">
+            <div
+              class="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 via-black/60 to-transparent transition duration-300">
             </div>
-            <span
-              class="px-3 py-1 rounded-full text-[10px] uppercase tracking-wide bg-white/10 text-white/90 backdrop-blur-sm border border-white/15"
-              style="text-shadow:0 14px 28px rgba(0,0,0,0.55)">{{ $project['location'] }}</span>
+            <div class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5">
+              <div>
+                <p class="mb-2 text-[10px] uppercase tracking-[0.28em] text-brand-gold">{{ $project['category'] }}</p>
+                <h2 class="mt-1 text-[17px] font-semibold uppercase leading-tight text-white"
+                  style="text-shadow:0 18px 36px rgba(0,0,0,0.7)">{{ $project['name'] }}</h2>
+              </div>
+              <span
+                class="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] uppercase tracking-wide text-white/90 backdrop-blur-sm"
+                style="text-shadow:0 14px 28px rgba(0,0,0,0.55)">{{ $project['location'] }}</span>
+            </div>
+          </a>
+        @else
+          <div class="group relative block cursor-default overflow-hidden shadow-md"
+            data-project-card data-category="{{ $project['category_slug'] }}">
+            <img src="{{ $project['image'] }}" class="h-96 w-full object-cover transition duration-500 group-hover:scale-110"
+              alt="{{ $project['name'] }}" loading="lazy" decoding="async">
+            <div
+              class="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 via-black/60 to-transparent transition duration-300">
+            </div>
+            <div class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5">
+              <div>
+                <p class="mb-2 text-[10px] uppercase tracking-[0.28em] text-brand-gold">{{ $project['category'] }}</p>
+                <h2 class="mt-1 text-[17px] font-semibold uppercase leading-tight text-white"
+                  style="text-shadow:0 18px 36px rgba(0,0,0,0.7)">{{ $project['name'] }}</h2>
+              </div>
+              <span
+                class="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] uppercase tracking-wide text-white/90 backdrop-blur-sm"
+                style="text-shadow:0 14px 28px rgba(0,0,0,0.55)">{{ $project['location'] }}</span>
+            </div>
           </div>
-        </div>
+        @endif
       @endforeach
     </div>
   </div>
@@ -161,9 +83,11 @@
   .chip-filter {
     border-bottom: 2px solid transparent;
   }
+
   .chip-filter:hover {
     border-color: var(--chip-color);
   }
+
   .chip-filter.active {
     border-color: var(--chip-color);
   }
@@ -178,10 +102,11 @@
       chip.addEventListener('click', () => {
         const target = chip.dataset.categoryChip;
 
-        chips.forEach(c => {
-          c.classList.remove('active', 'text-slate-900');
-          c.style.borderColor = 'transparent';
+        chips.forEach((currentChip) => {
+          currentChip.classList.remove('active', 'text-slate-900');
+          currentChip.style.borderColor = 'transparent';
         });
+
         chip.classList.add('active', 'text-slate-900');
         chip.style.borderColor = chip.dataset.chipColor || '#cba135';
 
