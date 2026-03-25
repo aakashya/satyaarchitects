@@ -518,14 +518,20 @@
     const navbar = document.getElementById('navbar');
     const navbarLogo = document.getElementById('navbar-logo');
     const homeHero = document.getElementById('home-hero');
+    const navOverlayHero = document.querySelector('[data-nav-hero]');
+    const activeNavHero = homeHero || navOverlayHero;
 
-    function setHomeNavbar() {
+function setHomeNavbar() {
   navbar.classList.add('bg-transparent', 'text-white');
   navbar.classList.remove('bg-white', 'text-slate-900', 'shadow-md');
 
   if (navbarLogo) {
     navbarLogo.src = navbarLogo.dataset.logoTransparent;
-    navbarLogo.classList.add('drop-shadow-[0_0_18px_rgba(255,255,255,1)]');
+    navbarLogo.classList.remove('drop-shadow-[0_0_18px_rgba(255,255,255,1)]');
+
+    if (activeNavHero?.dataset.navLogoGlow !== 'off') {
+      navbarLogo.classList.add('drop-shadow-[0_0_18px_rgba(255,255,255,1)]');
+    }
   }
 }
 
@@ -540,7 +546,7 @@ function setSolidNavbar() {
 }
 
 
-    if (homeHero) {
+    if (activeNavHero) {
         setHomeNavbar();
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -590,6 +596,8 @@ function setSolidNavbar() {
     }
 });
     </script>
+
+    @stack('scripts')
 
 </body>
 

@@ -31,16 +31,8 @@ class ProjectController extends Controller
 
         abort_unless($projectItem, 404);
 
-        $currentIndex = $projects->search(function (array $item) use ($projectItem) {
-            return $item['category_slug'] === $projectItem['category_slug']
-                && $item['project_slug'] === $projectItem['project_slug'];
-        });
-
-        $nextProject = $projects->get(($currentIndex + 1) % $projects->count());
-
         return view('project-detail', [
             'project' => $projectItem,
-            'nextProject' => $nextProject,
         ]);
     }
 
@@ -157,13 +149,19 @@ class ProjectController extends Controller
             'category_slug' => $category['slug'],
             'project_slug' => $projectSlug,
             'image' => $imageUrl,
+            'hero_image' => $imageUrl,
             'description' => $this->buildDescription($projectName, $projectLocation, $category['label']),
+            'overview_heading' => 'A contextual architectural response grounded in clarity, performance, and long-term usability.',
             'overview' => $this->buildOverview($projectName, $projectLocation, $category['label']),
             'details' => [
                 'Location' => $projectLocation,
                 'Year' => 'Details on request',
                 'Client' => 'Details on request',
                 'Area' => 'Details on request',
+            ],
+            'hero_stats' => [
+                ['label' => 'Location', 'value' => $projectLocation],
+                ['label' => 'Sector', 'value' => $category['label']],
             ],
             'content_sections' => [],
             'gallery' => [
@@ -227,6 +225,7 @@ class ProjectController extends Controller
         $project['location'] = 'Jhajjar';
         $project['display_category'] = 'Industrial Architecture';
         $project['description'] = 'The Dhoot Transmission Industrial Facility is conceived as a next-generation manufacturing campus that integrates operational efficiency with human-centric design.';
+        $project['overview_heading'] = 'A next-generation manufacturing campus shaped around operational clarity and human experience.';
         $project['overview'] = [
             'The site is organized along a clear circulation hierarchy, anchored by a 6.0-meter-wide internal road that ensures efficient vehicular movement, logistics handling, and fire access.',
             'The administrative wing near the entrance includes MD cabins, conference rooms, meeting spaces, and open offices, allowing efficient oversight while maintaining acoustic and functional separation from the production areas.',
@@ -240,9 +239,32 @@ class ProjectController extends Controller
             'Built-up Area' => '14631.632 SQMT. / 157500 SQFT.',
             'Sector' => 'INDUSTRIAL ARCHITECTURE',
         ];
+        $project['hero_stats'] = [
+            ['label' => 'Location', 'value' => 'Reliance MET Jhajjar, Haryana'],
+            ['label' => 'Sector', 'value' => 'Industrial Architecture'],
+            ['label' => 'Site Area', 'value' => '24280.98 sq. m'],
+            ['label' => 'Built-up Area', 'value' => '14631.632 sqmt / 157500 sqft'],
+        ];
+        $project['gallery'] = $this->buildGalleryFromFolder('images/projects-details/dhoot', $project['detail_title']);
+        $project['hero_image'] = $this->findGalleryImageByFilename('images/projects-details/dhoot', 'IMG_4013.jpg') ?? $project['hero_image'];
+        $project['factsheet_image'] = $this->findGalleryImageByFilename('images/projects-details/dhoot', 'dhoot.jpg');
         $project['content_sections'] = [
             [
-                'title' => 'Sustainability Approach',
+                'eyebrow' => 'Project Description',
+                'title' => 'An integrated industrial campus',
+                'paragraphs' => [
+                    'The Dhoot Transmission Industrial Facility is organized around a clear operational framework that balances industrial efficiency with a legible, human-scaled environment.',
+                    'A 6.0-meter-wide internal road anchors the site planning, enabling efficient vehicular circulation, logistics handling, and fire access across the campus.',
+                    'The administrative wing is positioned near the entrance with MD cabins, conference rooms, meeting spaces, and open offices, ensuring oversight while maintaining acoustic and functional separation from the production areas.',
+                    'A dedicated training hall and product gallery reinforce the company focus on skill development, innovation, and client engagement.',
+                ],
+                'items' => [],
+                'closing' => null,
+                'image' => $project['gallery'][0] ?? null,
+            ],
+            [
+                'eyebrow' => 'Sustainability Approach',
+                'title' => 'Passive design and operational efficiency',
                 'paragraphs' => [
                     'Sustainability is embedded through passive design intelligence and operational efficiency, rather than superficial additions.',
                 ],
@@ -255,11 +277,14 @@ class ProjectController extends Controller
                     'Rationalized water and waste management systems',
                 ],
                 'closing' => 'These measures collectively reduce the environmental footprint while enhancing user comfort and long-term viability.',
+                'image' => $project['gallery'][1] ?? null,
             ],
             [
-                'title' => 'Human-Centric Industrial Design',
+                'eyebrow' => 'Human-Centric Industrial Design',
+                'title' => 'Industrial productivity centered on people',
                 'paragraphs' => [
                     'A defining aspect of the project is its emphasis on people as the core of industrial productivity.',
+                    'Employee welfare is central to the design, with facilities such as a cafeteria, pantry, creche, and gender-inclusive sanitation blocks, creating a more comfortable and inclusive working environment.',
                 ],
                 'items' => [
                     'A well-equipped training center',
@@ -268,9 +293,9 @@ class ProjectController extends Controller
                     'A thoughtfully designed cafeteria and breakout zones',
                 ],
                 'closing' => 'The project recognizes that efficiency is not just a function of machines, but of human experience.',
+                'image' => $project['gallery'][2] ?? null,
             ],
         ];
-        $project['gallery'] = $this->buildGalleryFromFolder('images/projects-details/dhoot', $project['detail_title']);
 
         return $project;
     }
@@ -291,5 +316,12 @@ class ProjectController extends Controller
                 ];
             })
             ->all();
+    }
+
+    private function findGalleryImageByFilename(string $relativeFolder, string $filename): ?string
+    {
+        $filePath = public_path(trim($relativeFolder, '/') . '/' . $filename);
+
+        return File::exists($filePath) ? asset(trim($relativeFolder, '/') . '/' . $filename) : null;
     }
 }
