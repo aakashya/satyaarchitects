@@ -2,12 +2,12 @@
 
 @section('title', 'Satya Architects | Professional Architectural Consultancy')
 @section('meta_description', 'Satya Architects is a Gurugram-based architecture and interior design studio creating refined residential, commercial, industrial, and institutional projects across India.')
-@section('meta_image', asset('images/hero/nn/01.jpg'))
+@section('meta_image', asset('images/hero/new/01.jpg'))
 @push('styles')
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="{{ asset('images/hero/nn/01.jpg') }}">
+<link rel="preload" as="image" href="{{ asset('images/hero/new/01.jpg') }}">
 
 <style>
   .font-railway {
@@ -340,6 +340,18 @@
 </style>
 @endpush
 @section('content')
+@php
+  $homeHeroSlides = [
+    ['src' => asset('images/hero/new/01.jpg'), 'alt' => 'INFRA ONE TOWNSHIP, ROHTAK'],
+    ['src' => asset('images/hero/new/02.jpg'), 'alt' => 'SJ HOUSING, GURGAON'],
+    ['src' => asset('images/hero/new/03.jpg'), 'alt' => 'INTERNATIONAL EXPERIENTIAL SCHOOL, GURGAON'],
+    ['src' => asset('images/hero/new/04.jpg'), 'alt' => 'FUTURISTIC THINKING'],
+    ['src' => asset('images/hero/new/05.jpg'), 'alt' => 'SAGA CASTLE, BHIWADI'],
+    ['src' => asset('images/hero/new/06.jpg'), 'alt' => 'FOOD PARK, MEGHALAYA'],
+    ['src' => asset('images/hero/new/07.jpg'), 'alt' => 'SHOPPING MALL'],
+    ['src' => asset('images/hero/new/08.jpg'), 'alt' => 'SHUBHANGAN, PANIPAT'],
+  ];
+@endphp
 <!-- 1. HOME PAGE -->
 <section id="home">
   <h1 class="sr-only">Satya Architects</h1>
@@ -352,16 +364,15 @@
      z-10 pointer-events-none">
     </div>
 
-
-    <!-- Images from /public/images/hero/01–07 -->
-    <img src="{{ asset('images/hero/c/01_s.webp') }}" class="hero-slide active" alt="INFRA ONE TOWNSHIP, ROHTAK" loading="eager" decoding="async" fetchpriority="high">
-    <img src="{{ asset('images/hero/nn/02.jpg') }}" class="hero-slide" alt="SJ HOUSING, GURGAON " loading="lazy" decoding="async">
-    <img src="{{ asset('images/hero/nn/03.jpg') }}" class="hero-slide" alt="INTERNATIONAL EXPERIENTIAL SCHOOL, GURGAON" loading="lazy" decoding="async">
-    <img src="{{ asset('images/hero/nn/04.jpg') }}" class="hero-slide" alt="FUTURISTIC THINKING" loading="lazy" decoding="async">
-    <img src="{{ asset('images/hero/nn/05.jpg') }}" class="hero-slide" alt="SAGA CASTLE, BHIWADI " loading="lazy" decoding="async">
-    <img src="{{ asset('images/hero/nn/06.png') }}" class="hero-slide" alt="FOOD PARK, MEGHALAYA" loading="lazy" decoding="async">
-    <img src="{{ asset('images/hero/nn/07.jpg') }}" class="hero-slide" alt="SHOPPING MALL" loading="lazy" decoding="async">
-    <img src="{{ asset('images/hero/nn/08.jpg') }}" class="hero-slide" alt="SHUBHANGAN, PANIPAT" loading="lazy" decoding="async">
+    @foreach ($homeHeroSlides as $index => $slide)
+      <img
+        src="{{ $slide['src'] }}"
+        class="hero-slide {{ $index === 0 ? 'active' : '' }}"
+        alt="{{ $slide['alt'] }}"
+        loading="{{ $index === 0 ? 'eager' : 'lazy' }}"
+        decoding="async"
+        fetchpriority="{{ $index === 0 ? 'high' : 'auto' }}">
+    @endforeach
 
     <!-- Hero Navigation Arrows -->
     <button id="hero-prev" class="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-brand-gold transition z-30">
