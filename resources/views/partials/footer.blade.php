@@ -6,6 +6,7 @@
     ['label' => 'Our Story', 'route' => 'home'],
     ['label' => 'Expertise', 'route' => 'expertise'],
     ['label' => 'Projects', 'route' => 'projects'],
+    ['label' => 'Insights', 'route' => 'insights'],
     ['label' => 'Contact Us', 'route' => 'about'],
     ];
 

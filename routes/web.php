@@ -12,5 +12,6 @@ Route::view('/team', 'team')->name('team');
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
 Route::get('/projects/{category}/{project}', [ProjectController::class, 'show'])->name('projects.show');
 Route::view('/clients', 'clients')->name('clients');
+Route::view('/insights', 'insights')->name('insights');
 
 Route::post('/about', [ContactController::class, 'submit'])->name('contact.submit');
