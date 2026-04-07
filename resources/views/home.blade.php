@@ -832,7 +832,7 @@
     </div>
   </section> --}}
 
-  <section class="bg-white px-6 pb-16 pt-6 md:px-10 md:pb-20 lg:px-12">
+  {{-- <section class="bg-white px-6 pb-16 pt-6 md:px-10 md:pb-20 lg:px-12">
     <div class="mx-auto max-w-7xl overflow-hidden rounded-[1.75rem] bg-slate-100">
       <img
         src="{{ asset('images/india_map_black.webp') }}"
@@ -841,7 +841,7 @@
         loading="lazy"
         decoding="async">
     </div>
-  </section>
+  </section> --}}
 
   <script>
     // --- Timeline slider (range <-> horizontal scroll) ---
