@@ -32,46 +32,53 @@
   $supportingImages = $factsheetImage
       ? array_values(array_filter($galleryGridImages, fn ($image) => $image['src'] !== $factsheetImage['src']))
       : $galleryGridImages;
+  usort($supportingImages, function (array $first, array $second) {
+      $firstIsPreferred = str_ends_with($first['src'] ?? '', '/IMG_4036.jpg');
+      $secondIsPreferred = str_ends_with($second['src'] ?? '', '/IMG_4036.jpg');
+
+      return $firstIsPreferred === $secondIsPreferred ? 0 : ($firstIsPreferred ? -1 : 1);
+  });
+  if (count($supportingImages) >= 2) {
+      $lastIndex = count($supportingImages) - 1;
+      [$supportingImages[$lastIndex - 1], $supportingImages[$lastIndex]] = [$supportingImages[$lastIndex], $supportingImages[$lastIndex - 1]];
+  }
   $overviewParagraphs = $project['overview'] ?? [];
   $overviewLead = $overviewParagraphs[0] ?? null;
   $overviewBody = array_slice($overviewParagraphs, 1);
 @endphp
 
-<section data-nav-hero data-nav-logo-glow="off" class="relative isolate flex min-h-screen overflow-hidden bg-slate-950">
-  <div class="absolute inset-x-0 top-0 z-10 h-24 bg-gradient-to-b from-black/60 via-black/20 to-transparent md:h-32"></div>
-  <img src="{{ $heroImage }}" alt="{{ $project['detail_title'] ?? $project['name'] }}" class="absolute inset-0 h-full w-full object-cover" loading="eager" decoding="async" fetchpriority="high">
-  <div class="absolute inset-0 bg-black/35"></div>
-  <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/75"></div>
+<section data-nav-hero data-nav-logo-glow="off" class="relative isolate min-h-screen overflow-hidden bg-white">
+  <div class="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[22%] bg-gradient-to-t from-black/85 via-black/45 to-transparent"></div>
 
-  <div class="relative z-20 mx-auto flex min-h-screen w-full max-w-7xl flex-col items-center justify-center px-6 pb-32 pt-24 text-center md:px-10 md:pb-36 lg:px-12 lg:pb-44">
-    <div class="max-w-5xl">
-      <h1 class="font-publico text-4xl leading-tight text-white md:text-6xl lg:text-7xl xl:text-[5.25rem]">
-        {{ $project['detail_title'] ?? $project['name'] }}
-      </h1>
+  <img
+    src="{{ $heroImage }}"
+    alt="{{ $project['detail_title'] ?? $project['name'] }}"
+    class="absolute inset-0 h-full w-full object-cover object-center"
+    loading="eager"
+    decoding="async"
+    fetchpriority="high">
 
-      <p class="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-white/85 md:text-lg lg:text-xl">
-        {{ $project['description'] }}
-      </p>
-    </div>
+  <div class="relative z-20 flex min-h-screen flex-col justify-end">
+    <div class="px-6 pb-6 md:px-10 md:pb-8 lg:px-12 lg:pb-10">
+      <div class="mx-auto max-w-6xl text-center">
+        <h1 class="font-publico text-2xl leading-tight text-white drop-shadow-[0_18px_40px_rgba(0,0,0,0.78)] md:text-4xl lg:text-5xl">
+          {{ $project['detail_title'] ?? $project['name'] }}
+        </h1>
 
-    @if (!empty($project['hero_stats']))
-    <div class="absolute inset-x-0 bottom-16 px-6 md:bottom-20 md:px-10 lg:bottom-24 lg:px-12">
-      <div class="mx-auto grid max-w-5xl grid-cols-2 gap-x-6 gap-y-8 lg:grid-cols-4">
-        @foreach ($project['hero_stats'] as $stat)
-          <div>
-            <div class="mx-auto flex h-11 w-11 items-center justify-center rounded-full border border-brand-gold/60 text-brand-gold">
-              <i class="fa-solid {{ $heroIconMap[$stat['label']] ?? 'fa-circle-info' }} text-sm"></i>
-            </div>
-            <p class="mt-4 text-[10px] uppercase tracking-[0.28em] text-brand-gold">{{ $stat['label'] }}</p>
-            <p class="mt-2 text-sm leading-snug text-white md:text-[15px]">{{ $stat['value'] }}</p>
+        @if (!empty($project['hero_stats']))
+          <div class="mt-6 grid grid-cols-2 gap-x-6 gap-y-8 text-center lg:grid-cols-4">
+            @foreach ($project['hero_stats'] as $stat)
+              <div class="pt-5">
+                <div class="mx-auto flex h-11 w-11 items-center justify-center rounded-full border border-brand-gold/60 text-brand-gold">
+                  <i class="fa-solid {{ $heroIconMap[$stat['label']] ?? 'fa-circle-info' }} text-sm"></i>
+                </div>
+                <p class="mt-4 text-[10px] uppercase tracking-[0.28em] text-brand-gold drop-shadow-[0_10px_22px_rgba(0,0,0,0.58)]">{{ $stat['label'] }}</p>
+                <p class="mt-2 text-sm leading-snug text-white drop-shadow-[0_14px_30px_rgba(0,0,0,0.72)] md:text-[15px]">{{ $stat['value'] }}</p>
+              </div>
+            @endforeach
           </div>
-        @endforeach
+        @endif
       </div>
-    </div>
-    @endif
-
-    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/80">
-      <i class="fas fa-chevron-down animate-bounce text-2xl"></i>
     </div>
   </div>
 </section>
@@ -205,34 +212,48 @@
 
 @if (!empty($supportingImages))
   <section class="bg-white py-16 md:py-20">
-    <div class="mx-auto max-w-7xl px-6 md:px-10 lg:px-12">
-      <div class="mb-10 flex flex-col gap-4 border-b border-slate-200 pb-8 md:flex-row md:items-end md:justify-between">
-        <div class="max-w-2xl">
+    <div class="px-6 md:px-10 lg:px-12">
+      <div class="mb-10 border-b border-slate-200 pb-8 text-center">
+        <div class="mx-auto max-w-2xl">
           <p class="mb-4 text-xs uppercase tracking-[0.34em] text-brand-gold">Project Gallery</p>
           <h2 class="font-publico text-3xl leading-tight text-brand-dark md:text-5xl">More views from the facility</h2>
         </div>
-        <p class="max-w-md text-sm leading-relaxed text-slate-500">
-          A visual sequence of the industrial facility, from large-scale planning moves to the finer spatial details that shape the working environment.
-        </p>
       </div>
 
-      <div class="relative overflow-hidden bg-slate-100 shadow-[0_24px_60px_rgba(15,23,42,0.1)]" data-project-carousel>
-        @foreach ($supportingImages as $index => $image)
-          <figure
-            class="project-gallery-slide {{ $index === 0 ? 'is-active' : '' }}"
-            data-project-slide
-            aria-hidden="{{ $index === 0 ? 'false' : 'true' }}">
-            <img src="{{ $image['src'] }}" alt="{{ $image['alt'] }}" class="block h-[22rem] w-full object-cover md:h-[32rem] lg:h-[44rem]" loading="lazy" decoding="async">
-          </figure>
-        @endforeach
+      <div class="space-y-6 md:space-y-8">
+        @foreach (array_chunk($supportingImages, 2) as $pairIndex => $imagePair)
+          @php
+            $isReverse = $pairIndex % 2 === 1;
+            $primaryImage = $imagePair[0] ?? null;
+            $secondaryImage = $imagePair[1] ?? null;
+            $isFirstPair = $pairIndex === 0;
+            $isSecondPair = $pairIndex === 1;
+          @endphp
 
-        @if (count($supportingImages) > 1)
-          <div class="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 gap-2" aria-hidden="true">
-            @foreach ($supportingImages as $index => $image)
-              <span class="project-gallery-dot {{ $index === 0 ? 'is-active' : '' }}" data-project-dot></span>
-            @endforeach
+          <div class="grid items-start gap-6 md:grid-cols-5 md:gap-8 {{ $isFirstPair ? 'md:pb-48 lg:pb-52' : '' }} {{ $isSecondPair ? 'md:pt-40 lg:pt-44' : '' }}">
+            @if ($primaryImage)
+              <figure class="overflow-hidden rounded-[1.75rem] bg-slate-100 shadow-[0_24px_60px_rgba(15,23,42,0.1)] {{ $isReverse ? 'md:order-2 md:col-span-3' : 'md:col-span-3' }}">
+                <img
+                  src="{{ $primaryImage['src'] }}"
+                  alt="{{ $primaryImage['alt'] }}"
+                  class="block h-full min-h-[20rem] w-full object-cover md:min-h-[30rem] lg:min-h-[36rem]"
+                  loading="lazy"
+                  decoding="async">
+              </figure>
+            @endif
+
+            @if ($secondaryImage)
+              <figure class="overflow-hidden self-start rounded-[1.75rem] bg-slate-100 shadow-[0_24px_60px_rgba(15,23,42,0.1)] {{ $isReverse ? 'md:order-1 md:col-span-2' : 'md:col-span-2' }} {{ $isFirstPair ? 'md:mt-[74%] lg:mt-[70%]' : '' }} {{ $isSecondPair ? 'md:-mt-[38%] lg:-mt-[34%]' : '' }}">
+                <img
+                  src="{{ $secondaryImage['src'] }}"
+                  alt="{{ $secondaryImage['alt'] }}"
+                  class="block h-full min-h-[16rem] w-full object-cover {{ $isFirstPair ? 'md:min-h-[24rem] lg:min-h-[28rem]' : 'md:min-h-[30rem] lg:min-h-[36rem]' }}"
+                  loading="lazy"
+                  decoding="async">
+              </figure>
+            @endif
           </div>
-        @endif
+        @endforeach
       </div>
     </div>
   </section>
@@ -252,69 +273,4 @@
   </div>
 </section>
 
-@push('styles')
-<style>
-  .project-gallery-slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 700ms ease;
-  }
-
-  .project-gallery-slide.is-active {
-    position: relative;
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .project-gallery-dot {
-    width: 0.625rem;
-    height: 0.625rem;
-    border-radius: 9999px;
-    background: rgba(255, 255, 255, 0.45);
-    transition: transform 300ms ease, background-color 300ms ease, width 300ms ease;
-  }
-
-  .project-gallery-dot.is-active {
-    background: #ffffff;
-    width: 1.5rem;
-    transform: scale(1);
-  }
-</style>
-@endpush
-
-@push('scripts')
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const carousel = document.querySelector('[data-project-carousel]');
-    if (!carousel) return;
-
-    const slides = carousel.querySelectorAll('[data-project-slide]');
-    const dots = carousel.querySelectorAll('[data-project-dot]');
-
-    if (slides.length <= 1) return;
-
-    let activeIndex = 0;
-
-    const setActiveSlide = (nextIndex) => {
-      slides.forEach((slide, index) => {
-        const isActive = index === nextIndex;
-        slide.classList.toggle('is-active', isActive);
-        slide.setAttribute('aria-hidden', isActive ? 'false' : 'true');
-      });
-
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('is-active', index === nextIndex);
-      });
-
-      activeIndex = nextIndex;
-    };
-
-    window.setInterval(() => {
-      setActiveSlide((activeIndex + 1) % slides.length);
-    }, 5000);
-  });
-</script>
-@endpush
 @endsection

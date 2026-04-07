@@ -245,7 +245,11 @@ class ProjectController extends Controller
             ['label' => 'Site Area', 'value' => '24280.98 sq. m'],
             ['label' => 'Built-up Area', 'value' => '14631.632 sqmt / 157500 sqft'],
         ];
-        $project['gallery'] = $this->buildGalleryFromFolder('images/projects-details/dhoot', $project['detail_title']);
+        $project['gallery'] = $this->swapGalleryImages(
+            $this->buildGalleryFromFolder('images/projects-details/dhoot', $project['detail_title']),
+            'IMG_4024.jpg',
+            'IMG_4026.jpg'
+        );
         $project['hero_image'] = $this->findGalleryImageByFilename('images/projects-details/dhoot', 'IMG_4013.jpg') ?? $project['hero_image'];
         $project['factsheet_image'] = $this->findGalleryImageByFilename('images/projects-details/dhoot', 'dhoot.jpg');
         $project['content_sections'] = [
@@ -323,5 +327,29 @@ class ProjectController extends Controller
         $filePath = public_path(trim($relativeFolder, '/') . '/' . $filename);
 
         return File::exists($filePath) ? asset(trim($relativeFolder, '/') . '/' . $filename) : null;
+    }
+
+    private function swapGalleryImages(array $gallery, string $firstFilename, string $secondFilename): array
+    {
+        $firstIndex = null;
+        $secondIndex = null;
+
+        foreach ($gallery as $index => $image) {
+            $src = $image['src'] ?? '';
+
+            if (Str::endsWith($src, '/' . $firstFilename)) {
+                $firstIndex = $index;
+            }
+
+            if (Str::endsWith($src, '/' . $secondFilename)) {
+                $secondIndex = $index;
+            }
+        }
+
+        if ($firstIndex !== null && $secondIndex !== null) {
+            [$gallery[$firstIndex], $gallery[$secondIndex]] = [$gallery[$secondIndex], $gallery[$firstIndex]];
+        }
+
+        return $gallery;
     }
 }
