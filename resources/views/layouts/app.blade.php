@@ -17,7 +17,7 @@
         $siteUrl = rtrim(config('app.url') ?: request()->getSchemeAndHttpHost(), '/');
     @endphp
 
-    <title>{{ $metaTitle }}</title>
+    <title>{!! $metaTitle !!}</title>
     <meta name="description" content="{{ $metaDescription }}">
     <link rel="canonical" href="{{ $metaUrl }}">
     <meta name="robots" content="index,follow">
