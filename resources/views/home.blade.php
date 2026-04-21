@@ -14,10 +14,6 @@
     font-family: 'Railway', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
 
-  .font-century {
-    font-family: 'Century Gothic', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  }
-
   /* ===== COMPANY MAP COLORS (attach these classes to paths in your SVG) ===== */
   #company-map svg .sa-base {
     fill: #d6e2f0;

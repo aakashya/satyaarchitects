@@ -66,7 +66,7 @@
         </h1>
 
         @if (!empty($project['hero_stats']))
-          <div class="mt-6 grid grid-cols-2 gap-x-6 gap-y-8 text-center lg:grid-cols-4">
+          <div class="mt-2 grid grid-cols-2 gap-x-6 gap-y-8 text-center lg:grid-cols-4">
             @foreach ($project['hero_stats'] as $stat)
               <div class="pt-5">
                 <div class="mx-auto flex h-11 w-11 items-center justify-center rounded-full border border-brand-gold/60 text-brand-gold">
@@ -100,7 +100,7 @@
   <div class="relative mx-auto max-w-7xl px-6 md:px-10 lg:px-12">
     <div class="grid gap-12 lg:grid-cols-12 lg:items-center">
       <div class="lg:col-span-5">
-        <p class="mb-4 text-xs uppercase tracking-[0.34em] text-brand-gold">Project Overview</p>
+        <p class="mb-4 text-base uppercase tracking-[0.34em] text-brand-gold">Project Overview</p>
         @if ($overviewLead)
           <p class="max-w-3xl text-lg leading-relaxed text-slate-700 md:text-xl">
             {{ $overviewLead }}
@@ -118,7 +118,7 @@
 
       @if ($featuredImage)
         <div class="lg:col-span-7">
-          <figure class="overflow-hidden rounded-[2rem] bg-slate-100 shadow-[0_30px_80px_rgba(15,23,42,0.12)]">
+          <figure class="overflow-hidden bg-slate-100 shadow-[0_30px_80px_rgba(15,23,42,0.12)]">
             <img src="{{ $featuredImage['src'] }}" alt="{{ $featuredImage['alt'] }}" class="block h-auto w-full" loading="lazy" decoding="async">
           </figure>
         </div>
@@ -165,23 +165,25 @@
           <div class="grid gap-10 lg:grid-cols-5 lg:gap-0 lg:items-start">
             <div class="px-6 md:px-10 lg:px-12 lg:col-span-2 {{ $index % 2 === 1 ? 'lg:order-2' : '' }}">
               @if (!empty($section['eyebrow']))
-                <p class="mb-4 text-xs uppercase tracking-[0.34em] text-brand-gold">{{ $section['eyebrow'] }}</p>
+                <p class="mb-4 text-base uppercase tracking-[0.34em] text-brand-gold">
+                  {{ $section['eyebrow'] }}
+                </p>
               @endif
 
               @if (!empty($section['title']))
-                <h2 class="max-w-xl font-publico text-3xl leading-tight text-brand-dark md:text-5xl">
+                <h2 class="max-w-xl font-publico text-2xl leading-tight text-brand-dark md:text-4xl">
                   {{ $section['title'] }}
                 </h2>
               @endif
 
-              <div class="mt-6 space-y-4 text-sm leading-relaxed text-brand-gray md:text-base">
+              <div class="font-century mt-6 space-y-4 text-sm leading-relaxed text-brand-gray md:text-base">
                 @foreach ($section['paragraphs'] ?? [] as $paragraph)
                   <p>{{ $paragraph }}</p>
                 @endforeach
               </div>
 
               @if (!empty($section['items']))
-                <ul class="mt-6 space-y-3">
+                <ul class="font-century mt-6 space-y-3">
                   @foreach ($section['items'] as $item)
                     <li class="flex gap-3 text-sm leading-relaxed text-brand-gray md:text-base">
                       <span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-brand-gold"></span>
@@ -192,7 +194,7 @@
               @endif
 
               @if (!empty($section['closing']))
-                <p class="mt-6 text-sm leading-relaxed text-brand-gray md:text-base">{{ $section['closing'] }}</p>
+                <p class="font-century mt-6 text-sm leading-relaxed text-brand-gray md:text-base">{{ $section['closing'] }}</p>
               @endif
             </div>
 
@@ -230,9 +232,9 @@
             $isSecondPair = $pairIndex === 1;
           @endphp
 
-          <div class="grid items-start gap-6 md:grid-cols-5 md:gap-8 {{ $isFirstPair ? 'md:pb-48 lg:pb-52' : '' }} {{ $isSecondPair ? 'md:pt-40 lg:pt-44' : '' }}">
+          <div class="grid items-start gap-6 md:grid-cols-5 md:gap-8 {{ $isFirstPair ? 'md:pb-4 lg:pb-5' : '' }} {{ $isSecondPair ? 'md:pt-4 lg:pt-4' : '' }}">
             @if ($primaryImage)
-              <figure class="overflow-hidden rounded-[1.75rem] bg-slate-100 shadow-[0_24px_60px_rgba(15,23,42,0.1)] {{ $isReverse ? 'md:order-2 md:col-span-3' : 'md:col-span-3' }}">
+              <figure class="overflow-hidden bg-slate-100 shadow-[0_24px_60px_rgba(15,23,42,0.1)] {{ $isReverse ? 'md:order-2 md:col-span-3' : 'md:col-span-3' }}">
                 <img
                   src="{{ $primaryImage['src'] }}"
                   alt="{{ $primaryImage['alt'] }}"
@@ -243,7 +245,7 @@
             @endif
 
             @if ($secondaryImage)
-              <figure class="overflow-hidden self-start rounded-[1.75rem] bg-slate-100 shadow-[0_24px_60px_rgba(15,23,42,0.1)] {{ $isReverse ? 'md:order-1 md:col-span-2' : 'md:col-span-2' }} {{ $isFirstPair ? 'md:mt-[74%] lg:mt-[70%]' : '' }} {{ $isSecondPair ? 'md:-mt-[38%] lg:-mt-[34%]' : '' }}">
+              <figure class="overflow-hidden self-start bg-slate-100 shadow-[0_24px_60px_rgba(15,23,42,0.1)] {{ $isReverse ? 'md:order-1 md:col-span-2' : 'md:col-span-2' }} {{ $isFirstPair ? 'md:mt-[74%] lg:mt-[70%]' : '' }} {{ $isSecondPair ? 'md:-mt-[38%] lg:-mt-[34%]' : '' }}">
                 <img
                   src="{{ $secondaryImage['src'] }}"
                   alt="{{ $secondaryImage['alt'] }}"
