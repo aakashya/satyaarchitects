@@ -1,7 +1,7 @@
 ﻿@extends('layouts.app')
 
-@section('title', 'Satya Architects | Professional Architectural Consultancy')
-@section('meta_description', 'Satya Architects is a Gurugram-based architecture and interior design studio creating refined residential, commercial, industrial, and institutional projects across India.')
+@section('title', 'Satya Architects | Architecture & Interior Design Firm in Gurgaon')
+@section('meta_description', 'Leading architecture & interior design firm in Gurgaon. Serving Delhi NCR, Noida & Rohtak. Residential, commercial & industrial projects. Book a consultation.')
 @section('meta_image', asset('images/hero/new/01.jpg'))
 @push('styles')
 <link rel="preconnect" href="https://fonts.googleapis.com">

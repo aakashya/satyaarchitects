@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Expertise | Satya Architects')
-@section('meta_description', "Explore Satya Architects' expertise in architecture, masterplanning, interiors, landscape, industrial design, and project management.")
+@section('title', 'Expertise | Architecture, Interiors & Urban Design - Satya Architects')
+@section('meta_description', 'Architecture, interior design, master planning, landscape & project management services in Gurgaon, Delhi NCR, Noida, Rohtak & Sonipat.')
 @section('meta_image', asset('images/expertise/new/architecture.jpg'))
 
 @section('content')
