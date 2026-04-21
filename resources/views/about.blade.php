@@ -1,8 +1,8 @@
 {{-- resources/views/contact.blade.php --}}
 @extends('layouts.app')
 
-@section('title', 'Contact Us | Satya Architects')
-@section('meta_description', 'Get in touch with Satya Architects for architectural, interior, and planning projects. Visit our Gurugram studio or book a consultation.')
+@section('title', 'Contact Satya Architects | Sector 66, Gurgaon - Book a Consultation')
+@section('meta_description', 'Visit us at Emaar The Palm Square, Golf Course Extension Road, Sector 66, Gurgaon. Book a free consultation for architecture & interior design services.')
 @section('meta_image', asset('images/hero/nn/03.jpg'))
 
 @section('content')
@@ -148,4 +148,3 @@
   </div>
 </section>
 @endsection
-

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Projects | Satya Architects')
-@section('meta_description', 'Browse selected projects by Satya Architects across residential, commercial, industrial, education, hospitality, and healthcare sectors.')
+@section('title', 'Projects | Residential, Commercial & Industrial Work - Satya Architects')
+@section('meta_description', 'Explore our portfolio of residential, commercial, industrial & institutional projects across Gurgaon, Delhi, Rohtak, Noida, Sonipat & 30+ cities.')
 @section('meta_image', asset('images/slider/forteasia.png'))
 
 @section('content')
