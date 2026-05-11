@@ -9,6 +9,7 @@
 @section('content')
 @php
   $heroImage = $project['hero_image'] ?? $project['image'];
+  $factsheetImageSrc = $project['factsheet_image'] ?? null;
   $sectionImageSources = [];
   $heroIconMap = [
       'Location' => 'fa-location-dot',
@@ -23,8 +24,25 @@
       }
   }
 
-  $galleryImages = array_values(array_filter($project['gallery'] ?? [], function ($image) use ($sectionImageSources) {
-      return !in_array($image['src'], $sectionImageSources, true);
+  $galleryImages = array_values(array_filter($project['gallery'] ?? [], function ($image) use ($sectionImageSources, $heroImage, $factsheetImageSrc) {
+      $src = $image['src'] ?? null;
+      if (!$src) {
+          return false;
+      }
+
+      if (in_array($src, $sectionImageSources, true)) {
+          return false;
+      }
+
+      if ($src === $heroImage) {
+          return false;
+      }
+
+      if ($factsheetImageSrc && $src === $factsheetImageSrc) {
+          return false;
+      }
+
+      return true;
   }));
   $featuredImage = $galleryImages[0] ?? null;
   $galleryGridImages = $featuredImage ? array_slice($galleryImages, 1) : $galleryImages;
@@ -48,6 +66,7 @@
 @endphp
 
 <section data-nav-hero data-nav-logo-glow="off" class="relative isolate min-h-screen overflow-hidden bg-white">
+  <div class="pointer-events-none absolute inset-x-0 top-0 z-10 h-24 bg-gradient-to-b from-black/60 via-black/20 to-transparent md:h-32"></div>
   <div class="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[22%] bg-gradient-to-t from-black/85 via-black/45 to-transparent"></div>
 
   <img

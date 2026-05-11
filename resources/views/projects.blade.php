@@ -31,7 +31,7 @@
     <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
       @foreach ($projects as $project)
         @php
-          $hasDetailPage = $project['project_slug'] === 'dhoot-transmission-jhajjar';
+          $hasDetailPage = in_array($project['project_slug'], ['dhoot-transmission-jhajjar', 'forteasia-industrial-township-rohtak'], true);
         @endphp
 
         @if ($hasDetailPage)
