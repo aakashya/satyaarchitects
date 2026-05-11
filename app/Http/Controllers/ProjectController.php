@@ -317,24 +317,23 @@ class ProjectController extends Controller
         $project['location'] = 'Rohtak';
         $project['display_category'] = 'Masterplanning | Residential | Industrial';
         $project['description'] = 'Forteasia Industrial Township (FIT) is a 100+ acre RERA-approved integrated development located at Anwal-Kalanaur, Rohtak, Haryana, designed for industries, commercial spaces, and residential zones.';
-        $project['overview_heading'] = 'A structured work-live-play township planned for scalable industrial growth.';
+        $project['overview_heading'] = 'The township is developed by Forteasia Realty and aims to offer a "work-live-play" environment.';
         $project['overview'] = [
-            'A strategically planned industrial and residential township envisioned as a structured, scalable environment for manufacturing and logistics-oriented operations.',
-            'The design moves beyond conventional plot layouts, focusing on functional clarity, circulation efficiency, and long-term adaptability.',
-            'The master plan is organized around a hierarchy of internal road networks, enabling smooth movement of heavy vehicles, optimized logistics flow, and clear zoning of industrial activities.',
+            'A strategically planned industrial along with residential township envisioned as a structured, scalable environment for manufacturing and logistics-oriented operations.',
+            'The design moves beyond conventional plot layouts, focusing instead on functional clarity, circulation efficiency, and long-term adaptability. The master plan is organized around a hierarchy of internal road networks, enabling smooth movement of heavy vehicles, optimized logistics flow, and clear zoning of industrial activities.',
         ];
         $project['details'] = [
             'Client' => 'FORTEASIA REALTY PRIVATE LIMITED',
             'Location' => 'ROHTAK, HARYANA',
             'Site Area' => '150 ACRES',
-            'Sector' => 'MASTERPLANNING | RESIDENTIAL | INDUSTRIAL',
-            'Development Type' => 'INDUSTRIAL PLOTS, COMMERCIAL PLOTS, AND RESIDENTIAL PLOTS',
+            'Sector' => 'MASTERPLANNING I RESIDENTIAL I INDUSTRIAL',
+            'Development Type' => 'INDUSTRIAL PLOTS, COMMERCIAL PLOTS, AND RESIDENTIAL PLOT',
         ];
         $project['hero_stats'] = [
             ['label' => 'Location', 'value' => 'Rohtak, Haryana'],
-            ['label' => 'Sector', 'value' => 'Masterplanning | Residential | Industrial'],
+            ['label' => 'Sector', 'value' => 'Masterplanning I Residential I Industrial'],
             ['label' => 'Site Area', 'value' => '150 acres'],
-            ['label' => 'Development Type', 'value' => 'Industrial, Commercial and Residential Plots'],
+            ['label' => 'Development Type', 'value' => 'Industrial plots, Commercial plots, and Residential plot'],
         ];
         $project['gallery'] = $this->buildGalleryFromFolder('images/projects-details/fit', $project['detail_title']);
         $project['hero_image'] = $this->findGalleryImageByFilename('images/projects-details/fit', '01.jpg') ?? $project['hero_image'];
@@ -346,18 +345,18 @@ class ProjectController extends Controller
         ));
         $project['content_sections'] = [
             [
-                'eyebrow' => 'Township Vision',
-                'title' => 'Integrated planning for industry, commerce, and housing',
+                'eyebrow' => 'Project Description',
+                'title' => 'Integrated development at Anwal-Kalanaur, Rohtak',
                 'paragraphs' => [
-                    'The township is developed by Forteasia Realty and aims to offer a work-live-play environment within a single integrated framework.',
-                    'Positioned near the 152D Haryana Expressway and NH 44, the project is designed around modern infrastructure, including wide roads, dedicated utility networks, 24/7 security, and sustainable green spaces.',
-                    'The planning intent combines operational logic with long-term urban quality rather than treating industrial land as a purely transactional development.',
+                    'Forteasia Industrial Township (FIT) is a 100+ acre RERA-approved integrated development located at Anwal-Kalanaur, Rohtak, Haryana, designed for industries, commercial spaces, and residential zones.',
+                    'Positioned near the 152D Haryana Expressway and NH 44, it offers modern infrastructure, including wide roads, security, and sustainable green spaces.',
                 ],
                 'items' => [
                     'Location: Kalanaur-Beri Road, Anwal, Rohtak, Haryana',
-                    'Scale: Over 100+ acres of integrated development',
+                    'Size: Over 100+ acres of integrated development.',
                     'Target industries: Engineering, manufacturing, logistics, and FMCG',
-                    'Projected possession: July 2029',
+                    'Amenities: Wide internal roads, dedicated utility networks, green buffers, and 24/7 security.',
+                    'Projected Possession: July 2029.',
                 ],
                 'closing' => null,
                 'image' => $fitSectionImages[0] ?? null,
@@ -367,27 +366,33 @@ class ProjectController extends Controller
                 'title' => 'Positioned within an emerging industrial network',
                 'paragraphs' => [
                     'The site benefits from its placement within a growing industrial corridor, improving access to markets, suppliers, and the workforce.',
-                    'Its strategic connectivity supports reduced logistics time, stronger operational efficiency, and integration into a broader industrial supply chain.',
+                    'The location supports reduced logistics time, operational efficiency, and integration within a broader industrial supply chain.',
                 ],
                 'items' => [
                     'Proximity to NH-44',
                     'Access to 152D Trans Haryana Expressway',
                     'Connectivity to Hissar Bypass',
                     'Linkage to Delhi NCR region',
-                    'Industrial ecosystem nearby: IMT Rohtak and Jhajjar industrial belt',
+                    'Industrial Ecosystem Nearby: IMT Rohtak',
+                    'Industrial Ecosystem Nearby: Jhajjar industrial belt',
+                    'Industrial Ecosystem Nearby: Regional manufacturing clusters',
                 ],
                 'closing' => null,
                 'image' => $fitSectionImages[1] ?? null,
             ],
             [
                 'eyebrow' => 'Planning Outcome',
-                'title' => 'A functional ecosystem designed for long-term adaptability',
+                'title' => 'A functional industrial ecosystem',
                 'paragraphs' => [
                     'Forteasia Industrial Township represents an approach where architecture, infrastructure, and planning converge to create a functional industrial ecosystem.',
-                    'Rather than focusing on isolated plot delivery, the project emphasizes operational efficiency, spatial clarity, long-term adaptability, and integrated infrastructure.',
                 ],
-                'items' => [],
-                'closing' => null,
+                'items' => [
+                    'Operational efficiency',
+                    'Spatial clarity',
+                    'Long-term adaptability',
+                    'Integrated infrastructure',
+                ],
+                'closing' => 'Rather than focusing on transactional development, the project emphasizes these fundamentals.',
                 'image' => $fitSectionImages[2] ?? null,
             ],
         ];

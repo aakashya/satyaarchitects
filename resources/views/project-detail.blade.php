@@ -121,7 +121,7 @@
       <div class="lg:col-span-5">
         <p class="mb-4 text-base uppercase tracking-[0.34em] text-brand-gold">Project Overview</p>
         @if ($overviewLead)
-          <p class="max-w-3xl font-century text-lg leading-relaxed text-slate-700 md:text-xl">
+          <p class="max-w-3xl font-century text-base leading-relaxed text-brand-gray md:text-lg">
             {{ $overviewLead }}
           </p>
         @endif
