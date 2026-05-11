@@ -102,7 +102,7 @@
       <div class="lg:col-span-5">
         <p class="mb-4 text-base uppercase tracking-[0.34em] text-brand-gold">Project Overview</p>
         @if ($overviewLead)
-          <p class="max-w-3xl text-lg leading-relaxed text-slate-700 md:text-xl">
+          <p class="max-w-3xl font-century text-lg leading-relaxed text-slate-700 md:text-xl">
             {{ $overviewLead }}
           </p>
         @endif
@@ -110,7 +110,7 @@
         @if (!empty($overviewBody))
           <div class="mt-8 space-y-5">
             @foreach ($overviewBody as $paragraph)
-              <p class="text-base leading-relaxed text-brand-gray md:text-lg">{{ $paragraph }}</p>
+              <p class="font-century text-base leading-relaxed text-brand-gray md:text-lg">{{ $paragraph }}</p>
             @endforeach
           </div>
         @endif
