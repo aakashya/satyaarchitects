@@ -10,6 +10,7 @@ Route::redirect('/about', '/contact-us', 301);
 Route::view('/contact-us', 'about')->name('about');
 Route::view('/expertise', 'expertise')->name('expertise');
 Route::view('/team', 'team')->name('team');
+Route::view('/about-us', 'about-us')->name('about-us');
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
 Route::get('/projects/{category}/{project}', [ProjectController::class, 'show'])->name('projects.show');
 Route::view('/clients', 'clients')->name('clients');

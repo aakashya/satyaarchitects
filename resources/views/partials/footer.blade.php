@@ -4,6 +4,7 @@
     @php
     $links = [
     ['label' => 'Our Story', 'route' => 'home'],
+    ['label' => 'About Us', 'route' => 'about-us'],
     ['label' => 'Expertise', 'route' => 'expertise'],
     ['label' => 'Projects', 'route' => 'projects'],
     ['label' => 'Insights', 'route' => 'insights'],
