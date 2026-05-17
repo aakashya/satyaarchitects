@@ -116,13 +116,12 @@
 @push('styles')
 <style>
   .about-accordion {
-    --accordion-gap: 0.6rem;
     position: relative;
     width: 100%;
     height: 36rem;
     border-radius: 1.25rem;
     overflow: hidden;
-    background: #e2e8f0;
+    background: transparent;
   }
 
   .about-accordion__item {
@@ -130,9 +129,8 @@
     inset-block: 0;
     left: calc((100% / var(--item-count)) * var(--item-index));
     width: calc(100% / var(--item-count));
-    box-sizing: border-box;
-    padding-inline: calc(var(--accordion-gap) / 2);
     overflow: hidden;
+    border-right: 2px solid rgba(255, 255, 255, 0.55);
     transition: width 420ms ease, transform 420ms ease;
     box-shadow: 0 18px 42px rgba(15, 23, 42, 0.16);
     z-index: 1;
@@ -148,7 +146,6 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 0.9rem;
   }
 
   @media (hover: hover) and (pointer: fine) {
@@ -179,7 +176,6 @@
       inset-block: auto;
       left: auto;
       width: auto;
-      padding-inline: 0;
       border-right: 0;
       flex: 0 0 72%;
       scroll-snap-align: start;
