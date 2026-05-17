@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProjectController;
 
@@ -13,7 +14,8 @@ Route::view('/team', 'team')->name('team');
 Route::view('/about-us', 'about-us')->name('about-us');
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
 Route::get('/projects/{category}/{project}', [ProjectController::class, 'show'])->name('projects.show');
+Route::get('/insights', [BlogController::class, 'insights'])->name('insights');
+Route::get('/blogs/{slug}', [BlogController::class, 'show'])->name('blogs.show');
 Route::view('/clients', 'clients')->name('clients');
-Route::view('/insights', 'insights')->name('insights');
 
 Route::post('/contact-us', [ContactController::class, 'submit'])->name('contact.submit');
