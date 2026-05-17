@@ -11,7 +11,7 @@
 
     {{-- Header (center) --}}
     <div class="text-center">
-      <h1 class="text-center font-semibold tracking-[0.18em] uppercase text-3xl md:text-3xl font-railway inline-block border-b-2 border-brand-gold pb-2">Contact US</h1>
+      <h1 class="inline-block border-b-2 border-brand-gold pb-2 text-center font-publico text-4xl leading-tight uppercase text-brand-dark md:text-5xl">Contact Us</h1>
     </div>
 
     {{-- Top 3 Info Boxes --}}

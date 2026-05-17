@@ -8,7 +8,7 @@
 <section id="projects" class="min-h-screen bg-slate-50 pt-32 pb-20">
   <div class="container mx-auto px-6">
     <div class="text-center">
-      <h1 class="mb-12 inline-block border-b-2 border-brand-gold pb-2 text-center font-railway text-3xl font-semibold uppercase tracking-[0.18em] text-slate-900 md:text-3xl">Our Projects</h1>
+      <h1 class="mb-12 inline-block border-b-2 border-brand-gold pb-2 text-center font-publico text-4xl leading-tight uppercase text-brand-dark md:text-5xl">Our Projects</h1>
     </div>
 
     <div class="mx-auto mb-12 max-w-4xl">

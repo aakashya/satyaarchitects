@@ -45,10 +45,13 @@
       <div class="about-accordion">
         @foreach ($aboutGalleryItems as $index => $item)
           @php
-            $isReverseExpand = $index >= (count($aboutGalleryItems) - 2);
+            $itemCount = count($aboutGalleryItems);
+            $isLeftExpand = $index < 2;
+            $isRightExpand = $index >= ($itemCount - 2);
+            $isCenterExpand = !$isLeftExpand && !$isRightExpand;
           @endphp
           <figure
-            class="about-accordion__item {{ $isReverseExpand ? 'about-accordion__item--reverse' : '' }}"
+            class="about-accordion__item {{ $isRightExpand ? 'about-accordion__item--reverse' : '' }} {{ $isCenterExpand ? 'about-accordion__item--center' : '' }}"
             style="--item-index: {{ $index }}; --item-count: {{ count($aboutGalleryItems) }};">
             <img src="{{ $item['src'] }}" alt="{{ $item['alt'] }}" class="about-accordion__image" loading="lazy" decoding="async">
           </figure>
@@ -62,7 +65,7 @@
       <p class="font-century text-base leading-relaxed text-brand-gray md:text-lg">
         Our expertise spans planning, architecture, engineering, and design-build services across various sectors within the sustainable built environment.
       </p>
-      <figure class="mx-auto mt-6 w-full max-w-3xl overflow-hidden rounded-[1.5rem] bg-slate-100 shadow-[0_20px_55px_rgba(15,23,42,0.12)]">
+      <figure class="mt-6 w-full overflow-hidden rounded-[1.5rem] bg-slate-100 shadow-[0_20px_55px_rgba(15,23,42,0.12)] md:w-1/2">
         <img src="{{ $projectProposalOne }}" alt="Project proposal 1" class="block h-auto w-full object-cover" loading="lazy" decoding="async">
       </figure>
     </article>
@@ -71,7 +74,7 @@
       <p class="font-century text-base leading-relaxed text-brand-gray md:text-lg">
         Established in 2010, a consultancy firm with extensive technical and advisory expertise. We guide, plan and design the future of the built environment.
       </p>
-      <div class="mx-auto mt-6 grid w-full max-w-4xl gap-6 md:grid-cols-2">
+      <div class="mt-6 grid w-full gap-6 md:w-1/2">
         <figure class="overflow-hidden rounded-[1.5rem] bg-slate-100 shadow-[0_20px_55px_rgba(15,23,42,0.12)]">
           <img src="{{ $imageAboutOne }}" alt="Image About 1" class="block h-[16rem] w-full object-cover md:h-[19rem]" loading="lazy" decoding="async">
         </figure>
@@ -85,7 +88,7 @@
       <p class="font-century text-base leading-relaxed text-brand-gray md:text-lg">
         We are a leading data-driven design company specialising in Architecture, Master planning, Landscape, Interior Design, and Branded Environments.
       </p>
-      <figure class="mt-6 overflow-hidden rounded-[1.5rem] bg-slate-100 shadow-[0_20px_55px_rgba(15,23,42,0.12)]">
+      <figure class="mt-6">
         <img src="{{ $projectProposalTwo }}" alt="Project proposal 2" class="block h-auto w-full object-cover" loading="lazy" decoding="async">
       </figure>
     </article>
@@ -113,6 +116,7 @@
 @push('styles')
 <style>
   .about-accordion {
+    --accordion-gap: 0.6rem;
     position: relative;
     width: 100%;
     height: 36rem;
@@ -126,9 +130,10 @@
     inset-block: 0;
     left: calc((100% / var(--item-count)) * var(--item-index));
     width: calc(100% / var(--item-count));
+    box-sizing: border-box;
+    padding-inline: calc(var(--accordion-gap) / 2);
     overflow: hidden;
-    border-right: 1px solid rgba(255, 255, 255, 0.55);
-    transition: width 420ms ease;
+    transition: width 420ms ease, transform 420ms ease;
     box-shadow: 0 18px 42px rgba(15, 23, 42, 0.16);
     z-index: 1;
   }
@@ -143,12 +148,17 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    border-radius: 0.9rem;
   }
 
   @media (hover: hover) and (pointer: fine) {
     .about-accordion .about-accordion__item:hover {
       width: calc((100% / var(--item-count)) * 3);
       z-index: 20;
+    }
+
+    .about-accordion .about-accordion__item--center:hover {
+      transform: translateX(calc(-100% / 3));
     }
   }
 
@@ -169,6 +179,7 @@
       inset-block: auto;
       left: auto;
       width: auto;
+      padding-inline: 0;
       border-right: 0;
       flex: 0 0 72%;
       scroll-snap-align: start;

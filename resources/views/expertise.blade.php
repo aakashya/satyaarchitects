@@ -52,7 +52,7 @@
       <div class="text-center">
         {{-- Heading --}}
         <h1
-          class="text-center font-semibold tracking-[0.18em] uppercase text-3xl md:text-3xl font-railway text-slate-900 border-b-2 border-brand-gold inline-block pb-2">
+          class="inline-block border-b-2 border-brand-gold pb-2 text-center font-publico text-4xl leading-tight uppercase text-brand-dark md:text-5xl">
           Our Expertise
         </h1>
       </div>
