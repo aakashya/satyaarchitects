@@ -10,6 +10,7 @@
     <!-- Desktop Menu -->
     <div class="hidden md:flex space-x-8 text-base font-railway font-medium tracking-wide uppercase">
       <a href="{{ route('home') }}" class="hover:text-brand-gold transition">OUR STORY</a>
+      <a href="{{ route('about-us') }}" class="hover:text-brand-gold transition">ABOUT US</a>
       <a href="{{ route('expertise') }}" class="hover:text-brand-gold transition">EXPERTISE</a>
       <a href="{{ route('projects') }}" class="hover:text-brand-gold transition">PROJECTS</a>
       <a href="{{ route('about') }}" class="hover:text-brand-gold transition">CONTACT US</a>
@@ -31,6 +32,7 @@
       </div>
       <div class="mt-12 flex flex-1 flex-col items-center justify-center gap-8 text-center text-2xl uppercase tracking-[0.3em]">
         <a href="{{ route('home') }}" class="hover:text-brand-gold transition">Our Story</a>
+        <a href="{{ route('about-us') }}" class="hover:text-brand-gold transition">About Us</a>
         <a href="{{ route('expertise') }}" class="hover:text-brand-gold transition">Expertise</a>
         <a href="{{ route('projects') }}" class="hover:text-brand-gold transition">Projects</a>
         <a href="{{ route('about') }}" class="hover:text-brand-gold transition">Contact Us</a>

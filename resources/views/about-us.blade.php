@@ -34,10 +34,10 @@
 <section class="bg-white pb-20 pt-32 md:pb-24 md:pt-36">
   <div class="mx-auto mb-12 max-w-[1480px] px-6 md:mb-14 md:px-10 lg:mb-16 lg:px-12">
     <div class="grid items-stretch gap-12 md:gap-14 lg:grid-cols-[1.2fr_0.8fr] lg:gap-20">
-      <figure class="-ml-3 w-[108%] self-start md:-ml-6 md:w-[110%] lg:-ml-8 lg:w-[112%]">
+      <figure class="order-2 w-full self-start lg:order-1">
         <img src="{{ $indiaMarket }}" alt="India market" class="block h-[300px] w-full object-cover md:h-[380px] lg:h-[420px]" loading="lazy" decoding="async">
       </figure>
-      <div class="flex items-center px-1 py-3 text-brand-dark md:px-3 lg:px-6">
+      <div class="order-1 flex items-center px-6 py-3 text-brand-dark md:px-10 lg:order-2 lg:px-12">
         <div>
           <h1 class="font-publico text-4xl leading-tight text-brand-dark md:text-5xl lg:text-6xl">About Us</h1>
           <p class="mt-6 font-century text-sm leading-relaxed text-brand-gray md:text-base">
