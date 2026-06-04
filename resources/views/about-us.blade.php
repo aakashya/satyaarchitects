@@ -99,7 +99,7 @@
             <article class="studio-culture-row grid gap-4 border-b border-slate-300 py-7 md:py-9 lg:grid-cols-[74px_1fr_300px] lg:gap-8">
               <p class="studio-culture-label">{{ $row['label'] }}</p>
               <h3 class="studio-culture-title">{{ $row['title'] }}</h3>
-              <p class="studio-culture-copy">{{ $row['copy'] }}</p>
+              <p class="studio-culture-copy font-century">{{ $row['copy'] }}</p>
             </article>
           @endforeach
         </div>
