@@ -9,7 +9,7 @@
 @php
   $aboutGalleryPath = public_path('images/about/new');
   $aboutGalleryItems = [];
-  $projectProposalOne = asset('images/about/project_proposal1.jpg');
+  $projectProposalOne = asset('images/about/piechart.png');
   $projectProposalTwo = asset('images/about/project_proposal2.png');
   $imageAboutOne = asset('images/about/imgabout1.jpg');
   $imageAboutTwo = asset('images/about/imageabout2.jpg');
@@ -112,7 +112,7 @@
       <div class="space-y-12 md:space-y-14">
         <article class="grid gap-6 lg:grid-cols-[0.58fr_0.42fr] lg:gap-10">
           <figure class="overflow-hidden">
-            <img src="{{ $projectProposalOne }}" alt="Project proposal 1" class="block h-auto w-full object-contain" loading="lazy" decoding="async">
+            <img src="{{ $projectProposalOne }}" alt="Satya Architects pie chart" class="block h-auto w-full object-contain" loading="lazy" decoding="async">
           </figure>
           <div class="flex flex-col justify-center px-6 py-7 md:px-8 md:py-8">
             <p class="font-century text-sm leading-relaxed text-brand-gray md:text-base">

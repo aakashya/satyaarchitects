@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', $blog['title'] . ' | Satya Architects')
-@section('meta_description', $blog['excerpt'])
+@section('title', $blog['meta_title'] ?? ($blog['title'] . ' | Satya Architects'))
+@section('meta_description', $blog['meta_description'] ?? $blog['excerpt'])
 @section('meta_image', $blog['image'])
 @section('canonical', route('blogs.show', ['slug' => $blog['slug']]))
 @section('meta_type', 'article')
@@ -28,8 +28,22 @@
 
     <article class="mt-12 w-full space-y-6 font-century text-base leading-relaxed text-slate-700 md:text-lg">
       <p class="text-lg leading-relaxed text-brand-gray md:text-xl">{{ $blog['excerpt'] }}</p>
-      @foreach ($blog['body'] as $paragraph)
-        <p>{{ $paragraph }}</p>
+      @foreach ($blog['body'] as $block)
+        @php
+          $type = is_array($block) ? ($block['type'] ?? 'paragraph') : 'paragraph';
+        @endphp
+
+        @if ($type === 'heading')
+          <h2 class="pt-6 font-publico text-2xl leading-tight text-brand-dark md:text-3xl">{{ $block['text'] }}</h2>
+        @elseif ($type === 'list')
+          <ul class="list-disc space-y-2 pl-6">
+            @foreach ($block['items'] as $item)
+              <li>{{ $item }}</li>
+            @endforeach
+          </ul>
+        @else
+          <p>{{ is_array($block) ? $block['text'] : $block }}</p>
+        @endif
       @endforeach
     </article>
   </div>
