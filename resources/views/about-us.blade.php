@@ -10,11 +10,10 @@
   $aboutGalleryPath = public_path('images/about/new');
   $aboutGalleryItems = [];
   $projectProposalOne = asset('images/about/piechart.png');
-  $projectProposalTwo = asset('images/about/project_proposal2.png');
   $imageAboutOne = asset('images/about/imgabout1.jpg');
   $imageAboutTwo = asset('images/about/imageabout2.jpg');
   $indiaMarket = asset('images/about/india-market.webp');
-  $imageRemaining = asset('images/about/image.jpg');
+  $graphTwo = asset('images/about/graph2.png');
 
   if (\Illuminate\Support\Facades\File::exists($aboutGalleryPath)) {
       $aboutGalleryItems = collect(\Illuminate\Support\Facades\File::files($aboutGalleryPath))
@@ -133,6 +132,9 @@
               <p class="mt-4 font-century text-sm leading-relaxed text-brand-gray md:text-base">
                 And as creative problem solvers, we're passionate about design that's tailored to the needs of the people who live, work and experience the destinations we create.
               </p>
+              <p class="mt-4 font-century text-sm leading-relaxed text-brand-gray md:text-base">
+                Our holistic approach integrates architecture, engineering, infrastructure engineering, urban design, regional planning, landscape design, interior design, and environmental sustainability, bridging the gap between developed and developing regions.
+              </p>
             </div>
           </div>
           <div class="grid w-full gap-6 md:mx-auto md:w-[82%] lg:w-[78%]">
@@ -146,19 +148,8 @@
         </article>
 
         <article class="overflow-hidden">
-          <figure>
-            <img src="{{ $projectProposalTwo }}" alt="Project proposal 2" class="block h-auto w-full object-contain" loading="lazy" decoding="async">
-          </figure>
-        </article>
-
-        <article class="grid gap-6 lg:grid-cols-[0.45fr_0.55fr] lg:gap-10">
-          <div class="flex items-center px-6 py-7 md:px-8 md:py-8">
-            <p class="font-century text-sm leading-relaxed text-brand-gray md:text-base">
-              Our holistic approach integrates architecture, engineering, infrastructure engineering, urban design, regional planning, landscape design, interior design, and environmental sustainability, bridging the gap between developed and developing regions.
-            </p>
-          </div>
           <figure class="overflow-hidden">
-            <img src="{{ $imageRemaining }}" alt="About image remaining" class="block h-[320px] w-full object-cover md:h-[390px]" loading="lazy" decoding="async">
+            <img src="{{ $graphTwo }}" alt="Satya Architects graph" class="block h-auto w-full object-contain" loading="lazy" decoding="async">
           </figure>
         </article>
       </div>
