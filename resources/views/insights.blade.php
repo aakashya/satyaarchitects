@@ -73,15 +73,15 @@
             <i class="fa-regular fa-calendar-days text-brand-gold"></i>
             <span>{{ $post['date'] }}</span>
           </p>
-          <h3 class="mt-3 font-century text-2xl leading-tight md:text-3xl">
+          <h3 class="mt-3 font-century text-[24px] leading-tight">
             <a href="{{ route('blogs.show', ['slug' => $post['slug']]) }}" class="text-black transition hover:text-brand-gold">
               {{ $post['title'] }}
             </a>
           </h3>
-          <p class="mt-4 flex-1 font-century text-base leading-relaxed text-slate-700 md:text-[17px]">
+          <p class="mt-4 flex-1 font-century text-[16px] leading-relaxed text-slate-700">
             {{ $post['excerpt'] }}
           </p>
-          <a href="{{ route('blogs.show', ['slug' => $post['slug']]) }}" class="mt-6 inline-block font-century text-lg font-semibold text-black transition group-hover:text-brand-gold">
+          <a href="{{ route('blogs.show', ['slug' => $post['slug']]) }}" class="mt-6 inline-block font-century text-[17px] font-semibold text-black transition group-hover:text-brand-gold">
             Read More
           </a>
         </article>
