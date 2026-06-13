@@ -66,8 +66,8 @@
     <div class="grid gap-9 md:grid-cols-2 xl:grid-cols-4">
       @foreach ($blogPosts as $post)
         <article class="group flex h-full flex-col">
-          <figure class="aspect-[5/3.2] w-full overflow-hidden bg-slate-200">
-            <img src="{{ $post['image'] }}" alt="{{ $post['title'] }}" class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.06]" loading="lazy" decoding="async">
+          <figure class="w-full overflow-hidden bg-white">
+            <img src="{{ $post['image'] }}" alt="{{ $post['title'] }}" class="block h-auto w-full transition duration-500 group-hover:scale-[1.03]" loading="lazy" decoding="async">
           </figure>
           <p class="mt-4 inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.03em] text-slate-700">
             <i class="fa-regular fa-calendar-days text-brand-gold"></i>

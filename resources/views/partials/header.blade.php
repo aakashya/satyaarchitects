@@ -13,6 +13,7 @@
       <a href="{{ route('about-us') }}" class="hover:text-brand-gold transition">ABOUT US</a>
       <a href="{{ route('expertise') }}" class="hover:text-brand-gold transition">EXPERTISE</a>
       <a href="{{ route('projects') }}" class="hover:text-brand-gold transition">PROJECTS</a>
+      <a href="{{ route('insights') }}" class="hover:text-brand-gold transition">INSIGHTS</a>
       <a href="{{ route('about') }}" class="hover:text-brand-gold transition">CONTACT US</a>
     </div>
 
@@ -35,6 +36,7 @@
         <a href="{{ route('about-us') }}" class="hover:text-brand-gold transition">About Us</a>
         <a href="{{ route('expertise') }}" class="hover:text-brand-gold transition">Expertise</a>
         <a href="{{ route('projects') }}" class="hover:text-brand-gold transition">Projects</a>
+        <a href="{{ route('insights') }}" class="hover:text-brand-gold transition">Insights</a>
         <a href="{{ route('about') }}" class="hover:text-brand-gold transition">Contact Us</a>
       </div>
     </div>

@@ -21,8 +21,8 @@
     <h1 class="mt-3 font-publico text-4xl leading-tight text-brand-dark md:text-6xl">{{ $blog['title'] }}</h1>
 
     <div class="mt-10">
-      <figure class="overflow-hidden rounded-[1.5rem] bg-slate-200 shadow-[0_24px_55px_rgba(15,23,42,0.12)]">
-        <img src="{{ $blog['image'] }}" alt="{{ $blog['title'] }}" class="h-full w-full object-cover" loading="eager" decoding="async">
+      <figure class="overflow-hidden rounded-[1.5rem] bg-white shadow-[0_24px_55px_rgba(15,23,42,0.12)]">
+        <img src="{{ $blog['image'] }}" alt="{{ $blog['title'] }}" class="block h-auto w-full" loading="eager" decoding="async">
       </figure>
     </div>
 
@@ -41,6 +41,10 @@
               <li>{{ $item }}</li>
             @endforeach
           </ul>
+        @elseif ($type === 'html')
+          <p>{!! $block['html'] !!}</p>
+        @elseif ($type === 'callout')
+          <p class="pt-4 text-lg font-semibold leading-relaxed text-brand-dark md:text-xl">{!! $block['html'] !!}</p>
         @else
           <p>{{ is_array($block) ? $block['text'] : $block }}</p>
         @endif
@@ -56,8 +60,8 @@
       <div class="mt-8 grid gap-7 md:grid-cols-3">
         @foreach ($relatedPosts as $item)
           <article class="group flex h-full flex-col rounded-[1.25rem] border border-slate-200 bg-white p-4">
-            <a href="{{ route('blogs.show', ['slug' => $item['slug']]) }}" class="block overflow-hidden rounded-xl bg-slate-200">
-              <img src="{{ $item['image'] }}" alt="{{ $item['title'] }}" class="h-52 w-full object-cover transition duration-500 group-hover:scale-[1.05]" loading="lazy" decoding="async">
+            <a href="{{ route('blogs.show', ['slug' => $item['slug']]) }}" class="block overflow-hidden rounded-xl bg-white">
+              <img src="{{ $item['image'] }}" alt="{{ $item['title'] }}" class="block h-auto w-full transition duration-500 group-hover:scale-[1.03]" loading="lazy" decoding="async">
             </a>
             <p class="mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-slate-500">
               <i class="fa-regular fa-calendar-days text-brand-gold"></i>

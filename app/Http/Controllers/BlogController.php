@@ -35,7 +35,7 @@ class BlogController extends Controller
         return [
             [
                 'slug' => 'luxury-home-architecture-trends-2026-in-gurgaon',
-                'image' => asset('images/blog/blog1.jpg'),
+                'image' => asset('images/blog/blog01.png'),
                 'date' => 'May 4, 2026',
                 'title' => 'Luxury Home Architecture Trends 2026 in Gurgaon',
                 'meta_title' => 'Luxury Home Architecture Trends 2026 in Gurgaon',
@@ -81,8 +81,8 @@ class BlogController extends Controller
                         'text' => 'Luxury homeowners are now prioritizing homes that reduce heat gain while enhancing daylight quality. This approach not only improves comfort but also contributes to long-term operational efficiency.',
                     ],
                     [
-                        'type' => 'paragraph',
-                        'text' => 'For clients searching for luxury residential architects in Gurgaon, climate-sensitive design has become a defining benchmark of architectural quality.',
+                        'type' => 'html',
+                        'html' => 'For clients searching for <a href="' . route('about') . '" class="font-semibold text-brand-gold transition hover:text-brand-dark">luxury residential architects in Gurgaon</a>, climate-sensitive design has become a defining benchmark of architectural quality.',
                     ],
                     [
                         'type' => 'heading',
@@ -294,14 +294,14 @@ class BlogController extends Controller
                         'text' => 'As urban lifestyles continue to evolve, architecture will play an increasingly critical role in shaping homes that are efficient, emotionally enriching, and built for long-term relevance.',
                     ],
                     [
-                        'type' => 'paragraph',
-                        'text' => 'Looking for the Best Architects in Gurgaon? Contact Satya Architects today.',
+                        'type' => 'callout',
+                        'html' => 'Looking for the Best Architects in Gurgaon? Contact <a href="' . route('about') . '" class="text-brand-gold transition hover:text-brand-dark">Satya Architects</a> today!!!',
                     ],
                 ],
             ],
             [
                 'slug' => 'importance-of-vastu-compliant-design-in-modern-homes',
-                'image' => asset('images/blog/blog2.jpg'),
+                'image' => asset('images/blog/blog02.png'),
                 'date' => 'May 11, 2026',
                 'title' => 'The Importance of Vastu-Compliant Design in Modern Homes',
                 'meta_title' => 'The Importance of Vastu-Compliant Design in Modern Homes',
@@ -313,8 +313,8 @@ class BlogController extends Controller
                         'text' => 'In today\'s fast-paced lifestyle, homeowners are looking beyond aesthetics and functionality. Many people now prefer homes that create a sense of balance, positivity, and well-being. This is where Vastu-compliant design continues to play an important role in modern architecture.',
                     ],
                     [
-                        'type' => 'paragraph',
-                        'text' => 'At Satya Architects, thoughtful planning often includes understanding how traditional design principles can coexist with contemporary architecture. Rather than treating Vastu as a rigid rulebook, modern architects use it as a guiding framework to improve spatial harmony and natural flow within a home.',
+                        'type' => 'html',
+                        'html' => 'At <a href="' . route('about') . '" class="font-semibold text-brand-gold transition hover:text-brand-dark">Satya Architects</a>, thoughtful planning often includes understanding how traditional design principles can coexist with contemporary architecture. Rather than treating Vastu as a rigid rulebook, modern architects use it as a guiding framework to improve spatial harmony and natural flow within a home.',
                     ],
                     [
                         'type' => 'heading',
@@ -377,14 +377,14 @@ class BlogController extends Controller
                         'text' => 'As architectural trends continue to evolve, the focus remains the same, creating spaces that support comfort, positivity, and better living experiences.',
                     ],
                     [
-                        'type' => 'paragraph',
-                        'text' => 'Looking for the best Vastu architects in Delhi NCR? Contact Satya Architects today.',
+                        'type' => 'html',
+                        'html' => 'Looking for the best Vastu architects in Delhi NCR? Contact <a href="' . route('about') . '" class="font-semibold text-brand-gold transition hover:text-brand-dark">Satya Architects</a> today.',
                     ],
                 ],
             ],
             [
                 'slug' => 'what-design-aesthetics-will-define-2026',
-                'image' => asset('images/blog/blog3.jpg'),
+                'image' => asset('images/blog/blog03.png'),
                 'date' => 'May 18, 2026',
                 'title' => 'What Design Aesthetics Will Define 2026?',
                 'meta_title' => 'Future Design Aesthetics Will Define 2026?',
@@ -773,14 +773,14 @@ class BlogController extends Controller
                         'text' => 'For clients and developers planning future projects, understanding this emerging aesthetics can help create spaces that remain modern, functional, and relevant for years ahead.',
                     ],
                     [
-                        'type' => 'paragraph',
-                        'text' => 'As architectural priorities continue to evolve, Satya Architects remains committed to delivering thoughtful and future-ready design solutions grounded in creativity, expertise, and long-term value.',
+                        'type' => 'html',
+                        'html' => 'As architectural priorities continue to evolve, <a href="' . route('about') . '" class="font-semibold text-brand-gold transition hover:text-brand-dark">Satya Architects</a> remains committed to delivering thoughtful and future-ready design solutions grounded in creativity, expertise, and long-term value.',
                     ],
                 ],
             ],
             [
                 'slug' => 'dhoot-transmission-industrial-facility-jhajjar',
-                'image' => asset('images/blog/blog4.jpg'),
+                'image' => asset('images/blog/blog04.png'),
                 'date' => 'May 25, 2026',
                 'title' => 'Dhoot Transmission Industrial Facility in Jhajjar: A Modern Industrial Space',
                 'meta_title' => 'Dhoot Transmission Industrial Facility in Jhajjar',
@@ -797,8 +797,8 @@ class BlogController extends Controller
                 ],
                 'body' => [
                     [
-                        'type' => 'paragraph',
-                        'text' => 'Industrial architecture has changed significantly in recent years. Today, factories are not just built for production but also for efficiency, sustainability, and better working environments. The Dhoot Transmission Industrial Facility in Jhajjar is a great example of modern industrial design that combines functionality with smart planning.',
+                        'type' => 'html',
+                        'html' => 'Industrial architecture has changed significantly in recent years. Today, factories are not just built for production but also for efficiency, sustainability, and better working environments. The <a href="' . route('projects.show', ['category' => 'industries', 'project' => 'dhoot-transmission-jhajjar']) . '" class="font-semibold text-brand-gold transition hover:text-brand-dark">Dhoot Transmission Industrial Facility in Jhajjar</a> is a great example of modern industrial design that combines functionality with smart planning.',
                     ],
                     [
                         'type' => 'paragraph',
@@ -861,24 +861,24 @@ class BlogController extends Controller
                         'text' => 'Conclusion',
                     ],
                     [
-                        'type' => 'paragraph',
-                        'text' => 'The Dhoot Transmission Industrial Facility in Jhajjar reflects the growing demand for smart and sustainable industrial infrastructure in India. Its modern layout, efficient planning, and future-ready design make it an excellent example of contemporary industrial architecture.',
+                        'type' => 'html',
+                        'html' => 'The <a href="' . route('projects.show', ['category' => 'industries', 'project' => 'dhoot-transmission-jhajjar']) . '" class="font-semibold text-brand-gold transition hover:text-brand-dark">Dhoot Transmission Industrial Facility in Jhajjar</a> reflects the growing demand for smart and sustainable industrial infrastructure in India. Its modern layout, efficient planning, and future-ready design make it an excellent example of contemporary industrial architecture.',
                     ],
                     [
                         'type' => 'paragraph',
                         'text' => 'As industrial growth continues in Haryana, businesses are increasingly searching for the best architect in Jhajjar to design efficient and scalable manufacturing facilities that support long-term success.',
                     ],
                     [
-                        'type' => 'paragraph',
-                        'text' => 'Planning an industrial or manufacturing project? Connect with industrial architecture experts to build modern, efficient, and future-ready spaces.',
+                        'type' => 'html',
+                        'html' => '<a href="' . route('about') . '" class="font-semibold text-brand-gold transition hover:text-brand-dark">Planning an industrial or manufacturing project? Connect with industrial architecture experts to build modern, efficient, and future-ready spaces.</a>',
                     ],
                     [
                         'type' => 'heading',
                         'text' => 'Our Project Featured Internationally',
                     ],
                     [
-                        'type' => 'paragraph',
-                        'text' => 'Our project "Dhoot Transmission Industrial Facility" has been published on Archello, an international architecture platform showcasing remarkable architectural projects worldwide.',
+                        'type' => 'html',
+                        'html' => '<a href="https://archello.com/project/dhoot-transmission-industrial-facility" target="_blank" rel="noopener noreferrer" class="font-semibold text-brand-gold transition hover:text-brand-dark">Our project "Dhoot Transmission Industrial Facility" has been published on Archello, an international architecture platform showcasing remarkable architectural projects worldwide.</a>',
                     ],
                 ],
             ],
