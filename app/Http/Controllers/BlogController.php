@@ -36,7 +36,7 @@ class BlogController extends Controller
             [
                 'slug' => 'luxury-home-architecture-trends-2026-in-gurgaon',
                 'image' => asset('images/blog/blog1.jpg'),
-                'date' => 'June 8, 2026',
+                'date' => 'May 4, 2026',
                 'title' => 'Luxury Home Architecture Trends 2026 in Gurgaon',
                 'meta_title' => 'Luxury Home Architecture Trends 2026 in Gurgaon',
                 'meta_description' => 'Explore the top luxury home architecture trends shaping Delhi NCR in 2026, including sustainable design, biophilic planning, and smart homes - Satya Architects.',
@@ -302,7 +302,7 @@ class BlogController extends Controller
             [
                 'slug' => 'importance-of-vastu-compliant-design-in-modern-homes',
                 'image' => asset('images/blog/blog2.jpg'),
-                'date' => 'June 8, 2026',
+                'date' => 'May 11, 2026',
                 'title' => 'The Importance of Vastu-Compliant Design in Modern Homes',
                 'meta_title' => 'The Importance of Vastu-Compliant Design in Modern Homes',
                 'meta_description' => 'Discover how Vastu-compliant design enhances modern homes through balanced layouts, natural light, and functional architecture. Contact Satya Architects.',
@@ -385,7 +385,7 @@ class BlogController extends Controller
             [
                 'slug' => 'what-design-aesthetics-will-define-2026',
                 'image' => asset('images/blog/blog3.jpg'),
-                'date' => 'June 8, 2026',
+                'date' => 'May 18, 2026',
                 'title' => 'What Design Aesthetics Will Define 2026?',
                 'meta_title' => 'Future Design Aesthetics Will Define 2026?',
                 'meta_description' => 'Explore the design aesthetics expected to shape 2026, from biophilic architecture and tactile minimalism to adaptive spaces and sustainable luxury.',
@@ -781,7 +781,7 @@ class BlogController extends Controller
             [
                 'slug' => 'dhoot-transmission-industrial-facility-jhajjar',
                 'image' => asset('images/blog/blog4.jpg'),
-                'date' => 'June 8, 2026',
+                'date' => 'May 25, 2026',
                 'title' => 'Dhoot Transmission Industrial Facility in Jhajjar: A Modern Industrial Space',
                 'meta_title' => 'Dhoot Transmission Industrial Facility in Jhajjar',
                 'meta_description' => 'Explore the Dhoot Transmission Industrial Facility in Jhajjar, showcasing modern industrial architecture and smart design. Read more now!',
