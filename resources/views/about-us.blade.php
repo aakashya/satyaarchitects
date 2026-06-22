@@ -14,6 +14,18 @@
   $imageAboutTwo = asset('images/about/imageabout2.jpg');
   $indiaMarket = asset('images/about/india-market.webp');
   $graphTwo = asset('images/about/graph2.png');
+  $pieLegends = [
+      ['label' => 'Automobiles', 'value' => '1783K sq.ft', 'pct' => 34.8, 'color' => '#ef3f0a'],
+      ['label' => 'Warehouses', 'value' => '901K sq.ft', 'pct' => 17.6, 'color' => '#1f6ea5'],
+      ['label' => 'ICD', 'value' => '799K sq.ft', 'pct' => 15.6, 'color' => '#2d9b55'],
+      ['label' => 'Garments', 'value' => '473K sq.ft', 'pct' => 9.2, 'color' => '#d0a51e'],
+      ['label' => 'Others', 'value' => '380K sq.ft', 'pct' => 7.4, 'color' => '#874cc7'],
+      ['label' => 'Cold Storage', 'value' => '256K sq.ft', 'pct' => 5.0, 'color' => '#149d9b'],
+      ['label' => 'Print/Pkg', 'value' => '242K sq.ft', 'pct' => 4.7, 'color' => '#d94b70'],
+      ['label' => 'Pharma', 'value' => '135K sq.ft', 'pct' => 2.6, 'color' => '#65ad3a'],
+      ['label' => 'Leather & Tannery', 'value' => '79K sq.ft', 'pct' => 1.5, 'color' => '#ba5205'],
+      ['label' => 'Malt', 'value' => '70K sq.ft', 'pct' => 1.4, 'color' => '#64748b'],
+  ];
 
   if (\Illuminate\Support\Facades\File::exists($aboutGalleryPath)) {
       $aboutGalleryItems = collect(\Illuminate\Support\Facades\File::files($aboutGalleryPath))
@@ -41,6 +53,9 @@
           <h1 class="font-publico text-4xl leading-tight text-brand-dark md:text-5xl lg:text-6xl">About Us</h1>
           <p class="mt-6 font-century text-sm leading-relaxed text-brand-gray md:text-base">
             Satya Architects, a Leading Architecture &amp; Interior Design Firm, believe architecture should do more than occupy space-it should inspire, perform, and endure. Every project is approached with clarity of thought, contextual understanding, and attention to detail.
+          </p>
+          <p class="mt-4 font-century text-sm leading-relaxed text-brand-gray md:text-base">
+            Established in 2010, a consultancy firm with extensive technical and advisory expertise. We guide, plan and design the future of the built environment.
           </p>
         </div>
       </div>
@@ -109,17 +124,181 @@
   <section class="mt-16">
     <div class="mx-auto max-w-[1480px] px-6 md:px-10 lg:px-12">
       <div class="space-y-12 md:space-y-14">
-        <article class="grid gap-6 lg:grid-cols-[0.58fr_0.42fr] lg:gap-10">
-          <figure class="overflow-hidden">
-            <img src="{{ $projectProposalOne }}" alt="Satya Architects pie chart" class="block h-auto w-full object-contain" loading="lazy" decoding="async">
-          </figure>
-          <div class="flex flex-col justify-center px-6 py-7 md:px-8 md:py-8">
-            <p class="font-century text-sm leading-relaxed text-brand-gray md:text-base">
-              Our expertise spans planning, architecture, engineering, and design-build services across various sectors within the sustainable built environment.
+        <article>
+          <div class="mb-10 text-center">
+            <h3 class="font-century text-3xl font-bold leading-tight text-slate-950 md:text-4xl">
+              Built-up Area Distribution by Industry Sector
+            </h3>
+            <p class="mt-5 font-century text-sm leading-relaxed text-slate-500 md:text-lg">
+              Total Built-up Area&nbsp;&nbsp;&middot;&nbsp;&nbsp;5,117,708 Sq.ft&nbsp;&nbsp;&middot;&nbsp;&nbsp;51.18 Lakh Sq.ft&nbsp;&nbsp;&middot;&nbsp;&nbsp;10 Sectors&nbsp;&nbsp;&middot;&nbsp;&nbsp;58 Projects
             </p>
-            <p class="mt-4 font-century text-sm leading-relaxed text-brand-gray md:text-base">
-              Established in 2010, a consultancy firm with extensive technical and advisory expertise. We guide, plan and design the future of the built environment.
-            </p>
+            <div class="mx-auto mt-8 h-px max-w-3xl bg-slate-200"></div>
+          </div>
+          @php
+            $cx = 380;
+            $cy = 380;
+            $gap = 1.35;
+            $toPoint = function (float $radius, float $angle) use ($cx, $cy): array {
+                $rad = deg2rad($angle - 90);
+                return [$cx + ($radius * cos($rad)), $cy + ($radius * sin($rad))];
+            };
+            $arcPath = function (float $start, float $end, float $outerRadius, float $innerRadius) use ($toPoint): string {
+                [$x1, $y1] = $toPoint($outerRadius, $start);
+                [$x2, $y2] = $toPoint($outerRadius, $end);
+                [$x3, $y3] = $toPoint($innerRadius, $end);
+                [$x4, $y4] = $toPoint($innerRadius, $start);
+                $largeArc = ($end - $start) > 180 ? 1 : 0;
+
+                return sprintf(
+                    'M %.3f %.3f A %.3f %.3f 0 %d 1 %.3f %.3f L %.3f %.3f A %.3f %.3f 0 %d 0 %.3f %.3f Z',
+                    $x1,
+                    $y1,
+                    $outerRadius,
+                    $outerRadius,
+                    $largeArc,
+                    $x2,
+                    $y2,
+                    $x3,
+                    $y3,
+                    $innerRadius,
+                    $innerRadius,
+                    $largeArc,
+                    $x4,
+                    $y4
+                );
+            };
+            $chartSectors = [];
+            $currentAngle = 0;
+            $flipTextLabels = ['Warehouses', 'Others', 'Cold Storage', 'Print/Pkg', 'Pharma', 'Leather & Tannery', 'Malt'];
+
+            foreach ($pieLegends as $legend) {
+                $span = $legend['pct'] * 3.6;
+                $start = $currentAngle + $gap;
+                $end = $currentAngle + $span - $gap;
+
+                if ($end <= $start) {
+                    $start = $currentAngle + 0.35;
+                    $end = $currentAngle + $span - 0.35;
+                }
+
+                $mid = ($start + $end) / 2;
+                [$outerLabelX, $outerLabelY] = $toPoint(273, $mid);
+                [$percentX, $percentY] = $toPoint(172, $mid);
+                $textRotation = ($mid > 90 && $mid < 270) ? $mid + 180 : $mid;
+                $labelRotation = $textRotation - 90;
+                $percentRotation = $textRotation - 90;
+
+                if (in_array($legend['label'], $flipTextLabels, true)) {
+                    $labelRotation += 180;
+                    $percentRotation += 180;
+                }
+
+                $chartSectors[] = [
+                    ...$legend,
+                    'outer_path' => $arcPath($start, $end, 314, 232),
+                    'inner_path' => $arcPath($start, $end, 222, 124),
+                    'outer_label_x' => $outerLabelX,
+                    'outer_label_y' => $outerLabelY,
+                    'percent_x' => $percentX,
+                    'percent_y' => $percentY,
+                    'label_rotation' => $labelRotation,
+                    'percent_rotation' => $percentRotation,
+                    'label_class' => 'builtup-radial-chart__sector-label' . ($legend['pct'] < 3 ? ' builtup-radial-chart__sector-label--small' : ''),
+                    'label_line_gap' => $legend['pct'] < 3 ? 8 : 10,
+                ];
+
+                $currentAngle += $span;
+            }
+          @endphp
+          <div class="grid items-center gap-8 lg:grid-cols-[0.55fr_1.9fr_0.55fr] lg:gap-10">
+            <div class="hidden gap-4 lg:order-1 lg:grid lg:grid-cols-1">
+              @foreach (array_slice($pieLegends, 0, 5) as $legend)
+                <div class="flex flex-col items-center gap-2 text-center">
+                  <span class="h-5 w-5 shrink-0" style="background-color: {{ $legend['color'] }}"></span>
+                  <span>
+                    <span class="block font-century text-xs font-semibold text-slate-900 md:text-sm">{{ $legend['label'] }}</span>
+                    <span class="block font-century text-xs text-slate-500">{{ $legend['value'] }}</span>
+                  </span>
+                </div>
+              @endforeach
+            </div>
+            <div class="order-1 mx-auto w-full max-w-[980px] lg:order-2">
+              <svg class="builtup-radial-chart" viewBox="0 0 760 760" role="img" aria-labelledby="builtup-chart-title builtup-chart-desc">
+                <title id="builtup-chart-title">Built-up area distribution by industry sector</title>
+                <desc id="builtup-chart-desc">A two-ring radial chart showing total built-up area of 51.18 lakh square feet across 10 industry sectors.</desc>
+                <defs>
+                  <filter id="builtup-soft-shadow" x="-12%" y="-12%" width="124%" height="124%">
+                    <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#cbd5e1" flood-opacity="0.34" />
+                  </filter>
+                </defs>
+
+                <circle cx="380" cy="380" r="326" fill="#f1f7fb" />
+
+                <g filter="url(#builtup-soft-shadow)">
+                  @foreach ($chartSectors as $sector)
+                    <path d="{{ $sector['inner_path'] }}" fill="{{ $sector['color'] }}" opacity="0.18" stroke="#fff" stroke-width="4" />
+                  @endforeach
+                  @foreach ($chartSectors as $sector)
+                    <path d="{{ $sector['outer_path'] }}" fill="{{ $sector['color'] }}" stroke="#fff" stroke-width="6" />
+                  @endforeach
+                </g>
+
+                @foreach ($chartSectors as $sector)
+                  <text
+                    x="{{ $sector['outer_label_x'] }}"
+                    y="{{ $sector['outer_label_y'] }}"
+                    transform="rotate({{ $sector['label_rotation'] }} {{ $sector['outer_label_x'] }} {{ $sector['outer_label_y'] }})"
+                    text-anchor="middle"
+                    dominant-baseline="middle"
+                    class="{{ $sector['label_class'] }}">
+                    @foreach (explode(' ', str_replace('/', '/ ', $sector['label'])) as $wordIndex => $word)
+                      <tspan x="{{ $sector['outer_label_x'] }}" dy="{{ $wordIndex === 0 ? 0 : $sector['label_line_gap'] }}">{{ $word }}</tspan>
+                    @endforeach
+                  </text>
+                  <text
+                    x="{{ $sector['percent_x'] }}"
+                    y="{{ $sector['percent_y'] }}"
+                    transform="rotate({{ $sector['percent_rotation'] }} {{ $sector['percent_x'] }} {{ $sector['percent_y'] }})"
+                    text-anchor="middle"
+                    dominant-baseline="middle"
+                    fill="{{ $sector['color'] }}"
+                    class="builtup-radial-chart__percent">
+                    {{ number_format($sector['pct'], 1) }}%
+                  </text>
+                @endforeach
+
+                <circle cx="380" cy="380" r="121" fill="#fff" stroke="#d6e6f1" stroke-width="8" />
+                <circle cx="380" cy="380" r="112" fill="none" stroke="#c9ddeb" stroke-width="2" />
+                <text x="380" y="344" text-anchor="middle" class="builtup-radial-chart__total">51.18</text>
+                <text x="380" y="371" text-anchor="middle" class="builtup-radial-chart__unit">Lakh Sq.ft</text>
+                <line x1="314" y1="392" x2="446" y2="392" stroke="#d7dee7" stroke-width="1.5" />
+                <text x="380" y="416" text-anchor="middle" class="builtup-radial-chart__caption">TOTAL BUILT-UP AREA</text>
+                <text x="380" y="439" text-anchor="middle" class="builtup-radial-chart__built">5,117,708 Sq.ft</text>
+                <text x="380" y="463" text-anchor="middle" class="builtup-radial-chart__meta">10 Sectors&nbsp;&nbsp;&middot;&nbsp;&nbsp;58 Projects</text>
+              </svg>
+            </div>
+            <div class="order-2 grid grid-cols-2 gap-x-6 gap-y-5 lg:hidden">
+              @foreach ($pieLegends as $legend)
+                <div class="flex flex-col items-center gap-2 text-center">
+                  <span class="h-5 w-5 shrink-0" style="background-color: {{ $legend['color'] }}"></span>
+                  <span>
+                    <span class="block font-century text-xs font-semibold text-slate-900 md:text-sm">{{ $legend['label'] }}</span>
+                    <span class="block font-century text-xs text-slate-500">{{ $legend['value'] }}</span>
+                  </span>
+                </div>
+              @endforeach
+            </div>
+            <div class="hidden gap-4 lg:order-3 lg:grid lg:grid-cols-1">
+              @foreach (array_slice($pieLegends, 5) as $legend)
+                <div class="flex flex-col items-center gap-2 text-center">
+                  <span class="h-5 w-5 shrink-0" style="background-color: {{ $legend['color'] }}"></span>
+                  <span>
+                    <span class="block font-century text-xs font-semibold text-slate-900 md:text-sm">{{ $legend['label'] }}</span>
+                    <span class="block font-century text-xs text-slate-500">{{ $legend['value'] }}</span>
+                  </span>
+                </div>
+              @endforeach
+            </div>
           </div>
         </article>
 
@@ -127,6 +306,9 @@
           <div class="flex items-center px-6 py-7 md:px-8 md:py-8">
             <div>
               <p class="font-century text-sm leading-relaxed text-brand-gray md:text-base">
+                Our expertise spans planning, architecture, engineering, and design-build services across various sectors within the sustainable built environment.
+              </p>
+              <p class="mt-4 font-century text-sm leading-relaxed text-brand-gray md:text-base">
                 We are a leading data-driven design company specialising in Architecture, Master planning, Landscape, Interior Design, and Branded Environments.
               </p>
               <p class="mt-4 font-century text-sm leading-relaxed text-brand-gray md:text-base">
@@ -226,6 +408,68 @@
     line-height: 1.4;
   }
 
+  .builtup-radial-chart {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+
+  .builtup-radial-chart__sector-label {
+    fill: #fff;
+    font-family: 'Century Gothic', sans-serif;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+  }
+
+  .builtup-radial-chart__sector-label--small {
+    font-size: 7.2px;
+    letter-spacing: 0;
+  }
+
+  .builtup-radial-chart__percent {
+    font-family: 'Century Gothic', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .builtup-radial-chart__total {
+    fill: #16172c;
+    font-family: 'Century Gothic', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+  }
+
+  .builtup-radial-chart__unit {
+    fill: #657084;
+    font-family: 'Century Gothic', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .builtup-radial-chart__caption {
+    fill: #9aa4b2;
+    font-family: 'Century Gothic', sans-serif;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+  }
+
+  .builtup-radial-chart__built {
+    fill: #1f6ea5;
+    font-family: 'Century Gothic', sans-serif;
+    font-size: 10.5px;
+    font-weight: 800;
+  }
+
+  .builtup-radial-chart__meta {
+    fill: #a5adba;
+    font-family: 'Century Gothic', sans-serif;
+    font-size: 8px;
+    font-weight: 500;
+  }
+
   @media (max-width: 767px) {
     .about-accordion {
       height: 24rem;
@@ -267,3 +511,4 @@
 </style>
 @endpush
 @endsection
+
