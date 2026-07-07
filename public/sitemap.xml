@@ -2,26 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://satyaarchitects.com/</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://satyaarchitects.com/about</loc>
-    <lastmod>2026-02-09</lastmod>
+    <loc>https://satyaarchitects.com/about-us</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://satyaarchitects.com/expertise</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://satyaarchitects.com/projects</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://satyaarchitects.com/team</loc>
-    <lastmod>2026-02-09</lastmod>
+    <loc>https://satyaarchitects.com/projects/urbandesign-and-township/forteasia-industrial-township-rohtak</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://satyaarchitects.com/clients</loc>
-    <lastmod>2026-02-09</lastmod>
+    <loc>https://satyaarchitects.com/projects/industries/dhoot-transmission-jhajjar</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://satyaarchitects.com/insights</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://satyaarchitects.com/blogs/luxury-home-architecture-trends-2026-in-gurgaon</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://satyaarchitects.com/blogs/importance-of-vastu-compliant-design-in-modern-homes</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://satyaarchitects.com/blogs/what-design-aesthetics-will-define-2026</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://satyaarchitects.com/blogs/dhoot-transmission-industrial-facility-jhajjar</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://satyaarchitects.com/contact-us</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
